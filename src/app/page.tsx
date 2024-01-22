@@ -32,13 +32,13 @@ export default function Home() {
             width={1000}
             height={300}
           />
-          <h1 className="absolute bottom-24 font-mono text-base text-[#CBC9C8] lg:text-xl">
+          <h1 className="absolute font-passport bottom-24 text-base text-cream lg:text-xl">
             BOARDING STARTS SOON...
           </h1>
         </section>
 
         <section className="overflow-clip relative bg-cit-crowd bg-opacity-75 bg-blend-overlay bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24">
-          <h1 className="text-3xl font-semibold pb-4">About CIT</h1>
+          <h1 className="text-4xl font-semibold pb-4">About CIT</h1>
           <p className="z-10 text-base w-full md:max-w-3xl">
             A prominent institution ranking amongst the top colleges in Tamil
             Nadu, was established with an initiative to provide pragmatic
@@ -72,7 +72,7 @@ export default function Home() {
         </section>
 
         <section className="relative bg-thai-kudam-bridge bg-right overflow-hidden bg-opacity-75 bg-blend-overlay bg-[#272727] text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24">
-          <h1 className="text-3xl font-semibold pb-4">About Takshashila</h1>
+          <h1 className="text-4xl font-semibold pb-4">About Takshashila</h1>
           <p className="z-10 text-base w-full md:max-w-3xl">
             The grand Annual Cultural Fiesta Of Chennai Institute Of Technology
             is an eminent spectacle that gives the student community a platform
@@ -116,20 +116,20 @@ export default function Home() {
         />
         <section className="flex items-center absolute bottom-10 gap-3 md:left-24">
           <a href="https://www.instagram.com/cittakshashila/">
-            <IconBrandInstagram className="cursor-pointer text-[#CBC9C8] hover:text-[#f0f0f0]" />
+            <IconBrandInstagram className="cursor-pointer text-cream hover:text-[#f0f0f0]" />
           </a>
           <a href="https://www.facebook.com/people/CIT-Takshashila/100064056814271/">
-            <IconBrandFacebook className="cursor-pointer text-[#CBC9C8] hover:text-[#f0f0f0]" />
+            <IconBrandFacebook className="cursor-pointer text-cream hover:text-[#f0f0f0]" />
           </a>
 
           <a href="https://www.linkedin.com/in/cittakshashila">
-            <IconBrandLinkedin className="cursor-pointer text-[#CBC9C8] hover:text-[#f0f0f0]" />
+            <IconBrandLinkedin className="cursor-pointer text-cream hover:text-[#f0f0f0]" />
           </a>
           <a href="mailto:takshashila@citchennai.net">
-            <IconMail className="cursor-pointer text-[#CBC9C8] hover:text-[#f0f0f0]" />
+            <IconMail className="cursor-pointer text-cream hover:text-[#f0f0f0]" />
           </a>
           <a href="tel:+919361100381">
-            <IconPhone className="cursor-pointer text-[#CBC9C8] hover:text-[#f0f0f0]" />
+            <IconPhone className="cursor-pointer text-cream hover:text-[#f0f0f0]" />
           </a>
         </section>
       </section>
@@ -141,9 +141,9 @@ export default function Home() {
             alt="about-us-stacked-image"
             src={AboutUsImage}
           />
-          <h1 className="text-3xl text-[#CBC9C8]">About CIT</h1>
-          <hr className="text-[#CBC9C8] h-[1px] w-full md:hidden" />
-          <p className="text-[#CBC9C8] text-xs md:text-base lg:w-1/2">
+          <h1 className="font-oranienbaum text-4xl text-cream">About CIT</h1>
+          <hr className="text-cream h-[1px] w-full md:hidden" />
+          <p className="text-cream text-xs md:text-base lg:w-1/2">
             A prominent institution ranking amongst the top colleges in Tamil
             Nadu, was established with an initiative to provide pragmatic
             learning. The institution has also partnered with a number of
@@ -165,7 +165,7 @@ export default function Home() {
             you, so that you can tranform into a proper engineer"
             <br />
             <br />
-            <span className="font-bold italic text-xs">
+            <span className="font-bold italic text-base">
               ~Shri Sriram Parthasarathy
             </span>
           </p>
@@ -177,8 +177,8 @@ export default function Home() {
         </section>
 
         <section className="w-full flex flex-col relative items-start gap-8 p-10 md:p-24">
-          <h1 className="text-3xl text-[#CBC9C8]">About Takshashila</h1>
-          <p className="text-[#CBC9C8] text-xs md:text-base lg:w-[65%]">
+          <h1 className="text-4xl text-cream">About Takshashila</h1>
+          <p className="text-cream text-xs md:text-base lg:w-[65%]">
             The Grand Annual Cultural Fiesta of Chennai Institute Of Technology
             is an eminent spectacle that gives the student community a platform
             to showcase their talents and sculpt their skills. This memorable
@@ -189,7 +189,7 @@ export default function Home() {
             Takshashila's voyage will be an exhilarating one, full of adventures
             that are fished straight out of the ocean.
           </p>
-          <p className="text-[#CBC9C8] text-xs md:text-lg w-full">
+          <p className="text-cream text-xs md:text-lg w-full">
             The Great Indian cinema is a fascinating theme that sheds light on
             Indian culture and society. It has been a beacon of hope for over
             100 years, providing an escape from reality for us. This year,
@@ -203,7 +203,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="w-full flex items-center justify-center border-y  border-[#CBC9C8]">
+        <section className="w-full flex items-center justify-center border-y  border-cream">
           <section className="p-10 py-24">
             <Image
               alt="TK-logo"
@@ -216,46 +216,46 @@ export default function Home() {
           <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5">
             <section className="flex flex-col space-y-1">
               <h1 className="text-2xl mb-3">Socials</h1>
-              <a className="text-[#CBC9C8] text-xs" href="#">Instagram</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Facebook</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">LinkedIn</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Phone</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Email</a>
+              <a className="text-cream text-xs" href="#">Instagram</a>
+              <a className="text-cream text-xs" href="#">Facebook</a>
+              <a className="text-cream text-xs" href="#">LinkedIn</a>
+              <a className="text-cream text-xs" href="#">Phone</a>
+              <a className="text-cream text-xs" href="#">Email</a>
             </section>
 
-            <div className="bg-[#CBC9C8] w-[1px] h-24 mx-8" />
+            <div className="bg-cream w-[1px] h-24 mx-8" />
 
             <section className="flex flex-col space-y-1">
               <h1 className="text-2xl mb-3">Events</h1>
-              <a className="text-[#CBC9C8] text-xs" href="#">Technical</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Non Technical</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Workshops</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Pro-Shows</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Others</a>
+              <a className="text-cream text-xs" href="#">Technical</a>
+              <a className="text-cream text-xs" href="#">Non Technical</a>
+              <a className="text-cream text-xs" href="#">Workshops</a>
+              <a className="text-cream text-xs" href="#">Pro-Shows</a>
+              <a className="text-cream text-xs" href="#">Others</a>
             </section>
 
-            <div className="bg-[#CBC9C8] w-[1px] h-24 mx-8" />
+            <div className="bg-cream w-[1px] h-24 mx-8" />
 
             <section className="flex flex-col space-y-1">
               <h1 className="text-2xl mb-3">Website</h1>
-              <a className="text-[#CBC9C8] text-xs" href="#">Terms & Policy</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Services</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Account</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Collage Site</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Developer</a>
+              <a className="text-cream text-xs" href="#">Terms & Policy</a>
+              <a className="text-cream text-xs" href="#">Services</a>
+              <a className="text-cream text-xs" href="#">Account</a>
+              <a className="text-cream text-xs" href="#">Collage Site</a>
+              <a className="text-cream text-xs" href="#">Developer</a>
             </section>
 
-            <div className="bg-[#CBC9C8] w-[1px] h-24 mx-8" />
+            <div className="bg-cream w-[1px] h-24 mx-8" />
 
             <section className="flex flex-col space-y-1">
               <h1 className="text-2xl mb-3">Support</h1>
-              <a className="text-[#CBC9C8] text-xs" href="#">
+              <a className="text-cream text-xs" href="#">
                 Takshashila Team
               </a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Report</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Developer</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Contact Us</a>
-              <a className="text-[#CBC9C8] text-xs" href="#">Credits</a>
+              <a className="text-cream text-xs" href="#">Report</a>
+              <a className="text-cream text-xs" href="#">Developer</a>
+              <a className="text-cream text-xs" href="#">Contact Us</a>
+              <a className="text-cream text-xs" href="#">Credits</a>
             </section>
           </section>
         </section>

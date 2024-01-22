@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
-
-const inter = Inter({ subsets: ["latin"] });
+import { oranienbaum, passport, quicksand } from "@/libs/fonts";
 
 export const metadata: Metadata = {
   title: "CIT - Takshashila 2024",
@@ -18,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${quicksand.variable} ${oranienbaum.variable} ${passport.variable}`}
+      >
         <NavBar />
         {children}
       </body>

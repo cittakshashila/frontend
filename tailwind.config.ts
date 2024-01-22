@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        cream: "#CBC9C8",
+        grey: "#272727",
+      },
+      fontFamily: {
+        passport: "var(--passport-font)",
+        oranienbaum: "var(--oranienbaum-font)",
+        quicksand: "var(--quicksand-font)",
+      },
       backgroundImage: {
         "hero-popcorn": "url('/hero-background.webp')",
         "paint-effect": "url('/paint-effect-bg.png')",

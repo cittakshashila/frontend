@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: var(--quicksand-font);
+}
+
+p {
+  font-family: var(--quicksand-font);
+}
+
+h1 {
+  font-family: var(--oranienbaum-font);
+}
