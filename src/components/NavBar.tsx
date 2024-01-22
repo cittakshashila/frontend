@@ -26,7 +26,7 @@ const NavBar = () => {
       <section
         className={cn(
           "hidden text-white text-xl text-center font-bold backdrop-blur absolute left-0 pt-24 pb-5 rounded-b-3xl shadow -z-20 w-full duration-500 md:static md:p-0 md:flex md:w-auto md:gap-5 md:shadow-none md:backdrop-blur-0",
-          isOpen ? "top-0" : "-top-48",
+          isOpen ? "top-0" : "-top-48"
         )}
       >
         <h1 className="cursor-pointer">HOME</h1>

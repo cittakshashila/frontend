@@ -60,7 +60,9 @@ export default function Events() {
   return (
     <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200 backdrop-blur-xl ">
       <div className="flex flex-row flex-wrap justify-center ">
-        {array.map((item, index) => <Card key={index} events={item} />)}
+        {array.map((item, index) => (
+          <Card key={index} events={item} />
+        ))}
       </div>
     </main>
   );
