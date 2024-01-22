@@ -39,7 +39,10 @@ export default function Home() {
           </h1>
         </section>
 
-        <section className="overflow-clip relative bg-cit-crowd bg-opacity-75 bg-blend-overlay bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24">
+        <section
+          className="overflow-clip relative bg-cit-crowd bg-opacity-75 bg-blend-overlay bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24"
+          id="about-cit"
+        >
           <h1 className="text-3xl font-semibold pb-4">About CIT</h1>
           <p className="z-10 text-base w-full md:max-w-3xl jos">
             A prominent institution ranking amongst the top colleges in Tamil
@@ -69,7 +72,7 @@ export default function Home() {
           <Image
             src={AboutCITSideTKLogo}
             alt="side-image"
-            className="hidden md:block absolute right-0 rotate-[30deg] "
+            className="hidden md:block absolute right-0 rotate-[30deg]"
           />
         </section>
 
@@ -108,6 +111,11 @@ export default function Home() {
   }
   return (
     <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200 overflow-hidden">
+      <div
+        className="glass jos"
+        data-jos_animation="backdrop"
+        data-jos_anchor="#about-us"
+      ></div>
       <section className="relative flex items-center justify-center md:justify-end h-screen p-10 md:p-24 lg:p-48">
         <Image
           alt="TK-logo"
@@ -145,12 +153,7 @@ export default function Home() {
         </section>
       </section>
 
-      <section
-        className="jos"
-        data-jos_animationinverse="backdrop"
-        data-jos_duration="0.8"
-        id="about-us"
-      >
+      <section id="about-us">
         <section className="overflow-x-clip w-full flex flex-col relative items-start gap-8 p-10 md:p-24">
           <Image
             className="hidden z-10 lg:block w-1/2 min-w-[450px] max-w-[800px] absolute -right-14 top-16 grayscale hover:grayscale-0 jos"
@@ -241,8 +244,9 @@ export default function Home() {
           </p>
         </section>
 
+        {/* zindex high */}
         <section
-          className="w-full flex items-center justify-center border-y  border-[#CBC9C8]"
+          className="w-full flex items-center justify-center border-y  border-[#CBC9C8] border-opacity-50 relative"
           id="footer"
         >
           <section className="p-10 py-24">
@@ -256,8 +260,9 @@ export default function Home() {
               data-jos_anchor="#footer"
             />
           </section>
-          <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5">
-            <section className="flex flex-col space-y-1">
+          {/* zindex high */}
+          <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5 ">
+            <section className="flex flex-col space-y-1 ">
               <h1 className="text-2xl mb-3">Socials</h1>
               <a className="text-[#CBC9C8] text-xs" href="#">
                 Instagram
@@ -341,7 +346,7 @@ export default function Home() {
           </section>
         </section>
 
-        <section className="flex justify-center gap-3 text-white text-[9px] py-2">
+        <section className="flex justify-center gap-3 text-white text-[9px] py-2 relative">
           <h1>cittakshashila.in</h1>
           <h1>Copyright &copy; 2024</h1>
           <h1>Website By Team :bitspace</h1>

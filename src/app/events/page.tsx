@@ -58,7 +58,7 @@ export default function Events() {
   if (isTeaser) return;
 
   return (
-    <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200 backdrop-blur-xl ">
+    <main className="flex min-h-screen bg-hero-popcorn z-0 bg-fixed bg-cover bg-bottom flex-col bg-red-200 backdrop-blur-xl">
       <div className="flex flex-row flex-wrap justify-center ">
         {array.map((item, index) => (
           <Card key={index} events={item} />
