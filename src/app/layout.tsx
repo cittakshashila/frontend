@@ -21,16 +21,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jos_options = {
-    debugMode: false, // turn this off in production
-    passive: false,
-    animation: "fade",
-    duration: 0.5,
-    rootMargin: "0% 0% 30% 0%",
-  };
-
   useEffect(() => {
-    jos.init(jos_options);
+    jos.init({
+      debugMode: false, // turn this off in production
+      passive: false,
+      animation: "fade",
+      duration: 0.5,
+      rootMargin: "0% 0% 30% 0%",
+    });
     jos.version(); // returns the version of the library
   }, []);
 
