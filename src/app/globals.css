@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.jos-backdrop {
-  -webkit-backdrop-filter: blur(0px) !important;
-  background: rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(0px) !important;
+* {
+  font-family: var(--quicksand-font);
 }
 
+p {
+  font-family: var(--quicksand-font);
+}
+
+h1 {
+  font-family: var(--oranienbaum-font);
+}
 .glass {
   width: 100%;
   height: 100%;
@@ -16,4 +21,10 @@
   background: rgba(0, 0, 0, 0.33);
   backdrop-filter: blur(20px);
   z-index: 0;
+}
+
+.jos-backdrop {
+  -webkit-backdrop-filter: blur(0px) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(0px) !important;
 }

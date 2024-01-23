@@ -7,6 +7,7 @@ import jos from "jos-animation";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { use, useEffect, useState } from "react";
+import { oranienbaum, passport, quicksand } from "@/libs/fonts";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,7 +40,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${quicksand.variable} ${oranienbaum.variable} ${passport.variable}`}
+      >
         <NavBar />
         {children}
       </body>
