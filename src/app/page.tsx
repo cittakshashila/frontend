@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import TakshashilaPrimaryLogo from "@/assets/takshashila-primary-logo.png";
 import TakshashilaSecondaryLogo from "@/assets/takshashila-secondary-logo.svg";
@@ -40,7 +42,7 @@ export default function Home() {
 
         <section className="overflow-clip relative bg-cit-crowd bg-opacity-75 bg-blend-overlay bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24">
           <h1 className="text-4xl font-semibold pb-4">About CIT</h1>
-          <p className="z-10 text-base w-full md:max-w-3xl">
+          <p className="z-10 text-base w-full md:max-w-3xl jos">
             A prominent institution ranking amongst the top colleges in Tamil
             Nadu, was established with an initiative to provide pragmatic
             learning. The institution has also partnered with a number of
@@ -68,7 +70,7 @@ export default function Home() {
           <Image
             src={AboutCITSideTKLogo}
             alt="side-image"
-            className="hidden md:block absolute right-0 rotate-[30deg] "
+            className="hidden md:block absolute right-0 rotate-[30deg]"
           />
         </section>
 
@@ -110,16 +112,30 @@ export default function Home() {
     );
   }
   return (
-    <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200">
+    <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200 overflow-hidden">
+      <div
+        className="glass jos"
+        data-jos_animation="backdrop"
+        data-jos_anchor="#about-us"
+      ></div>
       <section className="relative flex items-center justify-center md:justify-end h-screen p-10 md:p-24 lg:p-48">
         <Image
           alt="TK-logo"
           width={500}
           height={90}
           src={TakshashilaSecondaryLogo}
-          className="w-full max-w-[550px]"
+          className="w-full max-w-[550px] jos"
+          data-jos_animation="skew-down"
+          data-jos_duration="0.4"
+          id="logo"
         />
-        <section className="flex items-center absolute bottom-10 gap-3 md:left-24">
+        <section
+          className="flex items-center absolute bottom-10 gap-3 md:left-24 jos"
+          data-jos_stagger="fade-right"
+          data-jos_stagger_seq="0.1"
+          data-jos_stagger_duration="0.2"
+          data-jos_stagger_anchor="#logo"
+        >
           <a href="https://www.instagram.com/cittakshashila/">
             <IconBrandInstagram className="cursor-pointer text-cream hover:text-[#f0f0f0]" />
           </a>
@@ -139,16 +155,21 @@ export default function Home() {
         </section>
       </section>
 
-      <section className="backdrop-blur bg-[#00000055] ">
+      <section id="about-us">
         <section className="overflow-x-clip w-full flex flex-col relative items-start gap-8 p-10 md:p-24">
           <Image
-            className="hidden z-10 lg:block w-1/2 min-w-[450px] max-w-[800px] absolute -right-14 top-16 grayscale hover:grayscale-0"
+            className="hidden z-10 lg:block w-1/2 min-w-[450px] max-w-[800px] absolute -right-14 top-16 grayscale hover:grayscale-0 jos"
+            data-jos_animation="spin"
+            data-jos_duration="1.2"
+            data-jos_anchor="#about-us"
             alt="about-us-stacked-image"
             src={AboutUsImage}
           />
-          <h1 className="font-oranienbaum text-4xl text-cream">About CIT</h1>
+         
+          <h1 className="font-oranienbaum text-4xl text-cream jos" data-jos_animation="fade-right">About CIT</h1>
           <hr className="text-cream h-[1px] w-full md:hidden" />
-          <p className="text-cream text-xs md:text-base lg:w-1/2">
+          <p className="text-cream text-xs md:text-base lg:w-1/2 jos" data-jos_animation="fade-up">
+
             A prominent institution ranking amongst the top colleges in Tamil
             Nadu, was established with an initiative to provide pragmatic
             learning. The institution has also partnered with a number of
@@ -174,7 +195,7 @@ export default function Home() {
               ~Shri Sriram Parthasarathy
             </span>
           </p>
-          <section className="flex gap-2">
+          <section className="flex gap-2 jos" data-jos_animation="zoom-in">
             <Button>Latest</Button>
             <Button>Website</Button>
             <Button>More</Button>
@@ -182,8 +203,10 @@ export default function Home() {
         </section>
 
         <section className="w-full flex flex-col relative items-start gap-8 p-10 md:p-24">
-          <h1 className="text-4xl text-cream">About Takshashila</h1>
-          <p className="text-cream text-xs md:text-base lg:w-[65%]">
+        
+          <h1 className="text-4xl text-cream jos" data-jos_animation="fade-right" >About Takshashila</h1>
+          <p className="text-cream text-xs md:text-base lg:w-[65%] jos" data-jos_animation="fade-up">
+
             The Grand Annual Cultural Fiesta of Chennai Institute Of Technology
             is an eminent spectacle that gives the student community a platform
             to showcase their talents and sculpt their skills. This memorable
@@ -194,7 +217,7 @@ export default function Home() {
             Takshashila's voyage will be an exhilarating one, full of adventures
             that are fished straight out of the ocean.
           </p>
-          <p className="text-cream text-xs md:text-lg w-full">
+          <p className="text-cream text-xs md:text-lg w-full jos" data-jos_animation="fade-up">
             The Great Indian cinema is a fascinating theme that sheds light on
             Indian culture and society. It has been a beacon of hope for over
             100 years, providing an escape from reality for us. This year,
@@ -208,18 +231,21 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="w-full flex items-center justify-center border-y  border-cream">
+        <section className="w-full flex items-center justify-center border-y  border-cream border-opacity-50 relative" id="footer">
           <section className="p-10 py-24">
             <Image
               alt="TK-logo"
               width={500}
               height={90}
               src={TakshashilaSecondaryLogo}
-              className="w-full max-w-56"
+              className="w-full max-w-56 jos"
+              data-jos_animation="zoom-in"
+              data-jos_anchor="#footer"
             />
           </section>
-          <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5">
-            <section className="flex flex-col space-y-1">
+          
+          <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5 ">
+            <section className="flex flex-col space-y-1 ">
               <h1 className="text-2xl mb-3">Socials</h1>
               <a className="text-cream text-xs" href="#">Instagram</a>
               <a className="text-cream text-xs" href="#">Facebook</a>
@@ -265,7 +291,7 @@ export default function Home() {
           </section>
         </section>
 
-        <section className="flex justify-center gap-3 text-white text-[9px] py-2">
+        <section className="flex justify-center gap-3 text-white text-[9px] py-2 relative">
           <h1>cittakshashila.in</h1>
           <h1>Copyright &copy; 2024</h1>
           <h1>Website By Team :bitspace</h1>

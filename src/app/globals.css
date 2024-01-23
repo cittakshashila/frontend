@@ -13,3 +13,18 @@ p {
 h1 {
   font-family: var(--oranienbaum-font);
 }
+.glass {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.33);
+  backdrop-filter: blur(20px);
+  z-index: 0;
+}
+
+.jos-backdrop {
+  -webkit-backdrop-filter: blur(0px) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(0px) !important;
+}
