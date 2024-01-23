@@ -13,3 +13,88 @@ p {
 h1 {
   font-family: var(--oranienbaum-font);
 }
+
+
+/* animation in teaser page */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  transition: transform 1.1s ease;
+  transform-origin: 50% 100%;
+}
+
+
+.box-1::before {
+  content: "Mirchi Siva";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 5;
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.box-1:hover::before {
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+.box-2::before {
+  content: "Actor Soori";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 5;
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.box-2:hover::before {
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+.box-3::before {
+  content: "Thaikulam Bridge";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 5;
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.box-3:hover::before {
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+.image-container:hover img:first-child {
+  transform: scale(1.2);
+}
+
+.image-container:hover img:last-child {
+  transform: scale(0.90);
+}
+/* animation in teaser ends  */
