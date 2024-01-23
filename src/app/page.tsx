@@ -13,6 +13,7 @@ import {
 } from "@tabler/icons-react";
 import Button from "@/components/Button";
 import { isTeaser } from "@/libs/utils";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
   if (isTeaser) {
@@ -98,15 +99,7 @@ export default function Home() {
               intricate mosaic that mirrors the interconnectedness of our World.
             </p>
           </section>
-          <section className="hidden lg:flex flex-col space-y-2">
-            <section className="bg-red-500 min-h-52 rounded-3xl min-w-64 z-10">
-            </section>
-            <section className="bg-red-500 min-h-52 rounded-3xl min-w-64 z-10">
-            </section>
-            <section className="bg-red-500 min-h-52 rounded-3xl min-w-64 z-10">
-            </section>
-          </section>
-
+          <Carousel />
           <Image
             src={AboutCITSideTKLogo}
             alt="side-image"
