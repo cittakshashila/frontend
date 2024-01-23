@@ -3,23 +3,33 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/autoplay";
 
 const Carousel = () => {
   return (
     <>
-      <section className="hidden lg:flex flex-col space-y-2">
-        <section className="bg-red-500 min-h-52 rounded-3xl min-w-64 z-10">
-        </section>
-        <section className="bg-red-500 min-h-52 rounded-3xl min-w-64 z-10">
-        </section>
-        <section className="bg-red-500 min-h-52 rounded-3xl min-w-64 z-10">
-        </section>
+      <section className="hidden lg:flex flex-col space-y-4">
+
+      <section className="image-container box-1 h-52 rounded-3xl min-w-80  relative z-10 ">
+        <img className="w-28 h-44 absolute bottom-0 inset-x-20" src="/mirchisiva.png" alt="First Image"  />
+        <img className=" h-full w-64  absolute top-0 left-0 z-[-1]" src="/mirichisiva-bg.png" alt="Second Image"  />
+     </section>
+
+     <section className="image-container box-2 h-52 rounded-3xl min-w-80 relative z-10 ">
+        <img className="w-32 h-44 absolute bottom-0 left-14" src="/soori.png" alt="First Image" />
+        <img className=" h-full w-64  absolute top-0 left-0 z-[-1]" src="/soori-bg.png" alt="Second Image"  />
+     </section>
+     
+       
+     <section className="image-container box-3 h-52 rounded-3xl min-w-80 relative z-10 mt-5">
+        <img className="w-32 h-44 absolute bottom-0 left-14 " src="/tbridge.png" alt="First Image" />
+        <img className=" h-full w-64  absolute top-0 left-0 z-[-1]" src="/tbridge-bg.png" alt="Second Image"    />
+     </section>
+
       </section>
 
-      <section className="lg:hidden  min-h-56 min-w-72 z-10">
+      <section className="lg:hidden  min-h-52 min-w-72 z-10 m-5 text-center">
         <Swiper
           slidesPerView={"auto"}
           effect={"creative"}
@@ -40,14 +50,14 @@ const Carousel = () => {
           }}
           modules={[EffectCreative, Autoplay]}
         >
-          <SwiperSlide className="min-h-56 rounded-3xl bg-red-500 w-full">
-            Slide 1
+          <SwiperSlide className="h-62 w-full rounded-3xl ">
+              <img className="w-64" src="/mirchisiva-slider.png" alt="Second Image"  />
           </SwiperSlide>
-          <SwiperSlide className="min-h-56 w-full bg-blue-300 rounded-3xl">
-            Slide 1
+          <SwiperSlide className="h-62 w-full rounded-3xl">
+              <img className="w-64" src="/soori-slider.png" alt="Second Image"  />
           </SwiperSlide>
-          <SwiperSlide className="min-h-56 w-full bg-green-200 rounded-3xl">
-            Slide 1
+          <SwiperSlide className="h-62 w-full rounded-3xl">
+              <img className="h-[100%] w-64" src="/tbridge-slider.png" alt="Second Image"  />
           </SwiperSlide>
         </Swiper>
       </section>
