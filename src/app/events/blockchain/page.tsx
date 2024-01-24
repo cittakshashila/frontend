@@ -1,11 +1,8 @@
-'use client';
-import React, { useEffect, useState } from "react";
 import { isTeaser } from "@/libs/utils";
 import EventDescriptionBox from "@/components/EventDescriptionBox";
 import { EventDescriptor } from "@/libs/types";
 
 export default function BlockChain() {
-  const [width, setWidth] = useState(0);
 
   if (isTeaser) return;
 
@@ -23,21 +20,10 @@ export default function BlockChain() {
     contact_number: "6380529077"
   }];
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    window.addEventListener('resize', () => {setWidth(window.innerWidth);});
-  }, []);
-
-  if(width >= 600){
-    return (
+  return (
       <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200 backdrop-blur-xl ">
         <EventDescriptionBox details={array[0]}/>
       </main>
-    );}else{
-      return(
-        <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200 backdrop-blur-xl ">
-      </main>
-      );
-  }
+    );
 
 }
