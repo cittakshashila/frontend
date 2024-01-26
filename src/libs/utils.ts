@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const isTeaser = process.env.IsTeaser || false;
+export const isTeaser = process.env.IsTeaser || true;

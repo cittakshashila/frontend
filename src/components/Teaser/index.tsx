@@ -1,34 +1,59 @@
+"use client"
 import Image from "next/image";
 import AboutCITSideTKLogo from "@/assets/about-cit-side-prop-tklogo.png";
-import YearBanner from "@/assets/2024-year-banner.png";
+
 import TakshashilaPrimaryLogo from "@/assets/takshashila-primary-logo.png";
 import { Carousel } from "@/components";
+import {motion,useScroll, useTime, useTransform} from "framer-motion"
+import { useRef } from'react';
+import styles from "./Teaser.module.css"
 
 const Teaser = () => {
+    const ref = useRef<HTMLElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+    
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1,0.5], [0.5,1,0]);
+
     return (
         <main className="bg-paint-effect bg-cover bg-center  min-h-screen bg-[#272727]">
             <section className="relative w-full  h-screen bg-world-map bg-cover bg-center flex flex-col items-center justify-center p-5 md:p-24 lg:p-72">
-                <Image
-                    alt="year"
-                    src={YearBanner}
-                    width={100}
-                    height={100}
-                    className="absolute top-20 right-10 w-20 lg:w-28 lg:top-28 lg:right-14"
-                />
-                <Image
+               <motion.div 
+                  initial={{opacity:0}}
+                  animate={{ opacity:1}}
+                  transition={{ duration: 4 }}>
+               <Image
                     alt="takshashila-logo"
                     src={TakshashilaPrimaryLogo}
                     width={1000}
                     height={300}
                 />
-                <h1 className="absolute font-passport bottom-24 text-base text-cream lg:text-xl">
-                    BOARDING STARTS SOON...
-                </h1>
+               </motion.div>
+                <div className="absolute  bottom-24 flex flex-col items-center justify-center">
+                    <BubbleText />
+                    <BarLoader />
+                </div>
             </section>
 
             <section className="overflow-clip relative bg-cit-crowd bg-opacity-75 bg-blend-overlay bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24">
                 <h1 className="text-4xl font-semibold pb-4">About CIT</h1>
-                <p className="z-10 text-base w-full md:max-w-3xl">
+                <motion.p 
+                //@ts-ignore
+                 ref={ref}
+                 style={{
+                    
+                    
+                    opacity:scrollYProgress
+                 }}
+
+                 initial={{x:-1000}}
+                 animate={{x:0}}
+                 transition={{duration:1}}  
+
+                    className="z-10 text-base w-full md:max-w-3xl">
                     A prominent institution ranking amongst the top colleges in Tamil
                     Nadu, was established with an initiative to provide pragmatic
                     learning. The institution has also partnered with a number of
@@ -52,11 +77,11 @@ const Teaser = () => {
                     <br />
                     <br />
                     <span>– Shri Sriram Parthasarathy</span>
-                </p>
+                </motion.p>
                 <Image
                     src={AboutCITSideTKLogo}
                     alt="side-image"
-                    className="hidden md:block absolute right-0 rotate-[30deg] "
+                    className="hidden md:block absolute right-0"
                 />
             </section>
 
@@ -97,4 +122,64 @@ const Teaser = () => {
         </main>
     );
 }
+const BubbleText = () => {
+    return (
+      <h2 className="text-center  font-thin text-cream text-lg ">
+        {"BOARDING STARTS SOON...".split("").map((child, idx) => (
+          <span className={styles.hoverText} key={idx}>
+            {child}
+          </span>
+        ))}
+      </h2>
+    );
+  };
+
+
+  const variants = {
+    initial: {
+      scaleY: 0.5,
+      opacity: 0,
+    },
+    animate: {
+      scaleY: 1,
+      opacity: 1,
+      transition: {
+        repeat: Infinity,
+        repeatType: "mirror",
+        duration: 1,
+        ease: "circIn",
+      },
+    },
+  };
+  
+const BarLoader = () => {
+  return (
+    <motion.div
+      transition={{
+        staggerChildren: 0.25,
+      }}
+      initial="initial"
+      animate="animate"
+      className="flex gap-1"
+    >
+      <motion.div
+      //@ts-ignore
+       variants={variants} className="h-12 w-2 bg-white" />
+      <motion.div 
+      //@ts-ignore
+      variants={variants} className="h-12 w-2 bg-white" />
+      <motion.div
+      //@ts-ignore 
+      variants={variants} className="h-12 w-2 bg-white" />
+      <motion.div
+      //@ts-ignore 
+      variants={variants} className="h-12 w-2 bg-white" />
+      
+      <motion.div
+       //@ts-ignore
+       variants={variants} className="h-12 w-2 bg-white" />
+    </motion.div>
+  );
+};
+
 export default Teaser;
