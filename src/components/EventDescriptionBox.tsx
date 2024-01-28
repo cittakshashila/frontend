@@ -1,5 +1,10 @@
 import { EventDescriptor } from "@/libs/types";
 import React from "react";
+import Image from "next/image";
+import Instagram from '@/assets/instagram_white_48dp.svg'
+import Download from '@/assets/downloading_white_48dp.svg'
+import ShareLink from '@/assets/share_white_48dp.svg'
+import { EventButton } from '@/components'
 
 interface props {
   details: EventDescriptor;
@@ -10,194 +15,77 @@ const EventDescriptionBox  = ({ details }: props) => {
   const eventDesc: React.CSSProperties = {
     backgroundSize: "cover",
     backgroundPosition: "center",
-    filter: "contrast(0.85) brightness(0.9) grayscale(0.2) blur(0px)",
-    minHeight: "30vw",
+    filter: "contrast(0.85) brightness(0.9) grayscale(0.2) blur(0px)"
   };
 
   return (
-    <div>
+    <section>
+
       {/* PC/Laptop View */}
-    <div className="hidden md:flex relative flex flex-row justify-between mt-[7vw] gap-[3vw] mr-[7vw] bg-[#333333]/[0.22] items-center h-fit text-[#fff] top-[9vh] left-[3.5vw]">
-      {/*Left side div*/}
-      <div className="relative flex flex-col flex-nowrap w-[26vw] h-[100%] bg-[#00000066] justify-center items-center pt-[2vw] pb-[2vw] m-[0px]">
-        <img src={details.event_img} className="h-[20vw] w-[78%] overflow-clip" />
-        <div className="justify-center w-[78%] mt-[2vw] flex flex-col">
-          <div className="flex flex-row gap-[1vw] mb-[1vw] items-center justify-center mt-0.7vw flex-wrap gap-y-[0.6vw]">
-            <a href="#" className="  flex items-center justify-center pt-[0.5vw] pr-[1vw] pl-[1vw] pb-[0.5vw] bg-[#1a1a1a6c] text-center text-[0.7vw] rounded-[4px] no-underline text-inherit">
-              Instagram Post
-            </a>
-            <a href="#" className=" flex items-center justify-center pt-[0.5vw] pr-[1vw] pl-[1vw] pb-[0.5vw] bg-[#1a1a1a6c] text-center text-[0.7vw] rounded-[4px] no-underline text-inherit">
-              Share Link
-            </a>
-            <a href="#" className=" flex items-center justify-center pt-[0.5vw] pr-[1vw] pl-[1vw] pb-[0.5vw] bg-[#1a1a1a6c] text-center text-[0.7vw] rounded-[4px] no-underline text-inherit">
-              Download
-            </a>
-          </div>
-        </div>
-        <div className="flex mt-[2vw]">
-          <a href="#" className="flex flex-row justify-center items-center w-[100%] text-[1.2vw] text-black rounded-[4px] pt-[1vw] pb-[1vw] w-[19vw] gap-[0.4vw] bg-white">
-            Register | {details.event_fees}
-          </a>
-        </div>
-      </div>
+      
+      <section className="left-14 w-11/12 hidden lg:flex flex-wrap relative flex-row mt-36 bg-lightcharcoal mb-36 items-stretch text-white">
 
-      {/*Right side div*/}
-      <div className="flex flex-col w-[70%] h-[100%] gap-[2.2vw] justify-center">
-        <div className="block">
-          <div className="flex text-[3vw] pb-[0.2vw] mb-[0.4vw] mt-[2vw]  font-bold w-fit gap-[2vw] border-b-[2px] border-white/50">
-            {details.event_name}
-          </div>
-          <div className="text-[0.8vw] ">
-            {details.event_tag}
-          </div>
-        </div>
+        {/*Left side section*/}
+        <section className="flex flex-col flex-wrap w-4/12 bg-black items-stretch justify-around bg-opacity-40">
 
-        <div className="block">
-          <div className="flex text-[1.1vw] pb-[0.5vw] mb-[1vw] mt-[1vw] border-b-[2px] border-white/50  w-fit gap-[2vw] font-bold">
-            Description
-          </div>
-          <div className="text-[0.8vw] w-[96%]">
-            {details.event_details}
-          </div>
-        </div>
+          <img src={details.event_img} className="w-11/12 mx-auto h-fit"></img>
+          <section className="flex flex-row w-11/12 justify-evenly mx-auto">
+            <a href="#" className="hover:animate-pulse"><Image alt="Instagram Post" src={Instagram}></Image></a>
+            <a href="#" className="hover:animate-pulse"><Image alt="Share Link" src={ShareLink}></Image></a>
+            <a href="#" className="hover:animate-pulse"><Image alt="Download" src={Download}></Image></a>
+          </section>
+          <EventButton classnames="text-2xl w-11/12 mx-auto">Register | {details.event_fees}</EventButton>
 
-        <div className="block">
-          <div className="flex flex-row w-[95%] h-[6vw] items-center justify-evenly content-around">
-            <div className="flex flex-col justify-center h-[100%] w-[100%]">
-              <div className="flex text-[1.1vw] pb-[0.5vw] mb-[1vw] mt-[1vw]  font-bold w-fit border-b-[2px] border-white/50 gap-[2vw]">
-                Prize
-              </div>
-              <div className="flex flex-col flex-nowrap items-start gap-[0.2vw] justify-center text-[0.8vw] " >
-                <div>Participate and win exciting prizes !</div>
-                <div>&nbsp;</div>
-                <div>&nbsp;</div>
-              </div>
-            </div>
+        </section>
 
-            <div className="flex flex-col justify-center h-[100%] w-[100%] ">
-              <div className="flex text-[1.1vw] pb-[0.5vw] mb-[1vw] mt-[1vw] w-fit gap-[2vw] border-b-[2px] border-white/50  font-bold">
-                Details
-              </div>
-              <div className="flex flex-col flex-nowrap items-start gap-[0.2vw] justify-center text-[0.8vw] ">
-                <div>Type: {details.event_type}</div>
-                <div>Date: {details.event_date}</div>
-                <div>Time: {details.event_time}</div>
-              </div>
-            </div>
+        {/*Right side section*/}
 
-            <div className="flex flex-col justify-center h-[100%] w-[100%]">
-              <div className="text-[1.1vw] pb-[0.5vw] mb-[1vw] mt-[1vw]  font-bold w-fit gap-[2vw] border-b-[2px] border-white/50">
-                Contact
-              </div>
-              <div className="flex flex-col flex-nowrap items-start gap-[0.2vw] justify-center text-[0.8vw] ">
-                <div className="no-underline text-inherit ">
-                  <a href={`mailto:${details.contact_email}`}>Co-ordinator : {details.contact_name}</a>
-                </div>
+        <section className="relative flex flex-col flex-wrap w-8/12 justify-stretch">
+          <h1 className="text-6xl underline decoration-halfwhite text-center underline-offset-16 pb-4 mt-10">{details.event_name}</h1>
+          <h1 className="text-md text-center pb-4">{details.event_tag}</h1>
+          <h1 className="relative underline decoration-halfwhite underline-offset-16 font-bold text-3xl left-3 pb-4">Description</h1>
+          <h1 className="relative w-11/12 font-light text-xl left-5 pb-4">{details.event_details}</h1>
+          <h1 className="relative underline decoration-halfwhite underline-offset-16 font-bold text-3xl left-3 pb-4">Prize</h1>
+          <h1 className="relative text-lg left-5 pb-4">Participate and win exciting prizes !</h1>
+          <h1 className="relative underline decoration-halfwhite underline-offset-16 font-bold text-3xl left-3 pb-4">Details</h1>
+          <h1 className="relative text-lg left-5">Type: {details.event_type}</h1>
+          <h1 className="relative text-lg left-5">Date: {details.event_date}</h1>
+          <h1 className="relative text-lg left-5 pb-4">Time: {details.event_time}</h1>
+          <h1 className="relative underline decoration-halfwhite underline-offset-16 font-bold text-3xl left-3 pb-4">Contact</h1>
+          <a href={`mailto:${details.contact_email}`} className="relative text-lg left-5 w-56"><h1>Co-ordinator: {details.contact_name}</h1></a>
+          <a href={`mailto:${details.contact_email}`} className="relative text-lg left-5 w-96"><h1>Email: {details.contact_email}</h1></a>
+          <a href={`tel:${details.contact_number}`} className="relative text-lg left-5 w-36 pb-10"><h1>Phone: {details.contact_number}</h1></a>
+        </section>
 
-                <div className="no-underline text-inherit ">
-                  <a href={`mailto:${details.contact_email}`}>Email : {details.contact_email}</a>
-                </div>
 
-                <div className="no-underline text-inherit ">
-                  <a href={`tel:${details.contact_number}`}>Phone : {details.contact_number}</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </section>
+        
+        {/* Mobile View*/}
+      <section className="rounded-2xl sm:flex lg:hidden relative flex shrink flex-nowrap flex-col mt-28 mb-20 pt-8 bg-lightcharcoal text-white top-4 overflow-clip">
+        <h1 className="text-4xl pb-5 underline decoration-halfwhite text-center underline-offset-16">{details.event_name}</h1>
+        <h1 className="text-xs text-center">{details.event_tag}</h1>
+        <img src={details.event_img} className="w-80 mx-auto mt-8 pb-12"></img>
+        <h1 className="relative top-3/4 underline pb-8 decoration-halfwhite underline-offset-16 font-bold text-2xl left-3">Description</h1>
+        <h1 className="relative top-3/4 w-11/12 font-light pb-12 text-sm left-5">{details.event_details}</h1>
+        <h1 className="relative top-3/4 underline pb-8 decoration-halfwhite underline-offset-16 font-bold text-2xl left-3">Prize</h1>
+        <h1 className="relative pb-12 text-sm left-5">Participate and win exciting prizes !</h1>
+        <h1 className="relative top-3/4 underline pb-8 decoration-halfwhite underline-offset-16 font-bold text-2xl left-3">Details</h1>
+        <h1 className="relative text-sm left-5">Type: {details.event_type}</h1>
+        <h1 className="relative text-sm left-5">Date: {details.event_date}</h1>
+        <h1 className="relative text-sm left-5 pb-12">Time: {details.event_time}</h1>
+        <h1 className="relative top-3/4 underline pb-8 decoration-halfwhite underline-offset-16 font-bold text-2xl left-3">Contact</h1>
+        <a href={`mailto:${details.contact_email}`} className="relative text-sm left-5 w-52"><h1>Co-ordinator: {details.contact_name}</h1></a>
+        <a href={`mailto:${details.contact_email}`} className="relative text-sm left-5 w-80"><h1>Email: {details.contact_email}</h1></a>
+        <a href={`tel:${details.contact_number}`} className="relative text-sm left-5 pb-12 w-32"><h1>Phone: {details.contact_number}</h1></a>
+        <section className="flex flex-wrap flex-row gap-4 w-9/12 justify-center mx-auto pb-12">
+          <EventButton classnames="text-sm">Instagram Post</EventButton>
+          <EventButton classnames="text-sm">Share Link</EventButton>
+          <EventButton classnames="text-sm">Download</EventButton>
+        </section>
+        <EventButton classnames="mx-auto w-fit text-2xl mb-8">Register | {details.event_fees}</EventButton>
+      </section>
 
-      </div>
-    </div>
-
-    {/* Mobile View*/}
-
-    <div className="sm:flex md:hidden rounded relative flex flex-nowrap flex-col-reverse justify-end mb-[22vw] mt-[10vw] gap-[3vw] mr-[5vw] pt-[10vw] pl-[5vw] bg-[#333333]/[0.35] items-center h-fit text-[#fff] top-[9vh] left-[2.35vw]">
-        {/*Top div (will be on the bottom as flex is in reverse*/}
-          <div className="relative flex flex-row flex-wrap justify-center items-center mb-[1vw] mt-[10vw] gap-[3vw] gap-y-[1.6vw]">
-              <a href="#" className="text-center pt-[1.5vw] p-[1.5vw] pr-[3vw] pl-[3vw] bg-[#1a1a1a6c] text-[2.7vw] rounded-[2px] no-underline text-inherit">
-                  Instagram Post
-              </a>
-              <a href="#" className="text-center pt-[1.5vw] p-[1.5vw] pr-[3vw] pl-[3vw] bg-[#1a1a1a6c] text-[2.7vw] rounded-[2px] no-underline text-inherit">
-                  Share Link
-              </a>
-              <a href="#" className="text-center pt-[1.5vw] p-[1.5vw] pr-[3vw] pl-[3vw] bg-[#1a1a1a6c] text-[2.7vw] rounded-[2px] no-underline text-inherit">
-                  Download
-              </a>
-
-                <a href="#" className="flex flex-row flex-nowrap justify-center items-center w-[70%] text-[4vw] pt-[3vw] pb-[3vw] text-black font-bold rounded-[10px] bg-white mt-[6vw] mb-[6vw]">
-                    Register | {details.event_fees}
-                </a>
-          </div>
-
-        {/*Bottom div (will be on the top as flex is in reverse*/}
-          <div className="flex flex-col h-[100%] w-[100%] gap-[10vw] justify-center">
-              <div className="flex flex-col items-center">
-                  <div className="flex text-[7vw] text-center pb-[0.2vw] mb-[0.4vw] mt-[2vw]  font-bold w-fit gap-[2vw] border-b-[2px] border-white/50">
-                      {details.event_name}
-                  </div>
-                  <div className="text-[2.4vw] ">
-                      {details.event_tag}
-                  </div>
-              </div>
-
-              <div className="flex justify-center items-center">
-                <img src={details.event_img} className="h-auto w-[78%] overflow-clip" />
-              </div>
-
-              <div className="mt-[6vw] block">
-                  <div className="flex text-[3vw] pb-[1vw] mb-[2vw] mt-[1vw] border-b-[2px] border-white/50  w-fit gap-[5vw] font-bold">
-                      Description
-                  </div>
-                  <div className="text-[2.8vw] w-[100%] font-light">
-                      {details.event_details}
-                  </div>
-              </div>
-
-              <div className="block">
-                  <div className="flex flex-col w-[100%] gap-[10vw] items-center justify-evenly">
-                      <div className="flex flex-col justify-center h-[100%] w-[100%]">
-                          <div className="flex text-[3vw] pb-[1vw] mb-[2vw] mt-[1vw] font-bold w-fit border-b-[2px] border-white/50 gap-[5vw]">
-                              Prize
-                          </div>
-                          <div className="flex flex-col flex-nowrap items-start gap-[0.2vw] justify-center text-[2.8vw] " >
-                              <div>Participate and win exciting prizes !</div>
-                          </div>
-                      </div>
-
-                      <div className="flex flex-col justify-center h-[100%] w-[100%] ">
-                          <div className="flex text-[3vw] pb-[1vw] mb-[2vw] mt-[1vw] w-fit gap-[5vw] border-b-[2px] border-white/50  font-bold">
-                              Details
-                          </div>
-                          <div className="flex flex-col flex-nowrap items-start gap-[0.2vw] justify-center text-[2.8vw] ">
-                              <div>Type: {details.event_type}</div>
-                              <div>Date: {details.event_date}</div>
-                              <div>Time: {details.event_time}</div>
-                          </div>
-                      </div>
-
-                      <div className="flex flex-col justify-center h-[100%] w-[100%]">
-                          <div className="text-[3vw] pb-[1vw] mb-[2vw] mt-[1vw]  font-bold w-fit gap-[5vw] border-b-[2px] border-white/50">
-                              Contact
-                          </div>
-                          <div className="flex flex-col flex-nowrap items-start gap-[0.2vw] justify-center text-[2.8vw] ">
-                              <div className="no-underline text-inherit ">
-                                  <a href={`mailto:${details.contact_email}`}>Co-ordinator : {details.contact_name}</a>
-                              </div>
-
-                              <div className="no-underline text-inherit ">
-                                  <a href={`mailto:${details.contact_email}`}>Email : {details.contact_email}</a>
-                              </div>
-
-                              <div className="no-underline text-inherit ">
-                                  <a href={`tel:${details.contact_number}`}>Phone : {details.contact_number}</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

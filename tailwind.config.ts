@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         cream: "#CBC9C8",
         grey: "#272727",
+        lightcharcoal: "#33333339",
+        halfwhite: "#ffffff80",
       },
       fontFamily: {
         passport: "var(--passport-font)",
@@ -25,6 +27,9 @@ const config: Config = {
         "thai-kudam-bridge": "url('/thaikudambridge-bg.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
+      textUnderlineOffset: {
+        16: '16px',
+      }
     },
   },
   plugins: [],
