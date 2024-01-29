@@ -1,6 +1,6 @@
 "use client";
 
-import TakshashilaSubmark from "@/assets/takshashila-submark-logo.png";
+import TakshashilaSubmark from "@/assets/takshashila-submark-logo.svg";
 import { cn } from "@/libs/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
@@ -16,12 +16,14 @@ const NavBar = () => {
 
   return (
     <nav className="flex justify-between items-center h-16 fixed z-50 w-full p-8 pt-16 md:p-20">
-      <Image
-        width={48}
-        height={48}
-        alt="takshashila-submark-logo"
-        src={TakshashilaSubmark}
-      />
+      <a href="#hero">
+        <Image
+          width={48}
+          height={48}
+          alt="takshashila-submark-logo"
+          src={TakshashilaSubmark}
+        />
+      </a>
 
       <section
         className={cn(

@@ -17,7 +17,7 @@ const ImageContainer = (
       {N && (
         <div
           style={{ left: `${leftPos}` }}
-          className={`hidden md:block pointer-events-none z-[100] font-quicksand absolute w-fit px-2 top-[80%] text-white bg-black bg-opacity-45`}
+          className={`hidden lg:block pointer-events-none z-[100] font-quicksand absolute w-fit px-2 top-[80%] text-white bg-black bg-opacity-45`}
         >
           {name}
         </div>
