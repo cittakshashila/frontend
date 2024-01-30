@@ -33,6 +33,7 @@ h1 {
 .image-container {
   position: relative;
   display: inline-block;
+  user-select: none;
 }
 
 .image-container img {

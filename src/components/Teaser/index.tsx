@@ -82,7 +82,7 @@ const Teaser = () => {
           href="#aboutcit"
           className="hidden lg:block absolute bottom-10 right-10"
         >
-          <Image alt="arrow" src={DownArrow} />
+          <Image className="select-none pointer-events-none " alt="arrow" src={DownArrow} />
         </a>
       </section>
 
@@ -119,13 +119,13 @@ const Teaser = () => {
         <Image
           src={AboutCITSideTKLogo}
           alt="side-image"
-          className="hidden md:block absolute right-0 rotate-[30deg] "
+          className="select-none pointer-events-none hidden md:block absolute right-0 rotate-[30deg] "
         />
         <a
           href="#abouttk"
           className="hidden lg:block absolute bottom-10 right-10"
         >
-          <Image alt="arrow" src={DownArrow} />
+          <Image className="select-none pointer-events-none " alt="arrow" src={DownArrow} />
         </a>
 
         <ContactCard />
@@ -169,11 +169,11 @@ const Teaser = () => {
         <Image
           src={AboutCITSideTKLogo}
           alt="side-image"
-          className="hidden md:block absolute -top-80 right-0 rotate-[30deg] -z-0"
+          className="select-none pointer-events-none hidden md:block absolute -top-80 right-0 rotate-[30deg] -z-0"
         />
 
         <a href="#hero" className="hidden lg:block absolute bottom-10 right-10">
-          <Image className="rotate-180" alt="arrow" src={DownArrow} />
+          <Image className="rotate-180 select-none pointer-events-none " alt="arrow" src={DownArrow} />
         </a>
       </section>
     </main>
