@@ -66,15 +66,16 @@ const Teaser = () => {
           src={YearBanner}
           width={100}
           height={100}
-          className="absolute top-20 right-10 w-20 lg:w-28 lg:top-28 lg:right-14"
+          className="select-none absolute top-20 right-10 w-20 lg:w-28 lg:top-28 lg:right-14"
         />
         <Image
+          className="select-none"
           alt="takshashila-logo"
           src={TakshashilaPrimaryLogo}
           width={1000}
           height={300}
         />
-        <h1 className="absolute font-passport bottom-24 text-base text-cream lg:text-xl">
+        <h1 className="select-none absolute font-passport bottom-24 text-base text-cream lg:text-xl">
           BOARDING STARTS SOON...
         </h1>
         <a
@@ -97,8 +98,8 @@ const Teaser = () => {
           learning. The institution has also partnered with a number of
           companies to set a worldwide standard by offering students a diverse
           range of possibilities that combine education and recreation. The
-          students' appetite for knowledge makes them thrive to prepare for the
-          ready-to-serve industrial requirements. This is delivered by CIT
+          students&apos; appetite for knowledge makes them thrive to prepare for
+          the ready-to-serve industrial requirements. This is delivered by CIT
           through professional ethics which is sated by frequent guest lectures
           by professionals from various industries and academic backgrounds.
           Chennai Institute of Technology has been awarded the National Award of
@@ -133,7 +134,7 @@ const Teaser = () => {
       <section
         data-section
         id="abouttk"
-        className="relative bg-thai-kudam-bridge bg-right overflow-hidden bg-blend-overlay bg-[#272727] min-h-screen w-full flex flex-col items-center justify-center gap-10 p-10 md:p-24 lg:flex-row lg:snap-start lg:overflow-y-hidden"
+        className="relative bg-thai-kudam-bridge bg-right overflow-hidden bg-blend-overlay bg-[#272727] min-h-screen w-full flex flex-col items-center justify-between gap-10 p-10 md:p-24 lg:flex-row lg:snap-start lg:overflow-y-hidden"
       >
         <section className="z-10 text-white">
           <h1 className="text-4xl font-semibold pb-4">About Takshashila</h1>
@@ -149,15 +150,16 @@ const Teaser = () => {
             of adventures that are fished straight out of the ocean.
             <br />
             <br />
-            The genesis of the "Around the World" theme for Takshashila 2024
-            springs from our legacy as a cradle of multifaceted talents and
-            cultural rendezvous. The theme "Around the World" mirrors
-            Takshashila's commitment to transcending boundaries, fostering an
-            environment to converge and exchange ideas, revel in diversity, and
-            also showcase their talents.The tagline "A Global Fusion"
-            encapsulates the spirit of blending cultural nuances, technological
-            breakthroughs, and artistic marvels, creating an intricate mosaic
-            that mirrors the interconnectedness of our World.
+            The genesis of the &quot;Around the World&quot; theme for
+            Takshashila 2024 springs from our legacy as a cradle of multifaceted
+            talents and cultural rendezvous. The theme &quot;Around the
+            World&quot; mirrors Takshashila&apos; s commitment to transcending
+            boundaries, fostering an environment to converge and exchange ideas,
+            revel in diversity, and also showcase their talents.The tagline
+            &quot;A Global Fusion&quot; encapsulates the spirit of blending
+            cultural nuances, technological breakthroughs, and artistic marvels,
+            creating an intricate mosaic that mirrors the interconnectedness of
+            our World.
           </p>
 
           <ContactCard />

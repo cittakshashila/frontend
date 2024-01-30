@@ -58,18 +58,19 @@ const Main = () => {
             range of possibilities that combine education and recreation. &nbsp;
             <br />
             <br />
-            The students' appetite for knowledge makes them thrive to prepare
-            for the ready-to-serve industrial requirements. This is delivered by
-            CIT through professional ethics which is sated by frequent guest
-            lectures by professionals from various industries and academic
-            backgrounds. Chennai Institute of Technology has been awarded the
-            National Award of Excellence for Best Placements & has been ranked
-            Second in Tamil Nadu. Our college has made dreams of thousands of
-            students come true
+            The students&apos; appetite for knowledge makes them thrive to
+            prepare for the ready-to-serve industrial requirements. This is
+            delivered by CIT through professional ethics which is sated by
+            frequent guest lectures by professionals from various industries and
+            academic backgrounds. Chennai Institute of Technology has been
+            awarded the National Award of Excellence for Best Placements & has
+            been ranked Second in Tamil Nadu. Our college has made dreams of
+            thousands of students come true
             <br />
             <br />
-            "Our objective for establishing CIT is to transfer our knowledge to
-            you, so that you can tranform into a proper engineer"
+            &quot;Our objective for establishing CIT is to transfer our
+            knowledge to you, so that you can tranform into a proper
+            engineer&quot;
             <br />
             <br />
             <span className="font-bold italic text-base">
@@ -93,8 +94,8 @@ const Main = () => {
             atmosphere with a potpourri of genres that escalate the vibrance of
             celebration. The event inculcates a blend of virtues among the
             students which makes them shine out of the crowd. This time,
-            Takshashila's voyage will be an exhilarating one, full of adventures
-            that are fished straight out of the ocean.
+            Takshashila&apos; s voyage will be an exhilarating one, full of
+            adventures that are fished straight out of the ocean.
           </p>
           <p className="text-cream text-xs md:text-lg w-full">
             The Great Indian cinema is a fascinating theme that sheds light on
