@@ -25,7 +25,7 @@ const ImageContainer = (
       <div
         onMouseEnter={() => sN(true)}
         onMouseLeave={() => sN(false)}
-        className="image-container scale-x-125 box-1 h-52 rounded-3xl min-w-72 relative z-10 "
+        className="image-container md:pointer-events-auto pointer-events-none scale-x-125 box-1 h-52 rounded-3xl min-w-72 relative z-10 "
       >
         <img
           className="w-28 h-44 absolute bottom-0 inset-x-20"
