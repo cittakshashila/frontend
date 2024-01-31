@@ -3,6 +3,13 @@ import AboutCITSideTKLogo from "@/assets/about-cit-side-prop-tklogo.png";
 import YearBanner from "@/assets/2024-year-banner.png";
 import TakshashilaPrimaryLogo from "@/assets/takshashila-primary-logo.png";
 import { Carousel } from "@/components";
+import ChooseCarousel from "../Marquee";
+import ContentSwitcher from "../ContentSwitch";
+
+
+
+
+
 
 const Teaser = () => {
     return (
@@ -93,8 +100,14 @@ const Teaser = () => {
                     alt="side-image"
                     className="hidden md:block absolute -top-80 right-0 rotate-[30deg] -z-0"
                 />
+                
             </section>
-        </main>
+            
+            
+            <ChooseCarousel />
+            <ContentSwitcher />
+            
+    </main>
     );
 }
 export default Teaser;
