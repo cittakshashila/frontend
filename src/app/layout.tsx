@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { NavBar } from "@/components";
 import { georgia, oranienbaum, passport } from "@/libs/fonts";
 import { title } from "process";
 
+export const viewport: Viewport = {
+  themeColor: "#18181B",
+};
 export const metadata: Metadata = {
   title: "CIT - Takshashila 2024",
   description:
