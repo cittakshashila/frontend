@@ -39,7 +39,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="revised" content="31/01/2024" />
-        <meta name="thumbnail" content="~/thumbnail.png" />
+        <meta name="thumbnail" content="/thumbnail.png" />
       </head>
       <body
         className={`${georgia.variable} ${oranienbaum.variable} ${passport.variable}`}
