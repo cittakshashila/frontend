@@ -111,5 +111,25 @@ h1 {
 .image-container:hover img:last-child {
   transform: scale(0.9);
 }
-
 /* animation in teaser ends  */
+
+/* scrollbar design starts */
+::-webkit-scrollbar {
+  width: 5px; 
+  background-color: transparent
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 5px; 
+}
+
+
+.container {
+  overflow: hidden; 
+}
+/* scrollbar design ends */
