@@ -1,0 +1,10 @@
+.defaultStyle{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+}
+@media (max-width: 1024px) {
+  .defaultStyle {
+    flex-direction: column;
+  }
+}

@@ -136,100 +136,6 @@ const Main = () => {
 
             <div className="bg-cream w-[1px] h-24 mx-8" />
 
-<<<<<<< HEAD
-                <section className="w-full flex flex-col relative items-start gap-8 p-10 md:p-24">
-                    <h1 className="text-4xl text-cream">About Takshashila</h1>
-                    <p className="text-cream text-xs md:text-base lg:w-[65%]">
-                        The Grand Annual Cultural Fiesta of Chennai Institute Of Technology
-                        is an eminent spectacle that gives the student community a platform
-                        to showcase their talents and sculpt their skills. This memorable
-                        occasion is a perfect fusion of entertainment and knowledge-filled
-                        atmosphere with a potpourri of genres that escalate the vibrance of
-                        celebration. The event inculcates a blend of virtues among the
-                        students which makes them shine out of the crowd. This time,
-                        Takshashila's voyage will be an exhilarating one, full of adventures
-                        that are fished straight out of the ocean.
-                    </p>
-                    <p className="text-cream text-xs md:text-lg w-full">
-                        The Great Indian cinema is a fascinating theme that sheds light on
-                        Indian culture and society. It has been a beacon of hope for over
-                        100 years, providing an escape from reality for us. This year,
-                        Takshashila celebrates Indian cinema and pays tribute to the art of
-                        storytelling through movies. The logo explores the beauty of iconic
-                        Indian films, delving into the minds of the artists who created
-                        them. From a distant point, a movie might not seem of any particular
-                        interest, but for us, it represents year-long dedication and hard
-                        work to produce a 2-hour-long masterpiece projected on a screen, a
-                        testament to the unfathomable wonders of the creative mind.
-                    </p>
-                </section>
-                <ChooseCarousel />
-                <ContentSwitcher />
-
-                <section className="w-full flex items-center justify-center border-y  border-cream">
-                    <section className="p-10 py-24">
-                        <Image
-                            alt="TK-logo"
-                            width={500}
-                            height={90}
-                            src={TakshashilaSecondaryLogo}
-                            className="w-full max-w-56"
-                        />
-                    </section>
-                    
-                    <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5">
-                        <section className="flex flex-col space-y-1">
-                            <h1 className="text-2xl mb-3">Socials</h1>
-                            <a className="text-cream text-xs" href="#">Instagram</a>
-                            <a className="text-cream text-xs" href="#">Facebook</a>
-                            <a className="text-cream text-xs" href="#">LinkedIn</a>
-                            <a className="text-cream text-xs" href="#">Phone</a>
-                            <a className="text-cream text-xs" href="#">Email</a>
-                        </section>
-
-                        <div className="bg-cream w-[1px] h-24 mx-8" />
-
-                        <section className="flex flex-col space-y-1">
-                            <h1 className="text-2xl mb-3">Events</h1>
-                            <a className="text-cream text-xs" href="#">Technical</a>
-                            <a className="text-cream text-xs" href="#">Non Technical</a>
-                            <a className="text-cream text-xs" href="#">Workshops</a>
-                            <a className="text-cream text-xs" href="#">Pro-Shows</a>
-                            <a className="text-cream text-xs" href="#">Others</a>
-                        </section>
-
-                        <div className="bg-cream w-[1px] h-24 mx-8" />
-
-                        <section className="flex flex-col space-y-1">
-                            <h1 className="text-2xl mb-3">Website</h1>
-                            <a className="text-cream text-xs" href="#">Terms & Policy</a>
-                            <a className="text-cream text-xs" href="#">Services</a>
-                            <a className="text-cream text-xs" href="#">Account</a>
-                            <a className="text-cream text-xs" href="#">Collage Site</a>
-                            <a className="text-cream text-xs" href="#">Developer</a>
-                        </section>
-
-                        <div className="bg-cream w-[1px] h-24 mx-8" />
-
-                        <section className="flex flex-col space-y-1">
-                            <h1 className="text-2xl mb-3">Support</h1>
-                            <a className="text-cream text-xs" href="#">
-                                Takshashila Team
-                            </a>
-                            <a className="text-cream text-xs" href="#">Report</a>
-                            <a className="text-cream text-xs" href="#">Developer</a>
-                            <a className="text-cream text-xs" href="#">Contact Us</a>
-                            <a className="text-cream text-xs" href="#">Credits</a>
-                        </section>
-                    </section>
-                </section>
-
-                <section className="flex justify-center gap-3 text-white text-[9px] py-2">
-                    <h1>cittakshashila.in</h1>
-                    <h1>Copyright &copy; 2024</h1>
-                    <h1>Website By Team :bitspace</h1>
-                </section>
-=======
             <section className="flex flex-col space-y-1">
               <h1 className="text-2xl mb-3">Events</h1>
               <a className="text-cream text-xs" href="#">Technical</a>
@@ -237,7 +143,6 @@ const Main = () => {
               <a className="text-cream text-xs" href="#">Workshops</a>
               <a className="text-cream text-xs" href="#">Pro-Shows</a>
               <a className="text-cream text-xs" href="#">Others</a>
->>>>>>> e16d92ebe62cfbb481590f060dbd86a4dd53bf1f
             </section>
 
             <div className="bg-cream w-[1px] h-24 mx-8" />
@@ -272,6 +177,9 @@ const Main = () => {
           <h1>Website By Team :bitspace</h1>
         </section>
       </section>
+      <ChooseCarousel/>
+      <ContentSwitcher/>
+      
     </main>
   );
 };
