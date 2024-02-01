@@ -4,13 +4,7 @@ import YearBanner from "@/assets/2024-year-banner.png";
 import TakshashilaPrimaryLogo from "@/assets/takshashila-primary-logo.png";
 import { Carousel } from "@/components";
 import ChooseCarousel from "../Marquee";
-import ContentSwitcher from "../ContentSwitch";
-
-
-
-
-
-
+import ContentSwitcher from "../ContentSwitch"; 
 const Teaser = () => {
     return (
         <main className="bg-paint-effect bg-cover bg-center  min-h-screen bg-[#272727]">
@@ -106,6 +100,9 @@ const Teaser = () => {
             
             <ChooseCarousel />
             <ContentSwitcher />
+          
+
+            
             
     </main>
     );

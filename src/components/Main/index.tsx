@@ -9,6 +9,9 @@ import {
     IconPhone,
 } from "@tabler/icons-react";
 import { Button } from "@/components";
+import ChooseCarousel from "../Marquee";
+import CardButton from "../CardButtonn";
+import ContentSwitcher from "../ContentSwitch";
 
 const Main = () => {
     return (
@@ -109,6 +112,8 @@ const Main = () => {
                         testament to the unfathomable wonders of the creative mind.
                     </p>
                 </section>
+                <ChooseCarousel />
+                <ContentSwitcher />
 
                 <section className="w-full flex items-center justify-center border-y  border-cream">
                     <section className="p-10 py-24">
@@ -120,6 +125,7 @@ const Main = () => {
                             className="w-full max-w-56"
                         />
                     </section>
+                    
                     <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5">
                         <section className="flex flex-col space-y-1">
                             <h1 className="text-2xl mb-3">Socials</h1>

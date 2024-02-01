@@ -1,7 +1,6 @@
 "use client"
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import CardButtons from "./cardButton";
 
 const Accordion = () => {
   const x = useMotionValue(0);

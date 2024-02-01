@@ -61,7 +61,8 @@ const ChooseCarousel = () => {
     <>
       <h1 className="text-4xl font-semibold pb-4 ml-20 text-white relative">
         Sponsors
-        <span className="absolute bottom-0 left-0 bg-white h-1 w-11/12 rounded-full"></span>
+        <span className="absolute bottom-0 left-0 bg-white bg-opacity-20 h-1 w-11/12 rounded-full border-white"></span>
+
       </h1>
 
       <br />

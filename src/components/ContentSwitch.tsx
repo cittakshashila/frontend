@@ -1,6 +1,6 @@
 "use client"
 import ToggleButton from "./ToggleButton";
-import CardButton from "./cardButton";
+import CardButton from "./CardButtonn";
 import { useState } from "react";
 
 const ContentSwitcher = () => {
@@ -8,16 +8,20 @@ const ContentSwitcher = () => {
 
   const toggleContent = () => {
     setShowCardButton(!showCardButton);
+    console.log("it works")
   };
 
   return (
     <>
-      <button className="w-12 h-12 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
+    <div className="">
+      <button className=" left-10 w-12 h-12 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
         
       </button>
       <button className="w-12 h-12 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
               </button>
-      {showCardButton ? <CardButton /> : <ToggleButton />}
+      
+      </div>
+      {showCardButton ? <ToggleButton /> : <CardButton />}
     </>
   );
 };
