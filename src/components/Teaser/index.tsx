@@ -27,7 +27,7 @@ const Teaser = () => {
               activeSection === "hero" && activeStyle,
             )}
           >
-            <a href="#hero">
+            <a href="#hero" aria-label="Home">
               <IconCircleFilled size={14} />
             </a>
           </li>
@@ -38,7 +38,7 @@ const Teaser = () => {
               activeSection === "aboutcit" && activeStyle,
             )}
           >
-            <a href="#aboutcit">
+            <a href="#aboutcit" aria-label="About CIT">
               <IconCircleFilled size={14} />
             </a>
           </li>
@@ -49,7 +49,7 @@ const Teaser = () => {
               activeSection === "abouttk" && activeStyle,
             )}
           >
-            <a href="#abouttk">
+            <a href="#abouttk" aria-label="About Takshashila">
               <IconCircleFilled size={14} />
             </a>
           </li>
@@ -81,15 +81,21 @@ const Teaser = () => {
         <a
           href="#aboutcit"
           className="hidden lg:block absolute bottom-10 right-10"
+          aria-label="Down"
         >
-          <Image className="select-none pointer-events-none " alt="arrow" src={DownArrow} />
+          <Image
+            className="select-none pointer-events-none "
+            alt="arrow"
+            src={DownArrow}
+          />
         </a>
       </section>
 
       <section
         data-section
         id="aboutcit"
-        className="overflow-clip relative bg-cit-crowd bg-cover bg-opacity-75 bg-blend-overlay bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24 lg:snap-start lg:overflow-y-hidden lg:bg-no-repeat"
+
+        className="overflow-clip relative bg-cit-crowd bg-cover bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24 lg:snap-start lg:overflow-y-hidden lg:bg-no-repeat"
       >
         <h1 className="text-4xl font-semibold pb-4">About CIT</h1>
         <p className="z-10 text-base w-full md:max-w-3xl">
@@ -119,13 +125,18 @@ const Teaser = () => {
         <Image
           src={AboutCITSideTKLogo}
           alt="side-image"
-          className="select-none pointer-events-none hidden md:block absolute right-0 rotate-[30deg] "
+          className="select-none pointer-events-none hidden md:block absolute right-0 rotate-[30deg]"
         />
         <a
           href="#abouttk"
           className="hidden lg:block absolute bottom-10 right-10"
+          aria-label="Down"
         >
-          <Image className="select-none pointer-events-none " alt="arrow" src={DownArrow} />
+          <Image
+            className="select-none pointer-events-none "
+            alt="arrow"
+            src={DownArrow}
+          />
         </a>
 
         <ContactCard />
@@ -134,7 +145,8 @@ const Teaser = () => {
       <section
         data-section
         id="abouttk"
-        className="relative bg-thai-kudam-bridge bg-cover bg-right overflow-hidden bg-blend-overlay bg-[#272727] min-h-screen w-full flex flex-col items-center justify-between gap-10 p-10 md:p-24 lg:flex-row lg:snap-start lg:overflow-y-hidden lg:bg-no-repeat"
+
+        className="relative bg-thai-kudam-bridge bg-cover bg-right overflow-hidden min-h-screen w-full flex flex-col items-center justify-between gap-10 p-10 md:p-24 lg:flex-row lg:snap-start lg:overflow-y-hidden lg:bg-no-repeat"
       >
         <section className="z-10 text-white">
           <h1 className="text-4xl font-semibold pb-4">About Takshashila</h1>
@@ -166,14 +178,17 @@ const Teaser = () => {
         </section>
 
         <Carousel />
-        <Image
-          src={AboutCITSideTKLogo}
-          alt="side-image"
-          className="select-none pointer-events-none hidden md:block absolute -top-80 right-0 rotate-[30deg] -z-0"
-        />
 
-        <a href="#hero" className="hidden lg:block absolute bottom-10 right-10">
-          <Image className="rotate-180 select-none pointer-events-none " alt="arrow" src={DownArrow} />
+        <a
+          href="#hero"
+          className="hidden lg:block absolute bottom-10 right-10"
+          aria-label="Up"
+        >
+          <Image
+            className="rotate-180 select-none pointer-events-none "
+            alt="arrow"
+            src={DownArrow}
+          />
         </a>
       </section>
     </main>
