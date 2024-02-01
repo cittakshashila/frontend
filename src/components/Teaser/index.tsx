@@ -6,16 +6,11 @@ import YearBanner from "@/assets/2024-year-banner.png";
 import TakshashilaPrimaryLogo from "@/assets/takshashila-primary-logo.svg";
 import DownArrow from "@/assets/down-arrow.svg";
 import { Carousel } from "@/components";
-<<<<<<< HEAD
-import ChooseCarousel from "../Marquee";
-import ContentSwitcher from "../ContentSwitch"; 
-=======
 import { IconCircleFilled } from "@tabler/icons-react";
 import { cn } from "@/libs/utils";
 import useHighlightScroll from "@/hooks/useHighlightScroll";
 import ContactCard from "../ContactCard";
 
->>>>>>> e16d92ebe62cfbb481590f060dbd86a4dd53bf1f
 const Teaser = () => {
   const { activeSection } = useHighlightScroll();
   const activeStyle = "border-cream";
@@ -37,54 +32,6 @@ const Teaser = () => {
             </a>
           </li>
 
-<<<<<<< HEAD
-            <section className="relative bg-thai-kudam-bridge bg-right overflow-hidden bg-blend-overlay bg-[#272727] min-h-screen w-full flex flex-col items-center justify-between gap-10 p-10 md:p-24 lg:flex-row">
-                <section className="z-10 text-white">
-                    <h1 className="text-4xl font-semibold pb-4">About Takshashila</h1>
-                    <p className="z-10 text-base w-full md:max-w-3xl">
-                        The grand Annual Cultural Fiesta Of Chennai Institute Of
-                        Technology is an eminent spectacle that gives the student
-                        community a platform to showcase their talents and sculpt their
-                        skills.This memorable occasion is a perfect fusion of
-                        entertainment and knowledge-filled atmosphere with a potpourri of
-                        genres that escalate the vibrance of celebration.The event
-                        inculcates a blend of virtues among the students which makes them
-                        shine out of the crowd.This time, Takshashila’s global fusion will
-                        be an exhilarating experience ,full of adventures that are fished
-                        straight out of the ocean.
-                        <br />
-                        <br />
-                        The genesis of the "Around the World" theme for Takshashila 2024
-                        springs from our legacy as a cradle of multifaceted talents and
-                        cultural rendezvous. The theme "Around the World" mirrors
-                        Takshashila's commitment to transcending boundaries, fostering an
-                        environment to converge and exchange ideas, revel in diversity,
-                        and also showcase their talents.The tagline "A Global Fusion"
-                        encapsulates the spirit of blending cultural nuances,
-                        technological breakthroughs, and artistic marvels, creating an
-                        intricate mosaic that mirrors the interconnectedness of our World.
-                    </p>
-                </section>
-                <Carousel />
-                <Image
-                    src={AboutCITSideTKLogo}
-                    alt="side-image"
-                    className="hidden md:block absolute -top-80 right-0 rotate-[30deg] -z-0"
-                />
-                
-            </section>
-            
-            
-            <ChooseCarousel />
-            <ContentSwitcher />
-          
-
-            
-            
-    </main>
-    );
-}
-=======
           <li
             className={cn(
               defaultStyle,
@@ -232,5 +179,4 @@ const Teaser = () => {
     </main>
   );
 };
->>>>>>> e16d92ebe62cfbb481590f060dbd86a4dd53bf1f
 export default Teaser;
