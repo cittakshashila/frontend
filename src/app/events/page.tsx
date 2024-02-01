@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "@/components/Card";
 import { EventList } from "@/libs/types";
-import { isTeaser } from "@/libs/utils";
 
 export default function Events() {
   const array: EventList[] = [
@@ -54,8 +53,6 @@ export default function Events() {
       event_img: "/drone-tech.webp",
     },
   ];
-
-  if (isTeaser) return;
 
   return (
     <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200 backdrop-blur-xl ">

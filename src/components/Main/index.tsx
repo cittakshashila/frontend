@@ -8,11 +8,12 @@ import {
   IconMail,
   IconPhone,
 } from "@tabler/icons-react";
-import { Button } from "@/components";
+import { Button, NavBar } from "@/components";
 
 const Main = () => {
   return (
     <main className="flex min-h-screen bg-hero-popcorn bg-fixed bg-cover bg-bottom flex-col bg-red-200">
+      <NavBar />
       <section className="relative flex items-center justify-center md:justify-end h-screen p-10 md:p-24 lg:p-48">
         <Image
           alt="TK-logo"
