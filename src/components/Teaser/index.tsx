@@ -94,7 +94,8 @@ const Teaser = () => {
       <section
         data-section
         id="aboutcit"
-        className="overflow-clip relative bg-cit-crowd bg-cover bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24 lg:snap-start lg:overflow-x-hidden"
+
+        className="overflow-clip relative bg-cit-crowd bg-cover bg-[#272727] bg-right text-white min-h-screen w-full flex flex-col justify-center p-10 md:p-24 lg:snap-start lg:overflow-y-hidden lg:bg-no-repeat"
       >
         <h1 className="text-4xl font-semibold pb-4">About CIT</h1>
         <p className="z-10 text-base w-full md:max-w-3xl">
@@ -144,7 +145,8 @@ const Teaser = () => {
       <section
         data-section
         id="abouttk"
-        className="relative bg-thai-kudam-bridge bg-right bg-cover min-h-screen w-full flex flex-col items-center justify-between gap-10 p-10 md:p-24 lg:flex-row lg:snap-start "
+
+        className="relative bg-thai-kudam-bridge bg-cover bg-right overflow-hidden min-h-screen w-full flex flex-col items-center justify-between gap-10 p-10 md:p-24 lg:flex-row lg:snap-start lg:overflow-y-hidden lg:bg-no-repeat"
       >
         <section className="z-10 text-white">
           <h1 className="text-4xl font-semibold pb-4">About Takshashila</h1>

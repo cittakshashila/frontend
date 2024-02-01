@@ -23,7 +23,7 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
       {
-        src: ".icons/takshashila-submark-logo-192.png",
+        src: "icons/takshashila-submark-logo-192.png",
         sizes: "512x512",
         type: "image/png",
       },
