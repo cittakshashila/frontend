@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     "Takshashila, an event organized In regards to annual cultural event conducted in Chennai Institute Of Technology.",
   keywords:
     "TAKSHASHILA, CULTURAL, CIT, CHENNAI, SYMPOSIUM, EVENT, COLLEGE, COMPETITION, INSTITUTE, TECHNOLOGY, DESIGN",
-  themeColor: "#272727",
   openGraph: {
     title: "CIT - TAKSHASHILA 2024",
     description:

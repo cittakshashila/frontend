@@ -13,6 +13,7 @@ export default function ContactCard() {
         rel="noopener noreferrer"
         href="https://www.instagram.com/cittakshashila/"
         className="hover:text-white"
+        aria-label="CIT-Takshashila Instagram"
       >
         <IconBrandInstagram />
       </a>
@@ -21,6 +22,7 @@ export default function ContactCard() {
         rel="noopener noreferrer"
         href="https://www.facebook.com/people/CIT-Takshashila/100064056814271/"
         className="hover:text-white"
+        aria-label="CIT-Takshashila Facebook"
       >
         <IconBrandFacebook />
       </a>
@@ -29,6 +31,7 @@ export default function ContactCard() {
         target="_blank"
         rel="noopener noreferrer"
         className="hover:text-white"
+        aria-label="CIT-Takshashila GitHub"
       >
         <IconBrandGithub />
       </a>
@@ -37,6 +40,7 @@ export default function ContactCard() {
         rel="noopener noreferrer"
         href="https://www.linkedin.com/in/cittakshashila"
         className="hover:text-white"
+        aria-label="CIT-Takshashila LinkedIn"
       >
         <IconBrandLinkedin />
       </a>

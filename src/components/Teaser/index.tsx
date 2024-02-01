@@ -27,7 +27,7 @@ const Teaser = () => {
               activeSection === "hero" && activeStyle,
             )}
           >
-            <a href="#hero">
+            <a href="#hero" aria-label="Home">
               <IconCircleFilled size={14} />
             </a>
           </li>
@@ -38,7 +38,7 @@ const Teaser = () => {
               activeSection === "aboutcit" && activeStyle,
             )}
           >
-            <a href="#aboutcit">
+            <a href="#aboutcit" aria-label="About CIT">
               <IconCircleFilled size={14} />
             </a>
           </li>
@@ -49,7 +49,7 @@ const Teaser = () => {
               activeSection === "abouttk" && activeStyle,
             )}
           >
-            <a href="#abouttk">
+            <a href="#abouttk" aria-label="About Takshashila">
               <IconCircleFilled size={14} />
             </a>
           </li>
@@ -81,6 +81,7 @@ const Teaser = () => {
         <a
           href="#aboutcit"
           className="hidden lg:block absolute bottom-10 right-10"
+          aria-label="Down"
         >
           <Image
             className="select-none pointer-events-none "
@@ -128,6 +129,7 @@ const Teaser = () => {
         <a
           href="#abouttk"
           className="hidden lg:block absolute bottom-10 right-10"
+          aria-label="Down"
         >
           <Image
             className="select-none pointer-events-none "
@@ -175,7 +177,11 @@ const Teaser = () => {
 
         <Carousel />
 
-        <a href="#hero" className="hidden lg:block absolute bottom-10 right-10">
+        <a
+          href="#hero"
+          className="hidden lg:block absolute bottom-10 right-10"
+          aria-label="Up"
+        >
           <Image
             className="rotate-180 select-none pointer-events-none "
             alt="arrow"
