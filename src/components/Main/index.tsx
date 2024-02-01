@@ -177,8 +177,8 @@ const Main = () => {
           <h1>Website By Team :bitspace</h1>
         </section>
       </section>
-      <ChooseCarousel />
-      <ContentSwitcher />
+      <ChooseCarousel/>
+      <ContentSwitcher/>
       
     </main>
   );

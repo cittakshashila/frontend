@@ -41,29 +41,35 @@ const Accordion = () => {
   };
 
   return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateY,
-        rotateX,
-        transformStyle: "preserve-3d",
-      }}
-      className="relative h-full w-full rounded-xl"
-    >
-      <div className=" absolute h-96 w-84 inset-x-0 right-0 bottom-0 top-0">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0036733731995!2d80.04049737607065!3d12.97161651487591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f4d07355bab5%3A0xbb6063169c4ed4d9!2sChennai%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1706618658857!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style={{ border: "0" }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </motion.div>
+    <>
+      <motion.div
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateY,
+          rotateX,
+          transformStyle: "preserve-3d",
+        }}
+        className=""
+      >
+        <div className=""
+        style ={{}}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0036733731995!2d80.04049737607065!3d12.97161651487591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f4d07355bab5%3A0xbb6063169c4ed4d9!2sChennai%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1706618658857!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: "0" }}
+            allowFullScreen     
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </motion.div> 
+    </>
+ 
+
   );
 };
-
-export default Accordion;
+//flex justify-center items-center lg:w-2/3 h-full
+//"relative h-2/5 w-1/2 rounded-xl "
+export default Accordion; 

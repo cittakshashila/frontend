@@ -6,8 +6,6 @@ import YearBanner from "@/assets/2024-year-banner.png";
 import TakshashilaPrimaryLogo from "@/assets/takshashila-primary-logo.svg";
 import DownArrow from "@/assets/down-arrow.svg";
 import { Carousel } from "@/components";
-import ChooseCarousel from "../Marquee";
-import ContentSwitcher from "../ContentSwitch"; 
 import { IconCircleFilled } from "@tabler/icons-react";
 import { cn } from "@/libs/utils";
 import useHighlightScroll from "@/hooks/useHighlightScroll";
