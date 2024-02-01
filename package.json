@@ -11,12 +11,7 @@
   "dependencies": {
     "@tabler/icons-react": "^2.46.0",
     "clsx": "^2.1.0",
-<<<<<<< HEAD
-    "framer-motion": "^11.0.3",
-    "next": "^14.1.0",
-=======
     "next": "^14.0.4",
->>>>>>> e16d92ebe62cfbb481590f060dbd86a4dd53bf1f
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.3",

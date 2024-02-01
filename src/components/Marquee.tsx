@@ -79,7 +79,7 @@ const ChooseCarousel = () => {
       >
 
         <div style={{ width: "70%", maxWidth: "70vw" }}> {/* Set width to half of the viewport */}
-          <Marquee speed={700} pauseOnHover={!isHovered} style={{ display: "flex", justifyContent: "center" }}>          
+          <Marquee speed={700} pauseOnHover style={{ display: "flex", justifyContent: "center" }}>          
             {Images.map((image) => (
               <motion.div
                 key={image.id}
