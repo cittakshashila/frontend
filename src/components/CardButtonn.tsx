@@ -10,7 +10,7 @@ const CardButton = () => {
   return (
     <>
       
-          <div className="flex justify-evenly gap-10">
+          <div className="flex justify-evenly  ">
           <motion.div
             className=""
             initial="hidden"
@@ -21,17 +21,20 @@ const CardButton = () => {
             <h1 className="text-2xl md:text-5xl font-bold mb-4 " >Phone :</h1>
           
             <br />
-            <p className="text-lg p-4 rounded-lg sm:bg-zinc-600 bg-opacity-100 sm:rounded-lg md:bg-transparent md:rounded-none transition-colors duration-300 ease-in-out hover:bg-slate-200 hover:text-black w-full sm:w-30 md:w-auto sm:block">. M Gayathrie (Event Queries)</p>
+            <p className="res text-md lg:text-base"> M Gayathrie(Event Queries)</p>
+            <br />
             
-            <p className="text-lg p-4 rounded-lg sm:bg-zinc-600 bg-opacity-100  sm:rounded-lg md:bg-transparent md:rounded-none  transition-colors duration-300 ease-in-out hover:bg-slate-200 hover:text-black ">. Shyam (Sponsorship Queries),</p>
+            <p className="res text-md lg:text-base ">. Shyam (Sponsorship Queries),</p>
+            <br />
             
-            <p className="text-lg p-4 rounded-lg sm:bg-zinc-600 bg-opacity-100  sm:rounded-lg md:bg-transparent md:rounded-none  transition-colors duration-300 ease-in-out hover:bg-slate-200 hover:text-black">. V Akshya Preetha (Pro Shows Queries)</p>
+            <p className="res text-md lg:text-base">. V Akshya Preetha (Pro Shows Queries)</p>
+            <br />
             
-            <p className="text-lg p-4 rounded-lg sm:bg-zinc-600 bg-opacity-100  sm:rounded-lg md:bg-transparent md:rounded-none  transition-colors duration-300 ease-in-out hover:bg-slate-200 hover:text-black">: BitSpace</p>
+            <p className="res text-md lg:text-base">: BitSpace</p>
 
           </motion.div>
           <motion.div
-            className=" right-10 top-10 hidden sm:block"
+            className=" right-10 top-10 hidden md:block "
             initial="hidden"
             animate="visible"
             variants={itemVariants}
@@ -42,7 +45,7 @@ const CardButton = () => {
             
             <br />
             <p className="text-sm md:text-xl p-4 hidden">Opening Soon</p>
-            <p className="text-sm md:text-xl p-4">Events</p>
+            <p className="text-sm md:text-xl p-4" >Events</p>
             <p className="text-sm md:text-xl p-4">Credits</p>
             <p className="text-sm md:text-xl p-4">Pro Harder</p> 
           </motion.div>

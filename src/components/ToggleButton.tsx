@@ -26,7 +26,7 @@ const ToggleButton = () =>{
             initial="hidden"
             animate="visible"
             variants={itemVariants}
-            
+            style={{margin : '5%'}}
           >
             <h1 className="text-4xl font-bold mb-4">Chennai Institute Of Technology</h1>
             <br />

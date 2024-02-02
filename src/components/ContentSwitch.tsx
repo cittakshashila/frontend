@@ -19,24 +19,25 @@ const ContentSwitcher = () => {
     <>
     <h1 className="text-4xl font-semibold pb-4 ml-20 text-white relative">
                 Location
-                <span className="absolute bottom-0 left-0 bg-white h-1 w-11/12 rounded-full"></span>
+                <span className="absolute bottom-0 left-0 bg-white bg-opacity-20 h-1 w-11/12 rounded-full border-white"></span>
     </h1>
     <br/>
     <br />
     <br />
     <div style={style}>
   
- <div className="w-2/3 h-2/4 bg-transparent border-2 border-solid border-white border-opacity-20 backdrop-filter backdrop-blur-lg shadow-lg text-white rounded-md relative">
+ <div className="w-2/3 h-1/4 bg-transparent border-2 border-solid border-white border-opacity-20 backdrop-filter backdrop-blur-lg shadow-lg text-white rounded-md relative">
 
     <div className="F" >
             
 
           {showCardButton ? <ToggleButton /> : <CardButton />}
-      <div className="flex justify-center">
-      <button className=" left-10 w-12 h-12 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
+          <br />
+      <div className="flex justify-center top-10">
+      <button className=" left-10 w-8 h-8 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
         
       </button>
-      <button className="w-12 h-12 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
+      <button className="w-8 h-8 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
       </button>
       </div>
     </div>
