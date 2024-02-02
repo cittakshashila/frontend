@@ -1,7 +1,6 @@
 "use client"
 import { useState } from 'react';
 import { CSSProperties } from 'react';
-import ContentSwitcher from './ContentSwitch';
 import './app.css'
 import { motion } from "framer-motion";
 import Accordion from './accordion';

@@ -26,14 +26,13 @@ const ContentSwitcher = () => {
     <br />
     <div style={style}>
   
- <div className="w-2/3 h-1/4 bg-transparent border-2 border-solid border-white border-opacity-20 backdrop-filter backdrop-blur-lg shadow-lg text-white rounded-md relative">
+ <div className="w-2/3 h-1/5 bg-transparent border-2 border-solid border-white border-opacity-20 backdrop-filter backdrop-blur-lg shadow-lg text-white rounded-md relative">
 
     <div className="F" >
             
 
           {showCardButton ? <ToggleButton /> : <CardButton />}
-          <br />
-      <div className="flex justify-center top-10">
+      <div className="flex justify-center">
       <button className=" left-10 w-8 h-8 rounded-full border border-gray-300 mr-4 transition duration-300 ease-in-out hover:bg-gray-100" onClick={toggleContent}>
         
       </button>

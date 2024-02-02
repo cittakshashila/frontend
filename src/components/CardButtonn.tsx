@@ -10,12 +10,13 @@ const CardButton = () => {
   return (
     <>
       
-          <div className="flex justify-evenly  ">
+          <div className="flex justify-evenly">
           <motion.div
             className=""
             initial="hidden"
             animate="visible"
             variants={itemVariants}
+            style ={{margin:'5%'}}
             
           >
             <h1 className="text-2xl md:text-5xl font-bold mb-4 " >Phone :</h1>
@@ -38,7 +39,7 @@ const CardButton = () => {
             initial="hidden"
             animate="visible"
             variants={itemVariants}
-            
+            style ={{margin:'5%'}}
           >
             
             <h1 className="text-2xl md:font-bold mb-4">Useful Links</h1>

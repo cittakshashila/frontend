@@ -113,6 +113,8 @@ const Main = () => {
             testament to the unfathomable wonders of the creative mind.
           </p>
         </section>
+        <ChooseCarousel/>
+      <ContentSwitcher/>
 
         <section className="w-full flex items-center justify-center border-y  border-cream">
           <section className="p-10 py-24">
@@ -177,8 +179,7 @@ const Main = () => {
           <h1>Website By Team :bitspace</h1>
         </section>
       </section>
-      <ChooseCarousel/>
-      <ContentSwitcher/>
+
       
     </main>
   );
