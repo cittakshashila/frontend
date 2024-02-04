@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     "Takshashila, an event organized In regards to annual cultural event conducted in Chennai Institute Of Technology.",
   keywords:
     "TAKSHASHILA, CULTURAL, CIT, CHENNAI, SYMPOSIUM, EVENT, COLLEGE, COMPETITION, INSTITUTE, TECHNOLOGY, DESIGN",
-  themeColor: "#272727",
   openGraph: {
     title: "CIT - TAKSHASHILA 2024",
     description:
@@ -39,7 +38,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="revised" content="31/01/2024" />
-        <meta name="thumbnail" content="~/thumbnail.png" />
+        <meta name="thumbnail" content="/thumbnail.png" />
       </head>
       <body
         className={`${georgia.variable} ${oranienbaum.variable} ${passport.variable}`}
