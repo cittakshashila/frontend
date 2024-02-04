@@ -1,37 +1,89 @@
 "use client"
 import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
-import { motion } from "framer-motion";
+import {  motion } from "framer-motion";
+import Image from "next/image";
 
 
 const Images = [
-  {
-    id: 1,
-    src :'https://raw.githubusercontent.com/jesvijonathan/Takshashila/master/static/sponsors/Group%20298%20(1).webp',
-    alt: "Image 1",
-  },
+    {
+      id: 1,
+      src :'/coca-cola.webp',
+      alt: "Image 1",
+      width: 400, 
+      height: 250,
+    },
   {
     id: 2,
-    src:"https://raw.githubusercontent.com/jesvijonathan/Takshashila/master/static/sponsors/Group%20299%20(1)%201.webp",
+    src:"/rapido.webp",
     alt: "Image 2",
+    width: 400, 
+    height: 250,
   },
   {
     id: 3,
-    src:"https://raw.githubusercontent.com/jesvijonathan/Takshashila/master/static/sponsors/Group%20299sss.webp",
+    src:"/hornbill.webp",
     alt: "Image 3",
+    width: 400, 
+    height: 250,
   },
   {
     id: 4,
-    src: "https://raw.githubusercontent.com/jesvijonathan/Takshashila/master/static/sponsors/Group%2029add9.webp",
+    src: "/little-talks.webp",
     alt: "Image 4",
+    width: 400, 
+    height: 250,
   },
   {
     id: 5,
-    src:"https://raw.githubusercontent.com/jesvijonathan/Takshashila/master/static/sponsors/Group%2029adfff9.webp",
+    src:"/rela-hospital.webp",
     alt:"Image 5",
+    width: 400, 
+    height: 250,
+  },
+  {
+    id: 6,
+    src:"/ace-sports.webp",
+    alt:"Image 6",
+    width: 400, 
+    height: 250,
   },
 
-  // Add other image objects
+  {
+    id: 7,
+    src:"/ags-cinema.webp",
+    alt:"Image 7",
+    width: 400, 
+    height: 250,
+  },
+
+  {
+    id: 8,
+    src:"/anderson-automotive.webp",
+    alt:"Image 8",
+    width: 400, 
+    height: 250,
+  },
+
+
+  {
+    id: 9,
+    src:"/cadbury.webp",
+    alt:"Image 9",
+    width: 400, 
+    height: 250,
+  },
+
+  {
+    id: 10,
+    src:"/gokul-autotech.webp",
+    alt:"Image 10",
+    width: 400, 
+    height: 250,
+  },
+
+
+
 ];
 
 
@@ -59,47 +111,33 @@ const ChooseCarousel = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-semibold pb-4 ml-20 text-white relative">
+      <h1 className="text-4xl text-cream relative ml-12 md:ml-28 lg:ml-24" >
         Sponsors
-        <span className="absolute bottom-0 left-0 bg-white bg-opacity-20 h-1 w-11/12 rounded-full border-white"></span>
-
       </h1>
-
-      <br />
       <div
-        className="content"
+        className="content flex justify-center overflow-x-hidden w-full"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          overflowX: "hidden",
-          width: "100%",
-        }}
       >
 
-        <div style={{ width: "70%", maxWidth: "70vw" }}> {/* Set width to half of the viewport */}
-          <Marquee speed={700} pauseOnHover style={{ display: "flex", justifyContent: "center" }}>          
+        <div className="w-9/12 max-w-70vw p-6"> 
+          <Marquee speed={500} pauseOnHover className="flex justify-center items-center">          
             {Images.map((image) => (
               <motion.div
                 key={image.id}
-                className="images"
+                className="border-2  border-white border-opacity-20 shadow-lg text-white rounded-md relative my-0 mx-2"
                 variants={imageVariants}
                 initial="hidden"
                 animate="show"
-                style={{ margin: "0 10px" }} // for Adjusting margin between images
+                
               >
                 
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  style={{
-                    width: "400px", // Set width of the image
-                    height: "250px", // Set height of the image
-                    borderRadius: "15px",
-                    opacity: isHovered ? 0.5 : 1,
-                    transition: "opacity 0.3s ease",
-                  }}
+                  width={image.width} 
+                  height={image.height}
+                  className={`w-64 h-40 rounded-lg ${isHovered ? 'opacity-50' : 'opacity-100'} transition-opacity duration-300 ease-in-out bg-white`}
                 />
               </motion.div>
             ))}
@@ -113,3 +151,4 @@ const ChooseCarousel = () => {
 
 
 export default ChooseCarousel;
+ 
