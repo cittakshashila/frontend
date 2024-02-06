@@ -15,7 +15,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center h-16 fixed z-50 w-full p-8 pt-16 md:p-20">
+    <nav className="flex justify-between items-center h-16 fixed z-50 w-full p-8 pt-16 md:p-20 res">
       <a href="#hero">
         <Image
           width={48}
