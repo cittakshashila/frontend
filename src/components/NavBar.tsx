@@ -2,7 +2,7 @@
 
 import TakshashilaSubmark from "@/assets/takshashila-submark-logo.svg";
 import { cn } from "@/libs/utils";
-import { IconMenu2 } from "@tabler/icons-react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import { useState } from "react";
 import ProfileButton from "./ProfileButton";

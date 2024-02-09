@@ -1,20 +1,4 @@
-import { Cart } from "@/contexts/CartContext";
 import { EVENT } from "./types";
-
-export const CartSample: Cart = {
-  DAY1: {
-    GEN: ["Holocaust", "Hit The Target"],
-    WK: ["ByteCon101"],
-  },
-  DAY2: {
-    GEN: ["OdiPudi"],
-    WK: [],
-  },
-  DAY3: {
-    GEN: ["DuoNight", "Kabaddi", "KalPandhu", "Crikettu"],
-    WK: [],
-  },
-};
 
 export const EventList: Array<EVENT> = [
   {
@@ -44,6 +28,7 @@ export const EventList: Array<EVENT> = [
     fee: 12,
     day: "DAY2",
     category: "WK",
+    code: "RC01",
   },
   {
     title: "Photography Exhibition",
@@ -72,6 +57,7 @@ export const EventList: Array<EVENT> = [
     fee: 7,
     day: "DAY1",
     category: "GEN",
+    code: "PE01",
   },
   {
     title: "Hackathon",
@@ -103,6 +89,7 @@ export const EventList: Array<EVENT> = [
     fee: 15,
     day: "DAY2",
     category: "WK",
+    code: "COC2",
   },
   {
     title: "Dance Workshop",
@@ -134,6 +121,7 @@ export const EventList: Array<EVENT> = [
     fee: 10,
     day: "DAY1",
     category: "GEN",
+    code: "DD02",
   },
   {
     title: "Science Fair",
@@ -165,6 +153,7 @@ export const EventList: Array<EVENT> = [
     fee: 5,
     day: "DAY2",
     category: "WK",
+    code: "SF42",
   },
   {
     title: "Food Festival",
@@ -196,6 +185,7 @@ export const EventList: Array<EVENT> = [
     fee: 8,
     day: "DAY3",
     category: "GEN",
+    code: "FF10",
   },
   {
     title: "Startup Pitch",
@@ -227,6 +217,8 @@ export const EventList: Array<EVENT> = [
     fee: 10,
     day: "DAY3",
     category: "WK",
+
+    code: "SP30",
   },
   {
     title: "Music Concert",
@@ -258,6 +250,7 @@ export const EventList: Array<EVENT> = [
     fee: 15,
     day: "DAY1",
     category: "GEN",
+    code: "HD41",
   },
   {
     title: "Environmental Workshop",
@@ -289,6 +282,7 @@ export const EventList: Array<EVENT> = [
     fee: 7,
     day: "DAY3",
     category: "GEN",
+    code: "EW36",
   },
   {
     title: "Fashion Show",
@@ -320,6 +314,7 @@ export const EventList: Array<EVENT> = [
     fee: 12,
     day: "DAY2",
     category: "GEN",
+    code: "FS92",
   },
   {
     title: "Sports Tournament",
@@ -351,6 +346,7 @@ export const EventList: Array<EVENT> = [
     fee: 10,
     day: "DAY3",
     category: "GEN",
+    code: "ST69",
   },
   {
     title: "Virtual Reality Showcase",
@@ -382,6 +378,7 @@ export const EventList: Array<EVENT> = [
     fee: 8,
     day: "DAY3",
     category: "WK",
+    code: "VR21",
   },
   {
     title: "Book Fair",
@@ -413,5 +410,6 @@ export const EventList: Array<EVENT> = [
     fee: 5,
     day: "DAY2",
     category: "GEN",
+    code: "BF02",
   },
 ];

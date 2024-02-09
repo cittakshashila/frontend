@@ -1,17 +1,22 @@
 "use client";
 
-import { EventsInDay } from "@/contexts/CartContext";
 import { cn } from "@/libs/utils";
-import { IconInfoCircle } from "@tabler/icons-react";
+import { EventsInDay, useCart } from "@/store";
+import { IconInfoCircle, IconTrash } from "@tabler/icons-react";
 import { useState } from "react";
 
 interface prop {
-  day: string;
+  day: "DAY1" | "DAY2" | "DAY3";
   event: EventsInDay;
 }
 
 export default function CartPass({ day, event }: prop) {
-  const [isOpen, setOpen] = useState<boolean>(false);
+  const { removePass, removeEvent } = useCart((state) => state);
+  const [isInfoOpen, setInfoOpen] = useState<boolean>(false);
+
+  const handleDeletePass = () => {
+    removePass(day);
+  };
 
   if (event.GEN.length === 0 && event.WK.length === 0) return;
 
@@ -31,20 +36,66 @@ export default function CartPass({ day, event }: prop) {
       </div>
       <h1 className="text-xs inline-flex space-x-4">
         <span>Date: 30/03/24</span> <span>Day: Thursday</span>
-        <span onClick={() => setOpen(!isOpen)}>
+        <span onClick={() => setInfoOpen(!isInfoOpen)}>
           <IconInfoCircle size={20} />
+        </span>
+        <span
+          onClick={handleDeletePass}
+          className="cursor-pointer hover:text-red-400"
+        >
+          <IconTrash size={20} />
         </span>
       </h1>
 
-      <section className={cn("ml-2", !isOpen && "hidden")}>
+      <section className={cn("ml-2", isInfoOpen && "hidden")}>
         {event.GEN.length !== 0 && <p>General</p>}
         <ol className=" ml-8 text-sm">
-          {event.GEN.map((event_name) => <li>{event_name}</li>)}
+          {event.GEN.map((event_name) => (
+            <li
+              className="inline-flex gap-x-1 items-center"
+              key={event_name.code}
+            >
+              {event_name.title}
+              <span
+                onClick={() => {
+                  console.log(event_name.code, event_name.day);
+                  removeEvent(
+                    event_name.code,
+                    event_name.day,
+                    "GEN",
+                  );
+                }}
+                className="cursor-pointer hover:text-red-400"
+              >
+                <IconTrash size={16} />
+              </span>
+            </li>
+          ))}
         </ol>
 
         {event.WK.length !== 0 && <p>Workshop</p>}
         <ol className=" ml-8 text-sm">
-          {event.WK.map((event_name) => <li>{event_name}</li>)}
+          {event.WK.map((event_name) => (
+            <li
+              className="inline-flex gap-x-1 items-center"
+              key={event_name.code}
+            >
+              {event_name.title}{" "}
+              <span
+                onClick={() => {
+                  console.log(event_name.code, event_name.day);
+                  removeEvent(
+                    event_name.code,
+                    event_name.day,
+                    "WK",
+                  );
+                }}
+                className="cursor-pointer hover:text-red-400"
+              >
+                <IconTrash size={16} />
+              </span>
+            </li>
+          ))}
         </ol>
       </section>
     </section>

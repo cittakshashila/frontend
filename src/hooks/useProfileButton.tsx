@@ -47,13 +47,17 @@ export const useProfileButton = () => {
         .then((res) => {
           setAuth({ access_token: accessToken, ...res.data });
         })
-        .catch((err) => console.log(err));
+        .catch(() => {
+          localStorage.removeItem("access_token");
+          localStorage.removeItem("cart");
+        });
     }
   }, [user]);
 
   const logOut = () => {
     googleLogout();
     localStorage.removeItem("access_token");
+    localStorage.removeItem("cart");
     setAuth(null);
   };
 

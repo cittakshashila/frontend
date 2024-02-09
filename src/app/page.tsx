@@ -1,4 +1,4 @@
-import { Main, NavBar } from "@/components";
+import { Main } from "@/components";
 
 const Home = () => {
   return <Main />;

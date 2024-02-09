@@ -1,22 +1,21 @@
 "use client";
 
-import { useCartContext } from "@/contexts/CartContext";
 import { useProfileButton } from "@/hooks/useProfileButton";
 import { cn } from "@/libs/utils";
+import { useCart } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ProfileButton() {
   const { menuRef, imgRef, auth, logOut, login, isOpen, setOpen } =
     useProfileButton();
-  const { setCartOpen } = useCartContext();
+  const { toggleCart } = useCart();
 
   return (
     <>
       <section className="relative">
         <section
           onClick={() => {
-            console.log(auth);
             setOpen(!isOpen);
           }}
           className=" cursor-pointer"
@@ -68,7 +67,7 @@ export default function ProfileButton() {
                 <ul className="space-y-1">
                   <li>
                     <h1
-                      onClick={() => setCartOpen(true)}
+                      onClick={() => toggleCart()}
                       className="block cursor-pointer px-3 font-mono hover:bg-slate-200"
                     >
                       Cart

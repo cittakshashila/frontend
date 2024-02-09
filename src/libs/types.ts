@@ -45,4 +45,5 @@ export type EVENT = {
   fee: number;
   day: "DAY1" | "DAY2" | "DAY3";
   category: "WK" | "GEN";
+  code: string;
 };

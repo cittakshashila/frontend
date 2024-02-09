@@ -1,28 +1,24 @@
 "use client";
 
-import { useCartContext } from "@/contexts/CartContext";
+import { EVENT } from "@/libs/types";
+import { useCart } from "@/store";
 
 interface prop {
-  name: string;
-  day: "DAY1" | "DAY2" | "DAY3";
-  category: "WK" | "GEN";
+  event: EVENT;
 }
 
-export default function AddToCartButton({ name, day, category }: prop) {
-  const { setCartOpen, cart, setCart } = useCartContext();
+export default function AddToCartButton({ event }: prop) {
+  const { addEvent } = useCart();
 
   const handleClick = () => {
-    setCartOpen(false);
-    const modifiedCart = cart;
-    if (!modifiedCart[day][category].includes(name)) {
-      modifiedCart[day][category].push(name);
-    }
-    setCart(modifiedCart);
+    addEvent(event);
   };
 
   return (
     <>
-      <h1 className="text-cream">{`${name} - ${day} - ${category}`}</h1>
+      <h1 className="text-cream">
+        {`${event.title} - ${event.day} - ${event.category}`}
+      </h1>
       <button
         onClick={handleClick}
         className="bg-cream text-black p-4 rounded-md"

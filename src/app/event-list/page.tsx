@@ -10,9 +10,8 @@ export default function Events() {
       <section className="  pt-32 text-center ">
         {EventList.map((event) => (
           <AddToCartButton
-            day={event.day}
-            category={event.category}
-            name={event.title}
+            key={event.code}
+            event={event}
           />
         ))}
       </section>

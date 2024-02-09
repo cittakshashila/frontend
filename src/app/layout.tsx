@@ -5,7 +5,6 @@ import { CLIENT_ID, isTeaser } from "@/libs/utils";
 import { Teaser } from "@/components";
 import AuthContextProvider from "@/contexts/AuthContextProvider";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import CartContextProvider from "@/contexts/CartContextProvider";
 
 export const viewport: Viewport = {
   themeColor: "#18181B",
@@ -38,22 +37,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <CartContextProvider>
-      <GoogleOAuthProvider clientId={CLIENT_ID}>
-        <AuthContextProvider>
-          <html lang="en">
-            <head>
-              <meta name="revised" content="31/01/2024" />
-              <meta name="thumbnail" content="/thumbnail.png" />
-            </head>
-            <body
-              className={`${georgia.variable} ${oranienbaum.variable} ${passport.variable}`}
-            >
-              {isTeaser ? <Teaser /> : children}
-            </body>
-          </html>
-        </AuthContextProvider>
-      </GoogleOAuthProvider>
-    </CartContextProvider>
+    <GoogleOAuthProvider clientId={CLIENT_ID}>
+      <AuthContextProvider>
+        <html lang="en">
+          <head>
+            <meta name="revised" content="31/01/2024" />
+            <meta name="thumbnail" content="/thumbnail.png" />
+          </head>
+          <body
+            className={`${georgia.variable} ${oranienbaum.variable} ${passport.variable}`}
+          >
+            {isTeaser ? <Teaser /> : children}
+          </body>
+        </html>
+      </AuthContextProvider>
+    </GoogleOAuthProvider>
   );
 }
