@@ -19,4 +19,31 @@ export type EventDescriptor = {
   contact_name: string;
   contact_number: string;
   contact_email: string;
-}
+};
+
+type CONTACT = {
+  incharge: string;
+  email: string;
+  phno: string;
+};
+
+type DETAIL = {
+  type: "NON-TECHNICAL" | "TECHNICAL";
+  date: string;
+  time: [number, number];
+};
+
+export type EVENT = {
+  title: string;
+  tagline: string;
+  description: string;
+  rules: Array<string>;
+  details: DETAIL;
+  prizes: Array<string>;
+  contacts: Array<CONTACT>;
+  links: Array<string>;
+  fee: number;
+  day: "DAY1" | "DAY2" | "DAY3";
+  category: "WK" | "GEN";
+  code: string;
+};

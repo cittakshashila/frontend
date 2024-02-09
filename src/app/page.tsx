@@ -1,8 +1,7 @@
-import { isTeaser } from "@/libs/utils"
-import { Main, Teaser } from "@/components"
+import { Main } from "@/components";
 
 const Home = () => {
-    return !isTeaser ? <Main /> : <Teaser />;
-}
+  return <Main />;
+};
 
 export default Home;
