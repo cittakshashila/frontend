@@ -40,14 +40,14 @@ const Register = () => {
                         <u>email</u>
                       </div>
                       <div className="flex ml-5 flex-row font-bold  pr-5 align-center flex-wrap gap-2 md:gap-6 text-[20px] sm:text-xl md:text-2xl lg:text-3xl w-[90%] justify-center mb-[20px] items-center font-passport">
-                           <div>GENERAL</div>
-                           <div>WORKSHOP</div>
-                           <div>PRO-SHOW</div>
-                           <button className="rounded-lg p-2 bg-[#1E1E1E] text-[#FFFFFF]">Register</button>
+                           <div className="z-30">GENERAL</div>
+                           <div className="z-30">WORKSHOP</div>
+                           <div className="z-30">PRO-SHOW</div>
+                           <button className="rounded-lg p-2 bg-[#1E1E1E] z-[50] text-[#FFFFFF]">Register</button>
                       </div>
                </div>
                 <Image 
-                    className="absolute top-0  sm:right-[10%] w-fit h-[140%]  opacity-[40%]"
+                    className="absolute top-0  sm:right-[10%] w-fit h-[140%]  opacity-[70%]"
                     src={TakshashilaLogo}
                     alt="Takshashila-logo"
                     />
