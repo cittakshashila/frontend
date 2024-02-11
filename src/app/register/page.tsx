@@ -58,7 +58,7 @@ const Register = () => {
                     alt="Takshashila-logo"
                     />
                 <Image 
-                    className="absolute z-10 h-[120%] w-[100%] bottom-[1%] sm:h-[140%] md:h-[130%] lg:h-[100%] opacity-[70%]"
+                    className="absolute z-10 h-[120%] w-[full] bottom-[1%] sm:h-[140%] md:h-[130%] lg:h-[100%] opacity-[70%]"
                     src={WorldMap}
                     alt="World-Map"
                     />
