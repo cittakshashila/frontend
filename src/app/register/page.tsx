@@ -1,8 +1,5 @@
-"use client"
-<<<<<<< HEAD
+"use client" ;
 import {useState} from "react";
-=======
->>>>>>> 22191395224d61f0db02d2695d9836247f42ac79
 import Image from "next/image";
 import useHighlightScroll from "@/hooks/useHighlightScroll";
 import TakshashilaText from "../../../public/takshashila-text-2024.svg";
@@ -15,14 +12,11 @@ const Register = () => {
   const defaultStyle =
     "no-underline	text-cream border border-transparent transition-all duration-200 p-[3px] rounded";
 
-<<<<<<< HEAD
     const [name,setName] : string = useState("");
     const [email,setEmail] : string  = useState("");
     const [college,setCollege] : string = useState("");
     const [mobile,setMobile] : string = useState("");
 
-=======
->>>>>>> 22191395224d61f0db02d2695d9836247f42ac79
   return (
     <main className="bg-paint-effect bg-cover bg-center bg-[#272727]  h-screen lg:snap-y lg:snap-mandatory overflow-x-hidden">
       <section
@@ -38,60 +32,33 @@ const Register = () => {
                         src={TakshashilaText}
                     />
                </div>
-<<<<<<< HEAD
-              <div className="ml-5 text-xl md:text-2xl lg:text-3xl font-passport flex flex-col justify-around gap-[2.5rem] flex-start ">
+              <div className="ml-5 text-xl md:text-2xl lg:text-3xl font-passport flex flex-col justify-around  gap-[1rem] sm:gap-[2.5rem] flex-start ">
                     <div className="ml-5 z-50 mt-3 font-passport flex">
-                      <input type="text" placeholder="name" name="username" required className="bg-transparent" onChange = {event =>{setName(event.target.value)}} />
+                      <input type="text" placeholder="name" name="username" required className="bg-transparent outline-none text-[#0A0A0A] underline underline-offset-1 " onChange = {event =>{setName(event.target.value)}} />
                       </div>   
                       <div className="ml-5 z-50 font-passport flex flex-wrap flex-row"> 
-                        from  <input type="text" placeholder="college" required name="college" className="pl-5 bg-transparent flex" onChange = {event=>{setCollege(event.target.value)}}/>to chennai institute of technology
+                        from  <input type="text" placeholder="college" required name="college" className="md:pl-5 bg-transparent outline-none text-[#0A0A0A] underline underline-offset-1" onChange = {event=>{setCollege(event.target.value)}}/>to chennai institute of technology
                       </div>
                       <div className="ml-5 z-50  font-passport flex">
-                         <input type="number" placeholder="mobile no" required name="mobile no" className="bg-transparent" onChange = {event =>{setMobile(event.target.value)}}/>
+                         <input type="number" placeholder="mobile no" required name="mobile no" className="bg-transparent text-[#0A0A0A] outline-none underline underline-offset-1" onChange = {event =>{setMobile(event.target.value)}}/>
                       </div>
                       <div className="ml-5 z-50  font-passport flex">
-                        <input type="email" placeholder="email" required name="email" className="bg-transparent" onChange={(event)=>{setEmail(event.target.value)}}/>
-=======
-              <div className="ml-5 text-xl md:text-2xl lg:text-3xl font-passport">
-                    <div className="ml-5 my-[1.5rem] sm:my-[30px] font-passport">
-                        <u >name</u>
-                      </div>   
-                      <div className="ml-5 my-[1.5rem] sm:my-[30px] font-passport"> 
-                        from  <u>college</u> to chennai institute of technology
-                      </div>
-                      <div className="ml-5 my-[1.5rem] sm:my-[30px]  font-passport">
-                        <u>mobile no</u>
-                      </div>
-                      <div className="ml-5 mt-[1rem] mb-[0.5rem] sm:my-[30px] font-passport">
-                        <u>email</u>
->>>>>>> 22191395224d61f0db02d2695d9836247f42ac79
+                        <input type="email" placeholder="email" required name="email" className="bg-transparent text-[#0A0A0A] outline-none underline underline-offset-1" onChange={(event)=>{setEmail(event.target.value)}}/>
                       </div>
                       <div className="flex ml-5 flex-row font-bold  pr-5 align-center flex-wrap gap-2 md:gap-6 text-[20px] sm:text-xl md:text-2xl lg:text-3xl w-[90%] justify-center mb-[20px] items-center font-passport">
                            <div className="z-30">GENERAL</div>
                            <div className="z-30">WORKSHOP</div>
                            <div className="z-30">PRO-SHOW</div>
-<<<<<<< HEAD
                            <button className="rounded-lg p-2 bg-[#1E1E1E] z-50 text-[#FFFFFF]">Register</button>
                       </div>
                </div>
                 <Image 
                     className="absolute top-0  sm:right-[10%] w-fit h-[140%]  opacity-[60%]"
-=======
-                           <button className="rounded-lg p-2 bg-[#1E1E1E] z-[50] text-[#FFFFFF]">Register</button>
-                      </div>
-               </div>
-                <Image 
-                    className="absolute top-0  sm:right-[10%] w-fit h-[140%]  opacity-[70%]"
->>>>>>> 22191395224d61f0db02d2695d9836247f42ac79
                     src={TakshashilaLogo}
                     alt="Takshashila-logo"
                     />
                 <Image 
-<<<<<<< HEAD
                     className="absolute z-10 h-[120%] w-[full] bottom-[1%] sm:h-[140%] md:h-[130%] lg:h-[100%] opacity-[70%]"
-=======
-                    className="absolute  h-[120%] w-full bottom-[1%] sm:h-[140%] md:h-[130%] lg:h-[100%] opacity-[70%]"
->>>>>>> 22191395224d61f0db02d2695d9836247f42ac79
                     src={WorldMap}
                     alt="World-Map"
                     />
@@ -100,11 +67,6 @@ const Register = () => {
                     src={Year}
                     alt="World-Map"
                     />
-<<<<<<< HEAD
-=======
-                    
-            
->>>>>>> 22191395224d61f0db02d2695d9836247f42ac79
         </div>
 
       </section>
