@@ -2,11 +2,30 @@
 
 import CartPass from "./CartPass";
 import { IconShoppingCart, IconX } from "@tabler/icons-react";
-import { cn } from "@/libs/utils";
+import { API_URL, cn } from "@/libs/utils";
 import { useCart } from "@/store";
+import axios from "axios";
+import {useAuthContext} from "@/contexts/AuthContext";
+import { useRouter } from 'next/navigation'
 
 export default function CartSheet() {
   const { cart, cartOpen, toggleCart } = useCart((state) => state);
+  const {auth} = useAuthContext()
+  const events_id = ["OD-567"]
+  const router = useRouter()
+
+  const confirmEvents = async () => {
+    try{
+       await axios.put(`${API_URL}/user/update-cart`, { events_id }, {
+        headers : { authorization : `Bearer ${auth?.access_token}` }
+      }).then(data=>{
+        console.log(data)
+      })
+    }catch(err : any) {
+      if(err.response.status === 550)
+        router.push("/register")
+    }
+}
 
   return (
     <section
@@ -31,7 +50,7 @@ export default function CartSheet() {
               <CartPass day={"DAY3"} event={cart.DAY3} />
             </section>
 
-            <button className="px-6 py-2 text-black text-2xl border w-fit self-center rounded-md bg-cream hover:bg-white">
+            <button className="px-6 py-2 text-black text-2xl border w-fit self-center rounded-md bg-cream hover:bg-white" onClick={()=>confirmEvents()}>
               Confirm
             </button>
           </>
