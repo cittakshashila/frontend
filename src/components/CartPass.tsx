@@ -18,7 +18,7 @@ export default function CartPass({ day, event }: prop) {
     removePass(day);
   };
 
-  if (event.GEN.length === 0 && event.WK.length === 0) return;
+  if (event.GEN.length === 0 && event.WK.length === 0) return null;
 
   return (
     <section className="text-cream border-y border-y-cream py-4 select-none">
