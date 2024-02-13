@@ -1,20 +1,22 @@
-"use client"
+"use client";
 import { NavBar } from "@/components";
 import AddToCartButton from "@/components/AddToCartButton";
-import {useProfileButton} from "@/hooks/useProfileButton";
+import { useProfileButton } from "@/hooks/useProfileButton";
 import { EventList } from "@/libs/data";
+import { useAuth } from "@/store";
 
 export default function Events() {
+  const { login } = useProfileButton();
+  const { auth } = useAuth();
 
-  const { auth, login } = useProfileButton()
-  if(!auth){
-    login()
+  if (!auth) {
+    login();
     return (
-        <main className="flex min-h-screen flex-col bg-gray-800 ">
-            <div className="w-[100vw] h-[100vh] flex justify-center items-center">
-                <span className="text-3xl text-white">Click Login and Continue</span>
-            </div>
-        </main>
+      <main className="flex min-h-screen flex-col bg-gray-800 ">
+        <div className="w-[100vw] h-[100vh] flex justify-center items-center">
+          <span className="text-3xl text-white">Click Login and Continue</span>
+        </div>
+      </main>
     );
   }
 
@@ -23,10 +25,7 @@ export default function Events() {
       <NavBar />
       <section className="  pt-32 text-center ">
         {EventList.map((event) => (
-          <AddToCartButton
-            key={event.code}
-            event={event}
-          />
+          <AddToCartButton key={event.code} event={event} />
         ))}
       </section>
     </main>

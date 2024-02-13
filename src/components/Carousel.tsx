@@ -7,9 +7,15 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { useState } from "react";
 
-const ImageContainer = (
-  { fg, bg, name }: { fg: string; bg: string; name: string },
-) => {
+const ImageContainer = ({
+  fg,
+  bg,
+  name,
+}: {
+  fg: string;
+  bg: string;
+  name: string;
+}) => {
   const [N, sN] = useState<boolean>(false);
   const leftPos = name === "Thaikudam Bridge" ? "20%" : "30%";
   return (
