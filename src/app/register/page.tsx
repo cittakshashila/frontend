@@ -3,7 +3,6 @@ import Image from "next/image";
 import useHighlightScroll from "@/hooks/useHighlightScroll";
 import TakshashilaText from "../../../public/takshashila-text-2024.svg";
 import TakshashilaLogo from "../../../public/register-logo.svg";
-import WorldMap from "../../../public/world-map-bg.svg";
 import Year from "../../../public/2024-travel.svg";
 import { useState } from "react";
 import { useProfileButton } from "@/hooks/useProfileButton";
@@ -126,4 +125,5 @@ const Register = () => {
     </main>
   );
 };
+
 export default Register;
