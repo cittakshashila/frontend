@@ -1,34 +1,6 @@
 import { create } from "zustand";
-import { EVENT } from "./libs/types";
-
-export interface EventsInDay {
-  WK: EVENT[];
-  GEN: EVENT[];
-}
-
-export interface Cart {
-  DAY1: EventsInDay;
-  DAY2: EventsInDay;
-  DAY3: EventsInDay;
-  codes: {
-    DAY1: string[];
-    DAY2: string[];
-    DAY3: string[];
-  };
-}
-
-interface CartState {
-  cart: Cart;
-  cartOpen: boolean;
-  toggleCart: () => void;
-  addEvent: (prop: EVENT) => void;
-  removePass: (day: "DAY1" | "DAY2" | "DAY3") => void;
-  removeEvent: (
-    code: string,
-    day: "DAY1" | "DAY2" | "DAY3",
-    category: "WK" | "GEN",
-  ) => void;
-}
+import { persist } from "zustand/middleware";
+import { Cart, CartState, User } from "./libs/types";
 
 const initData: Cart = {
   DAY1: {
@@ -50,47 +22,83 @@ const initData: Cart = {
   },
 };
 
-export const useCart = create<CartState>((set) => ({
-  cart: initData,
-  addEvent: (event) => {
-    set((state) => {
-      const newCart = state.cart;
+export const useCart = create<CartState>()(
+  persist(
+    (set) => ({
+      cart: initData,
+      addEvent: (event) => {
+        set((state) => {
+          const newCart = state.cart;
 
-      if (newCart.codes[event.day].includes(event.code)) return {};
+          if (newCart.codes[event.day].includes(event.code)) return {};
 
-      newCart[event.day][event.category].push(event);
-      newCart.codes[event.day].push(event.code);
+          newCart[event.day][event.category].push(event);
+          newCart.codes[event.day].push(event.code);
 
-      return { cart: newCart };
-    });
-  },
+          return { cart: newCart };
+        });
+      },
 
-  removePass: (day) => {
-    set((state) => {
-      const newCart = state.cart;
+      removePass: (day) => {
+        set((state) => {
+          const newCart = state.cart;
 
-      newCart[day] = { WK: [], GEN: [] };
-      newCart.codes[day] = [];
+          newCart[day] = { WK: [], GEN: [] };
+          newCart.codes[day] = [];
 
-      return { cart: newCart };
-    });
-  },
+          return { cart: newCart };
+        });
+      },
 
-  removeEvent: (code, day, category) => {
-    set((state) => {
-      const newCart = state.cart;
+      removeEvent: (code, day, category) => {
+        set((state) => {
+          const newCart = state.cart;
 
-      newCart[day][category] = [
-        ...newCart[day][category].filter((obj) => obj.code !== code),
-      ];
-      newCart.codes[day] = [...newCart.codes[day].filter((i) => i !== code)];
+          newCart[day][category] = [
+            ...newCart[day][category].filter((obj) => obj.code !== code),
+          ];
+          newCart.codes[day] = [
+            ...newCart.codes[day].filter((i) => i !== code),
+          ];
 
-      return { cart: newCart };
-    });
-  },
+          return { cart: newCart };
+        });
+      },
 
-  cartOpen: false,
-  toggleCart: () => {
-    set((state) => ({ cartOpen: !state.cartOpen }));
-  },
-}));
+      cartOpen: false,
+      toggleCart: () => {
+        set((state) => ({ cartOpen: !state.cartOpen }));
+      },
+    }),
+    { name: "cart" },
+  ),
+);
+
+interface AuthState {
+  auth: User | null;
+  setAcessToken: (user: User) => void;
+  removeToken: () => void;
+}
+
+const initUser: User = {
+  name: "",
+  access_token: "",
+  picture: "",
+  email: "",
+};
+
+export const useAuth = create<AuthState>()(
+  persist(
+    (set) => ({
+      auth: initUser,
+      setAcessToken: (user) =>
+        set(() => ({
+          auth: user,
+        })),
+      removeToken: () => {
+        set(() => ({ auth: null }));
+      },
+    }),
+    { name: "user" },
+  ),
+);

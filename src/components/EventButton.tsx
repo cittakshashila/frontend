@@ -7,9 +7,11 @@ interface props {
   type?: "fill" | "outline";
 }
 
-export default function EventButton(
-  { children, type = "outline", classnames }: props,
-) {
+export default function EventButton({
+  children,
+  type = "outline",
+  classnames,
+}: props) {
   return (
     <button
       className={cn(

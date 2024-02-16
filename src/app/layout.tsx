@@ -3,7 +3,6 @@ import "./globals.css";
 import { georgia, oranienbaum, passport } from "@/libs/fonts";
 import { CLIENT_ID, isTeaser } from "@/libs/utils";
 import { Teaser } from "@/components";
-import AuthContextProvider from "@/contexts/AuthContextProvider";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export const viewport: Viewport = {
@@ -38,19 +37,17 @@ export default function RootLayout({
 }) {
   return (
     <GoogleOAuthProvider clientId={CLIENT_ID}>
-      <AuthContextProvider>
-        <html lang="en">
-          <head>
-            <meta name="revised" content="31/01/2024" />
-            <meta name="thumbnail" content="/thumbnail.png" />
-          </head>
-          <body
-            className={`${georgia.variable} ${oranienbaum.variable} ${passport.variable}`}
-          >
-            {isTeaser ? <Teaser /> : children}
-          </body>
-        </html>
-      </AuthContextProvider>
+      <html lang="en">
+        <head>
+          <meta name="revised" content="31/01/2024" />
+          <meta name="thumbnail" content="/thumbnail.png" />
+        </head>
+        <body
+          className={`${georgia.variable} ${oranienbaum.variable} ${passport.variable}`}
+        >
+          {isTeaser ? <Teaser /> : children}
+        </body>
+      </html>
     </GoogleOAuthProvider>
   );
 }

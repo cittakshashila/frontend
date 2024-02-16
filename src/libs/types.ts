@@ -48,3 +48,43 @@ export type EVENT = {
   category: "WK" | "GEN";
   code: string;
 };
+
+// INTERFACES FOR CART
+export interface EventsInDay {
+  WK: EVENT[];
+  GEN: EVENT[];
+}
+
+export interface Cart {
+  DAY1: EventsInDay;
+  DAY2: EventsInDay;
+  DAY3: EventsInDay;
+  codes: {
+    DAY1: string[];
+    DAY2: string[];
+    DAY3: string[];
+  };
+}
+
+export interface CartState {
+  cart: Cart;
+  cartOpen: boolean;
+  toggleCart: () => void;
+  addEvent: (prop: EVENT) => void;
+  removePass: (day: "DAY1" | "DAY2" | "DAY3") => void;
+  removeEvent: (
+    code: string,
+    day: "DAY1" | "DAY2" | "DAY3",
+    category: "WK" | "GEN",
+  ) => void;
+}
+
+// INTERFACE FOR USER
+export interface User {
+  name: string;
+  email: string;
+  picture: string;
+  access_token: string;
+}
+
+

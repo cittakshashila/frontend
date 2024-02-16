@@ -1,4 +1,5 @@
 import { useAuthContext } from "@/contexts/AuthContext";
+import { useAuth } from "@/store";
 import {
   googleLogout,
   TokenResponse,
@@ -11,7 +12,8 @@ export const useProfileButton = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const [isCartOpen, setCartOpen] = useState<boolean>(false);
   const [user, setUser] = useState<TokenResponse>();
-  const { auth, setAuth } = useAuthContext();
+  // const { auth, setAuth } = useAuthContext();
+  const { removeToken, setAcessToken } = useAuth((state) => state);
 
   const menuRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -30,8 +32,8 @@ export const useProfileButton = () => {
       }
     });
 
-    const accessToken = user?.access_token ||
-      localStorage.getItem("access_token");
+    const accessToken =
+      user?.access_token || localStorage.getItem("access_token");
     if (accessToken) {
       localStorage.setItem("access_token", accessToken);
       axios
@@ -45,20 +47,20 @@ export const useProfileButton = () => {
           },
         )
         .then((res) => {
-          setAuth({ access_token: accessToken, ...res.data });
+          setAcessToken({ ...res.data, access_token: accessToken });
         })
         .catch(() => {
           localStorage.removeItem("access_token");
           localStorage.removeItem("cart");
         });
     }
-  }, [user]);
+  }, [user, setAcessToken]);
 
   const logOut = () => {
     googleLogout();
     localStorage.removeItem("access_token");
     localStorage.removeItem("cart");
-    setAuth(null);
+    removeToken();
   };
 
   return {
@@ -66,7 +68,6 @@ export const useProfileButton = () => {
     setOpen,
     login,
     logOut,
-    auth,
     imgRef,
     menuRef,
     isCartOpen,

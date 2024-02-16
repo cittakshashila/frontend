@@ -6,9 +6,7 @@ interface props {
   type?: "fill" | "outline";
 }
 
-export default function Button(
-  { children, type = "outline" }: props,
-) {
+export default function Button({ children, type = "outline" }: props) {
   return (
     <button
       className={cn(
