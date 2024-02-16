@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import TakshashilaSecondaryLogo from "@/assets/takshashila-secondary-logo.svg";
 import TakshashilaTextLogo from "@/assets/takshashila-text.svg";
@@ -23,8 +25,30 @@ import BGThaiKudamBridge from "@/assets/thaikudambridge-bg.webp";
 
 import { NavBar } from "@/components";
 import HomeEventComponent from "../HomeEventComponent";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Main = () => {
+  const [loaded, setLoaded] = useState(false);
+  const controls1 = useAnimation();
+  const [ref1, inView1] = useInView({ threshold: 0.3 });
+
+  const controls2 = useAnimation();
+  const [ref2, inView2] = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (loaded && inView1) {
+      controls1.start("visible");
+    }
+    if (loaded && inView2) {
+      controls2.start("visible");
+    }
+  }, [loaded, inView1, inView2, controls1, controls2]);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
   return (
     <main className="flex min-h-screen flex-col ">
       <NavBar />
@@ -39,30 +63,59 @@ const Main = () => {
         loading="lazy"
       />
 
-      <section className="relative w-full flex items-center justify-center h-screen p-10 md:p-24 lg:p-48 overflow-clip">
-        <Image
+      <section
+        ref={ref1}
+        className="relative w-full flex items-center justify-center h-screen p-10 md:p-24 lg:p-48 overflow-clip"
+      >
+        <motion.div
           className="absolute lg:-right-56 -z-10 lg:-top-64 lg:w-[900px] min-w-[1000px] -bottom-40"
-          src={TakshashilaSideProp}
-          width={500}
-          alt="cit-takshashila-primary-logo"
-        />
+          initial={{ opacity: 0, x: 500, rotate: -30 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 1.5, type: "tween" }}
+        >
+          <Image
+            src={TakshashilaSideProp}
+            alt="cit-takshashila-primary-logo"
+            width={500}
+            height={500}
+            className="w-full h-full"
+          />
+        </motion.div>
 
-        <Image
-          src={TakshashilaTextLogo}
-          width={700}
-          alt="cit-takshashila-primary-logo"
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: loaded ? 1 : 0 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1 }}
+          whileHover={{ scale: 1.07 }}
           className="w-[500px] lg:w-[700px]"
-        />
-
-        <Image
+        >
+          <Image
+            src={TakshashilaTextLogo}
+            width={700}
+            alt="cit-takshashila-primary-logo"
+          />
+        </motion.div>
+        <motion.div
           className="hidden lg:block absolute -z-10 -left-56 -top-0 w-[900px]"
-          src={TakshashilaSideProp}
-          width={500}
-          alt="cit-takshashila-primary-logo"
-        />
+          initial={{ opacity: 0, x: -500, rotate: 30 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 1.5, type: "tween" }}
+        >
+          <Image
+            src={TakshashilaSideProp}
+            width={500}
+            height={500}
+            className="w-full h-full"
+            alt="cit-takshashila-primary-logo"
+          />
+        </motion.div>
       </section>
 
-      <section className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 ">
+      <section
+        ref={ref1}
+        className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 overflow-clip "
+      >
         <Image
           className="h-screen -z-10 bg-[#272727]"
           alt="bg"
@@ -74,7 +127,15 @@ const Main = () => {
         />
 
         <section className="flex flex-col xl:flex-row items-center">
-          <section>
+          <motion.section
+            initial="hidden"
+            animate={controls1}
+            variants={{
+              visible: { x: 0, opacity: 1 },
+              hidden: { x: -200, opacity: 0 },
+            }}
+            transition={{ duration: 1 }}
+          >
             <h1 className="font-oranienbaum text-4xl text-cream pb-3">
               About CIT
             </h1>
@@ -103,35 +164,76 @@ const Main = () => {
                 ~Shri Sriram Parthasarathy
               </span>
             </p>
-          </section>
+          </motion.section>
 
           <section className="m-5 xl:pt-0 w-40 h-40 xl:w-48 xl:h-48 relative xl:min-w-[350px]">
-            <Image
-              height={150}
-              width={150}
-              src={IMGPeopleSitting}
-              alt="soori-na"
-              className="absolute left-20 rotate-6 xl:top-28 xl:left-40 xl:rotate-6 md:w-52 "
-            />
-            <Image
-              height={150}
-              width={150}
-              src={IMGWeloveOs}
-              alt="soori-na"
-              className="absolute -rotate-6 right-20 xl:top-10 xl:left-10 xl:-rotate-6 md:w-52"
-            />
-            <Image
-              height={150}
-              width={150}
-              src={IMGSriram}
-              alt="soori-na"
-              className="absolute rotate-6 xl:-top-20 xl:left-52 xl:rotate-6 md:w-52"
-            />
+            <motion.section
+              className="absolute md:left-20 left-0 rotate-6 xl:top-36 xl:left-52 xl:rotate-6 md:w-52"
+              initial="hidden"
+              animate={controls1}
+              variants={{
+                hidden: { x: -100, y: -100, opacity: 0, rotate: 6, scale: 1 },
+                visible: { x: 0, y: 0, opacity: 1, rotate: -6, scale: 1 },
+              }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.08 }}
+            >
+              <Image
+                height={200}
+                width={200}
+                src={IMGPeopleSitting}
+                alt="People Sitting"
+              />
+            </motion.section>
+            <motion.section
+              className="absolute -rotate-6 md:right-20 right-10 xl:top-14 xl:left-10 md:w-52"
+              initial="hidden"
+              animate={controls1}
+              variants={{
+                hidden: { x: 67, y: -20, opacity: 0, rotate: 6, scale: 1 },
+                visible: { x: 0, y: 0, opacity: 1, rotate: -6, scale: 1 },
+              }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.08 }}
+            >
+              <Image
+                height={200}
+                width={200}
+                src={IMGWeloveOs}
+                alt="We love Open Source"
+              />
+            </motion.section>
+            <motion.section
+              className="absolute rotate-6 xl:top-0 xl:left-52 xl:rotate-6 md:w-52"
+              initial="hidden"
+              animate={controls1}
+              variants={{
+                hidden: { x: -100, y: 40, opacity: 0, rotate: -6, scale: 1 },
+                visible: { x: 0, y: 0, opacity: 1, rotate: 6, scale: 1 },
+              }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.08 }}
+            >
+              <Image
+                height={200}
+                width={200}
+                src={IMGSriram}
+                alt="Respected Chairman of CIT Institutions"
+              />
+            </motion.section>
           </section>
         </section>
 
         <section className="flex xl:flex-row-reverse xl:mt-16">
-          <section>
+          <motion.section
+            initial="hidden"
+            animate={controls1}
+            variants={{
+              visible: { x: 0, opacity: 1 },
+              hidden: { x: 200, opacity: 0 },
+            }}
+            transition={{ duration: 1 }}
+          >
             <h1 className="font-oranienbaum text-4xl text-cream py-4">
               About Takshashila
             </h1>
@@ -147,35 +249,70 @@ const Main = () => {
               be an exhilarating one, full of adventures that are fished
               straight out of the ocean.
             </p>
-          </section>
-
+          </motion.section>
           <section className="hidden xl:block w-48 h-48 relative xl:min-w-[350px]">
-            <Image
-              height={200}
-              width={200}
-              src={IMGSooriNa}
-              alt="soori-na"
-              className="absolute -left-8 top-6 -rotate-6"
-            />
-            <Image
-              height={200}
-              width={200}
-              src={IMGDjDance}
-              alt="soori-na"
-              className="absolute top-28 right-16 -rotate-3"
-            />
-            <Image
-              height={200}
-              width={200}
-              src={IMGThaikudamGuitarist}
-              alt="soori-na"
-              className="absolute right-5 -top-6 rotate-6"
-            />
+            <motion.section
+              className="absolute -left-8 top-6"
+              initial="hidden"
+              animate={controls1}
+              variants={{
+                hidden: { x: 75, y: 30, opacity: 0, rotate: 6 },
+                visible: { x: 0, y: 0, opacity: 1, rotate: -6 },
+              }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.08 }}
+            >
+              <Image
+                height={200}
+                width={200}
+                src={IMGSooriNa}
+                alt="Actor Soori"
+              />
+            </motion.section>
+            <motion.section
+              className="absolute top-28 right-16"
+              initial="hidden"
+              animate={controls1}
+              variants={{
+                hidden: { x: -30, y: -30, opacity: 0, rotate: 3 },
+                visible: { x: 0, y: 0, opacity: 1, rotate: -3 },
+              }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.08 }}
+            >
+              <Image
+                height={200}
+                width={200}
+                src={IMGDjDance}
+                alt="Group of Students"
+              />
+            </motion.section>
+            <motion.section
+              className="absolute right-5 -top-6"
+              initial="hidden"
+              animate={controls1}
+              variants={{
+                hidden: { x: -70, y: 60, opacity: 0, rotate: -6 },
+                visible: { x: 0, y: 0, opacity: 1, rotate: 6 },
+              }}
+              transition={{ duration: 1.5 }}
+              whileHover={{ scale: 1.08 }}
+            >
+              <Image
+                height={200}
+                width={200}
+                src={IMGThaikudamGuitarist}
+                alt="Thaikudam Bridge"
+              />
+            </motion.section>
           </section>
         </section>
       </section>
 
-      <section className="flex flex-col relative min-h-screen w-full  p-10 md:p-24 lg:p-48 lg:py-36">
+      <section
+        ref={ref2}
+        className="flex flex-col relative min-h-screen w-full  p-10 md:p-24 lg:p-48 lg:py-36"
+      >
         <Image
           className="h-screen -z-10 bg-[#272727]"
           alt="bg"
@@ -189,7 +326,16 @@ const Main = () => {
           Events
         </h1>
 
-        <section className="hidden xl:flex flex-grow space-x-3 ">
+        <motion.section
+          className="hidden xl:flex flex-grow space-x-3"
+          initial="hidden"
+          animate={controls2}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0.5 },
+          }}
+          transition={{ duration: 1.5 }}
+        >
           <HomeEventComponent
             title="Pro Shows"
             description="For people with friends"
@@ -213,9 +359,8 @@ const Main = () => {
             description="For people with "
             background={IMGTechnical}
           />
-        </section>
+        </motion.section>
       </section>
-
 
       <section className="w-full relative flex items-center justify-center border-y  border-cream">
         <Image
