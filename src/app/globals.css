@@ -145,3 +145,27 @@ h1 {
     max-width: 200px;
   }
 }
+
+.show{
+  border-radius: 25px;
+  background: linear-gradient(270deg, rgba(135, 135, 135, 0.50) 0%, rgba(43, 42, 42, 0.50) 100%);
+  backdrop-filter: blur(10px);
+  height: 50px; 
+}
+
+
+.text {
+  position: absolute;
+  font-size: xx-large;
+  bottom:10%;
+  transform: translateX(-10%);
+  transition:.3s ease;
+  width: 100%;
+}
+
+.card:hover .text {
+  font-size: xx-large;
+  bottom:100%;
+  transform: translate(-10%,100%);
+}
+

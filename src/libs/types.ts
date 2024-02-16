@@ -5,6 +5,7 @@ export type EventList = {
   event_type: string;
   event_date: string;
   event_img: string;
+  event_hover_img:string;
 };
 
 export type EventDescriptor = {
