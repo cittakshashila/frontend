@@ -5,12 +5,13 @@ type CONTACT = {
 };
 
 type DETAIL = {
-    type: "NON-TECHNICAL" | "TECHNICAL";
+    type: "WORKSHOP" | "PRO SHOW" | "NON-TECHNICAL" | "TECHNICAL" | "ONLINE EVENT";
     date: string;
     time: [number, number];
 };
 
 export type EVENT = {
+    id: string;
     title: string;
     tagline: string;
     description: string;
@@ -63,8 +64,11 @@ export interface User {
     access_token: string;
 }
 
-export type INFO_URL = `https://github.com/RahulNavneeth/TK-events-proto/blob/master/${string}/info.json`
-export type MEDIA_URL = `https://raw.githubusercontent.com/RahulNavneeth/TK-events-proto/master/events/${string}/assets/${string}.png`
+export const REPO_OWNER = "cittakshashila";
+export const REPO_NAME = "EVENTS-DATA-24";
+
+export type INFO_URL = `https://github.com/cittakshashila/EVENTS-DATA-24/blob/master/${string}/info.json`
+export type MEDIA_URL = `https://raw.githubusercontent.com/cittakshashila/EVENTS-DATA-24/master/events/${string}/assets/${string}.png`
 
 export type FOLDER_TYPE = {
     name: string,

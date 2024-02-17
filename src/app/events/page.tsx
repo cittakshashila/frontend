@@ -7,19 +7,17 @@ import { EVENT, FOLDER_TYPE } from "@/libs/types";
 import { PARSE } from "@/libs/utils";
 
 export default function Events() {
-    const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [filter, setFilter] = useState<string>("All");
     const [queue, setQueue] = useState<Array<FOLDER_TYPE>>([]);
     const [EventList, setEventList] = useState<Array<EVENT>>([]);
-    const [ref, inView] = useInView();
 
-    const LIMIT = 3;
+    const LIMIT = 10;
 
     useEffect(() => {
         const fetchFolders = async () => {
             const res = await fetch("/api/events/folder");
-            const data = await res.json();
-            setQueue(data.payload.tree.items);
+            const data = await res.json() as { payload: { tree: { items: Array<FOLDER_TYPE> } } };
+            setQueue(data.payload.tree.items.filter((item) => item.contentType === "directory"));
         };
         if (queue.length === 0) {
             fetchFolders();
@@ -77,19 +75,25 @@ export default function Events() {
                                 className={filter === "Tech" ? "underline" : ""}
                                 onClick={() => setFilter("Tech")}
                             >
-                                Tech
+                                Technical
                             </a>
                             <a
                                 className={filter === "Non-Tech" ? "underline" : ""}
                                 onClick={() => setFilter("Non-Tech")}
                             >
-                                Non-Tech
+                                Non-Technical
+                            </a>
+                            <a
+                                className={filter === "Tech" ? "underline" : ""}
+                                onClick={() => setFilter("Tech")}
+                            >
+                                Workshops
                             </a>
                             <a
                                 className={filter === "Sports" ? "underline" : ""}
                                 onClick={() => setFilter("Sports")}
                             >
-                                Sports
+                                Online events
                             </a>
                         </ul>
                     </div>
