@@ -7,21 +7,19 @@ interface prop {
   event: EVENT;
 }
 
-export default function AddToCartButton({ event }: prop) {
+// export default function AddToCartButton({ event }: prop) {
+export default function AddToCartButton() {
   const { addEvent } = useCart();
 
-  const handleClick = () => {
-    addEvent(event);
-  };
+  // const handleClick = () => {
+  //   addEvent(event);
+  // };
 
   return (
     <>
-      <h1 className="text-cream">
-        {`${event.title} - ${event.day} - ${event.category}`}
-      </h1>
       <button
-        onClick={handleClick}
-        className="bg-cream text-black p-4 rounded-md"
+        // onClick={handleClick}
+        className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg"
       >
         Add To Cart
       </button>
