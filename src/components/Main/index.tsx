@@ -453,15 +453,15 @@ const Main = () => {
             <ul className="text-base xl:text-xl text-cream text-center space-y-1">
               <li>
                 <h1>
-                  Gaythrie ( Event Head ) <br className="xl:hidden" />
-                  +91 8015929273
+                  Gayathrie ( Event Head ) <br className="xl:hidden" />
+                  +91 9150472413
                 </h1>
               </li>
 
               <li>
                 <h1>
                   Amrize ( Even Co-ordinator ) <br className="xl:hidden" /> +91
-                  9150472413
+                  +91 8015929273
                 </h1>
               </li>
 
