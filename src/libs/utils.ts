@@ -24,6 +24,7 @@ export const INFO_URL = (ID: string): INFO_URL_TYPE => {
 }
 
 export const FOLDER_URL = `https://github.com/${REPO_OWNER}/${REPO_NAME}/tree/master/events`;
+export const FOLDER_INFO_URL = `https://github.com/${REPO_OWNER}/${REPO_NAME}/tree/master/info.json`;
 
 export const PARSE = (data: Array<string>): Record<string, any> => {
     const jsonString: string = data.join("").replace(/\s*(\{|\}|\[|\]|,|:)\s*/g, '$1');
