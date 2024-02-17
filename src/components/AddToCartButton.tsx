@@ -11,9 +11,6 @@ export default function AddToCartButton({ event }: prop) {
   const { addEvent } = useCart();
 
   const handleClick = () => {
-    const newEvent = event
-    newEvent.day = "DAY1"
-    newEvent.category = "GEN"
     addEvent(event);
   };
 

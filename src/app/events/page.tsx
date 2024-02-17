@@ -73,7 +73,7 @@ export default function Events() {
           </div>
         ) : (
           <div className="relative top-32 flex flex-row flex-wrap justify-center">
-            <div className="sticky w-full flex justify-center items-center xl:top-10 top-3 px-5  z-40 ">
+            <div className="sticky w-full flex justify-center items-center xl:top-36 top-3 px-5  md:z-[999] z-40 ">
               <ul className="text-cream px-10 text-md flex justify-center flex-wrap items-center space-x-4 rounded-xl backdrop-blur py-4 cursor-pointer">
                 <a
                   className={filter === "All" ? "underline text-[#f0f0f0]" : ""}

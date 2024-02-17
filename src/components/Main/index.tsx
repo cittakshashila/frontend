@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import TakshashilaSecondaryLogo from "@/assets/takshashila-secondary-logo.svg";
 import TakshashilaTextLogo from "@/assets/takshashila-text.svg";
 import TakshashilaSideProp from "@/assets/about-cit-side-prop-tklogo-hero.png";
 
@@ -37,6 +36,7 @@ import HomeEventComponent from "../HomeEventComponent";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const Main = () => {
   const [loaded, setLoaded] = useState(false);
@@ -130,7 +130,7 @@ const Main = () => {
       <section
         ref={ref1}
         id="about"
-        className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 overflow-clip lg:snap-start"
+        className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:snap-start  overflow-clip "
       >
         <Image
           className="h-screen -z-10 bg-[#272727]"
@@ -240,7 +240,7 @@ const Main = () => {
           </section>
         </section>
 
-        <section className="flex xl:flex-row-reverse xl:mt-16">
+        <section className="hidden xl:flex xl:flex-row-reverse xl:mt-16">
           <motion.section
             initial="hidden"
             animate={controls1}
@@ -398,21 +398,21 @@ const Main = () => {
             }}
             modules={[EffectCreative, Autoplay]}
           >
-            <SwiperSlide className="maxw72 w-full rounded-3xl">
+            <SwiperSlide className=" w-full rounded-3xl">
               <HomeEventComponent
                 title="Technical"
                 description="For people with "
                 background={IMGTechnical}
               />
             </SwiperSlide>
-            <SwiperSlide className=" maw72 rounded-3xl">
+            <SwiperSlide className="  rounded-3xl">
               <HomeEventComponent
                 title="Non-Technical"
                 description="it is non techincal events, loren ipsum its on load rasengan macbook pro router keyboard it is pendrive paper"
                 background={IMGNonTechnical}
               />
             </SwiperSlide>
-            <SwiperSlide className=" maxw72 rounded-3xl ">
+            <SwiperSlide className="  rounded-3xl ">
               <HomeEventComponent
                 title="Pro Shows"
                 description="For people with friends"
@@ -452,26 +452,21 @@ const Main = () => {
 
             <ul className="text-base xl:text-xl text-cream text-center space-y-1">
               <li>
-                <h1>Saran C (General Queries)</h1>
+                <h1>
+                  Gaythrie ( Event Head ) <br className="xl:hidden" />
+                  +91 8015929273
+                </h1>
               </li>
 
               <li>
-                <h1>M Gayathrie (Event Queries)</h1>
+                <h1>
+                  Amrize ( Even Co-ordinator ) <br className="xl:hidden" /> +91
+                  9150472413
+                </h1>
               </li>
 
               <li>
-                <h1>Shyam (Sponsorship Queries) </h1>
-              </li>
-
-              <li>
-                <h1>V Akshya (Pro Shows Queries)</h1>
-              </li>
-
-              <li>
-                <h1>Preetha (Pro Shows Queries)</h1>
-              </li>
-              <li>
-                <h1>Jesvi Jonathan ( Developer)</h1>
+                <h1>Bitspace ( Web Dev Team ) </h1>
               </li>
             </ul>
 
@@ -509,7 +504,7 @@ const Main = () => {
                 onClick={() => setContactComp(true)}
                 className="mt-3 rounded-md cursor-pointer bg-[#f0f0f0] p-2 px-3 text-grey hover:bg-cream mr-3"
               >
-                Contact Us{" "}
+                Contact Us
               </button>
             </section>
           </section>
@@ -531,7 +526,7 @@ const Main = () => {
             alt="TK-logo"
             width={500}
             height={90}
-            src={TakshashilaSecondaryLogo}
+            src={TakshashilaTextLogo}
             className="w-full max-w-56"
           />
         </section>
@@ -539,19 +534,28 @@ const Main = () => {
         <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5">
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Socials</h1>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.instagram.com/cittakshashila/"
+            >
               Instagram
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://m.facebook.com/p/CIT-Takshashila-100064056814271/"
+            >
               Facebook
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.linkedin.com/in/cittakshashila/?originalSubdomain=in"
+            >
               LinkedIn
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="8015929273">
               Phone
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="takshashila@citchennai.net">
               Email
             </a>
           </section>
@@ -560,41 +564,47 @@ const Main = () => {
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Events</h1>
-            <a className="text-cream text-xs" href="#">
+            <Link className="text-cream text-xs" href="/events">
               Technical
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Non Technical
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Workshops
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Pro-Shows
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Others
-            </a>
+            </Link>
           </section>
 
           <div className="bg-cream w-[1px] h-24 mx-8" />
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Website</h1>
-            <a className="text-cream text-xs" href="#">
-              Terms & Policy
+            <a
+              className="text-cream text-xs"
+              href="https://www.bitspace.org.in/team"
+            >
+              Team
             </a>
-            <a className="text-cream text-xs" href="#">
-              Services
+            <a
+              className="text-cream text-xs"
+              href="https://www.citchennai.edu.in/"
+            >
+              College Site
             </a>
-            <a className="text-cream text-xs" href="#">
-              Account
-            </a>
-            <a className="text-cream text-xs" href="#">
-              Collage Site
-            </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://github.com/bitspaceorg/"
+            >
               Developer
+            </a>
+            <a className="text-cream text-xs" href="info@bitspace.org.in">
+              Contact
             </a>
           </section>
 
@@ -602,19 +612,25 @@ const Main = () => {
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Support</h1>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="bitspace.org.in">
               Takshashila Team
             </a>
             <a className="text-cream text-xs" href="#">
               Report
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.bitspace.org.in/"
+            >
               Developer
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="#contact">
               Contact Us
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.bitspace.org.in/"
+            >
               Credits
             </a>
           </section>

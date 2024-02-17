@@ -11,7 +11,7 @@ export default function NavBar() {
   const pathname = usePathname();
 
   return (
-    <section className="flex items-center justify-between p-4 lg:p-10 fixed bgwhite w-full z-50">
+    <section className="flex items-center justify-between p-4 lg:p-10 fixed bgwhite w-full z-[1000]">
       <section className="min-w-9 lg:w-full h-full inline-block">
         <div className="w-fit">
           <Link href={"/"}>

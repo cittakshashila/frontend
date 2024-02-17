@@ -76,14 +76,15 @@ export default function ProfileButton() {
                   </h1>
                 </li>
 
+{/*
                 <li>
                   <Link
                     className="block cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey"
                     href="/booked-events"
                   >
-                    Booked Events
                   </Link>
                 </li>
+*/}
 
                 <button
                   onClick={() => logOut()}

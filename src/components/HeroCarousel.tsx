@@ -42,7 +42,7 @@ export default function HeroCarousel() {
 
   return (
     <>
-      <section className="h-screen flex absolute w-[250px] md:w-[350px] xl:w-[500px] left-0 right-0 mx-auto z-0">
+      <section className="h-screen flex space-x-0  md:space-x-[10px] absolute w-[250px] md:w-[350px] xl:w-[500px] left-0 right-0 mx-auto z-0">
         <Swiper
           loop={true}
           allowTouchMove={false}
@@ -314,7 +314,7 @@ export default function HeroCarousel() {
           autoplay={{ delay: 3000 }}
           effect="fade"
           modules={[Autoplay, EffectFade]}
-          className="text-white text-center text-4xl h-10"
+          className="text-white text-center text-3xl h-10"
         >
           {textCarousel.map((text) => (
             <SwiperSlide key={text}>
