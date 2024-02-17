@@ -36,30 +36,31 @@ export default function ProfileButton() {
 
         <section
           className={cn(
-            "absolute top-12 right-0 bg-slate-100 rounded-md py-2 text-grey text-right text-sm min-w-52 transition-all",
+          " bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-70",
+            "absolute top-12 right-0 rounded-md py-5 text-cream text-center text-sm min-w-52 transition-all",
             !isOpen && "hidden",
           )}
           ref={menuRef}
         >
           {auth === null ? (
             <>
-              <h1 className="text-sm cursor-pointer px-3 font-mono hover:bg-slate-200">
+              <h1 className="text-sm pointer-events-none px-3 font-mono hover:bg-cream hover:text-grey">
                 Register to continue
               </h1>
               <hr className="my-2" />
               <button
                 onClick={() => login()}
-                className="rounded-md cursor-pointer bg-red-400 p-2 px-3 text-grey hover:bg-red-300 mr-3"
+                className="rounded-md cursor-pointer bg-[#f0f0f0] p-2 px-3 text-grey hover:bg-cream mr-3"
               >
                 Register
               </button>
             </>
           ) : (
             <>
-              <h1 className="text-xl cursor-pointer px-3 font-mono hover:bg-slate-200">
+              <h1 className="text-xl cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey">
                 {auth.name}
               </h1>
-              <h2 className="text-xs cursor-pointer px-3 font-mono hover:bg-slate-200">
+              <h2 className="text-xs cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey">
                 {auth.email}
               </h2>
 
@@ -69,24 +70,25 @@ export default function ProfileButton() {
                 <li>
                   <h1
                     onClick={() => toggleCart()}
-                    className="block cursor-pointer px-3 font-mono hover:bg-slate-200"
+                    className="block cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey"
                   >
                     Cart
                   </h1>
                 </li>
 
+{/*
                 <li>
                   <Link
-                    className="block cursor-pointer px-3 font-mono hover:bg-slate-200"
+                    className="block cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey"
                     href="/booked-events"
                   >
-                    Booked Events
                   </Link>
                 </li>
+*/}
 
                 <button
                   onClick={() => logOut()}
-                  className=" cursor-pointer bg-gray-900 mx-3 text-cream font-mono hover:bg-gray-950 text-center w-1/2 inline-block rounded-sm"
+                  className=" cursor-pointer bg-red-500 mx-3 py-1 text-cream font-mono hover:bg-red-400 text-center w-1/2 inline-block rounded-sm"
                 >
                   Log Out
                 </button>

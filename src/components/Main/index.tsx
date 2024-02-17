@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import TakshashilaSecondaryLogo from "@/assets/takshashila-secondary-logo.svg";
 import TakshashilaTextLogo from "@/assets/takshashila-text.svg";
 import TakshashilaSideProp from "@/assets/about-cit-side-prop-tklogo-hero.png";
 
@@ -18,21 +17,33 @@ import {
   IMGTechnical,
   IMGNonTechnical,
 } from "@/assets/event-section";
+import HeroCarousel from "../HeroCarousel";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCreative } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 import BGCITCrowd from "@/assets/cit-crowd-bg.webp";
+import BGAbout from "@/assets/BGEvents.png";
 import BGPaintSplash from "@/assets/paint-effect-bg.webp";
 import BGThaiKudamBridge from "@/assets/thaikudambridge-bg.webp";
 
 import { NavBar } from "@/components";
 import HomeEventComponent from "../HomeEventComponent";
+
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const Main = () => {
   const [loaded, setLoaded] = useState(false);
   const controls1 = useAnimation();
   const [ref1, inView1] = useInView({ threshold: 0.3 });
+
+  const [isContactComp, setContactComp] = useState<boolean>(true);
 
   const controls2 = useAnimation();
   const [ref2, inView2] = useInView({ threshold: 0.2 });
@@ -49,8 +60,9 @@ const Main = () => {
   useEffect(() => {
     setLoaded(true);
   }, []);
+
   return (
-    <main className="flex min-h-screen flex-col ">
+    <main className="relative flex min-h-screen flex-col wrapper lg:snap-y lg:snap-mandatory">
       <NavBar />
 
       <Image
@@ -65,7 +77,7 @@ const Main = () => {
 
       <section
         ref={ref1}
-        className="relative w-full flex items-center justify-center h-screen p-10 md:p-24 lg:p-48 overflow-clip"
+        className="relative w-full flex items-center justify-center min-h-screen h-screen p-10 md:p-24 lg:p-48 overflow-clip lg:snap-start"
       >
         <motion.div
           className="absolute lg:-right-56 -z-10 lg:-top-64 lg:w-[900px] min-w-[1000px] -bottom-40"
@@ -88,7 +100,7 @@ const Main = () => {
           transition={{ duration: 1.5 }}
           whileInView={{ opacity: 1 }}
           whileHover={{ scale: 1.07 }}
-          className="w-[500px] lg:w-[700px]"
+          className="w-[500px] lg:w-[700px] z-10"
         >
           <Image
             src={TakshashilaTextLogo}
@@ -96,6 +108,9 @@ const Main = () => {
             alt="cit-takshashila-primary-logo"
           />
         </motion.div>
+
+        <HeroCarousel />
+
         <motion.div
           className="hidden lg:block absolute -z-10 -left-56 -top-0 w-[900px]"
           initial={{ opacity: 0, x: -500, rotate: 30 }}
@@ -114,7 +129,8 @@ const Main = () => {
 
       <section
         ref={ref1}
-        className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 overflow-clip "
+        id="about"
+        className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:snap-start  overflow-clip "
       >
         <Image
           className="h-screen -z-10 bg-[#272727]"
@@ -224,7 +240,7 @@ const Main = () => {
           </section>
         </section>
 
-        <section className="flex xl:flex-row-reverse xl:mt-16">
+        <section className="hidden xl:flex xl:flex-row-reverse xl:mt-16">
           <motion.section
             initial="hidden"
             animate={controls1}
@@ -311,7 +327,8 @@ const Main = () => {
 
       <section
         ref={ref2}
-        className="flex flex-col relative min-h-screen w-full  p-10 md:p-24 lg:p-48 lg:py-36"
+        id="events"
+        className="flex flex-col relative min-h-screen w-full  p-10 md:p-24 lg:p-48 lg:py-36 lg:snap-start"
       >
         <Image
           className="h-screen -z-10 bg-[#272727]"
@@ -360,9 +377,141 @@ const Main = () => {
             background={IMGTechnical}
           />
         </motion.section>
+
+        <section className="xl:hidden text-center flex flex-1 h-0">
+          <Swiper
+            slidesPerView={"auto"}
+            effect={"creative"}
+            creativeEffect={{
+              prev: {
+                translate: [0, 0, -700],
+              },
+              next: {
+                translate: ["100%", 0, 0],
+              },
+            }}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            modules={[EffectCreative, Autoplay]}
+          >
+            <SwiperSlide className=" w-full rounded-3xl">
+              <HomeEventComponent
+                title="Technical"
+                description="For people with "
+                background={IMGTechnical}
+              />
+            </SwiperSlide>
+            <SwiperSlide className="  rounded-3xl">
+              <HomeEventComponent
+                title="Non-Technical"
+                description="it is non techincal events, loren ipsum its on load rasengan macbook pro router keyboard it is pendrive paper"
+                background={IMGNonTechnical}
+              />
+            </SwiperSlide>
+            <SwiperSlide className="  rounded-3xl ">
+              <HomeEventComponent
+                title="Pro Shows"
+                description="For people with friends"
+                background={IMGProShow}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </section>
       </section>
 
-      <section className="w-full relative flex items-center justify-center border-y  border-cream">
+      <section
+        id="contact"
+        className="flex flex-col relative min-h-screen w-full p-10 md:px-24 md:py-16 lg:snap-end"
+      >
+        <Image
+          className="h-screen -z-20 bg-[#272727]"
+          alt="bg"
+          src={BGAbout}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          loading="lazy"
+        />
+
+        {/*
+        <h1 className="font-oranienbaum text-5xl text-cream pb-3">Sponsors</h1>
+        <section className="min-h-40 xl:min-h-48 bg-red-200"></section>
+*/}
+
+        <h1 className="font-oranienbaum text-5xl text-cream py-8">
+          {isContactComp ? "Contact Us" : "Location"}
+        </h1>
+
+        {isContactComp ? (
+          <section className="h-fit xl:h-0 p-6 flex flex-col items-center justify-center flex-grow space-x-5 w-full xl:w-3/4 self-center rounded-md bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-100 border border-gray-600">
+            <h1 className="text-3xl xl:text-5xl text-[#f0f0f0] pb-3">Phone</h1>
+
+            <ul className="text-base xl:text-xl text-cream text-center space-y-1">
+              <li>
+                <h1>
+                  Gaythrie ( Event Head ) <br className="xl:hidden" />
+                  +91 8015929273
+                </h1>
+              </li>
+
+              <li>
+                <h1>
+                  Amrize ( Even Co-ordinator ) <br className="xl:hidden" /> +91
+                  9150472413
+                </h1>
+              </li>
+
+              <li>
+                <h1>Bitspace ( Web Dev Team ) </h1>
+              </li>
+            </ul>
+
+            <button
+              onClick={() => setContactComp(false)}
+              className="mt-5 rounded-md cursor-pointer bg-[#f0f0f0] p-2 px-3 text-grey hover:bg-cream xl:mr-3"
+            >
+              Location
+            </button>
+          </section>
+        ) : (
+          <section className="h-fit xl:h-0 p-6 flex flex-col xl:flex-row flex-grow xl:space-x-5 space-y-5 xl:space-y-0 w-full xl:w-3/4 self-center rounded-md bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-100 border border-gray-600">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62198.13500334535!2d80.03678337390197!3d13.011237000629103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f4d07355bab5%3A0xbb6063169c4ed4d9!2sChennai%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1708087898963!5m2!1sen!2sin"
+              loading="lazy"
+            ></iframe>
+
+            <section className="text-cream flex flex-col items-center justify-center h-full w-full xl:w-0 flex-grow">
+              <h1 className="text-xl text-[#f0f0f0] font-bold text-center xl:text-4xl md:text-3xl">
+                Chennai Institute of Technology
+              </h1>
+              <p className="text-center pt-3">
+                SH-113, Sarathy Nagar,
+                <br />
+                Pudupedu Kundrathur,
+                <br />
+                Sriperumbudur Main Road,
+                <br />
+                Chennai, Tamil Nadu
+                <br />
+                PIN : 600069
+              </p>
+
+              <button
+                onClick={() => setContactComp(true)}
+                className="mt-3 rounded-md cursor-pointer bg-[#f0f0f0] p-2 px-3 text-grey hover:bg-cream mr-3"
+              >
+                Contact Us
+              </button>
+            </section>
+          </section>
+        )}
+      </section>
+
+      <section className="w-full relative flex items-center justify-center border-y  border-cream ">
         <Image
           className="h-screen -z-10 bg-[#272727]"
           alt="bg"
@@ -377,7 +526,7 @@ const Main = () => {
             alt="TK-logo"
             width={500}
             height={90}
-            src={TakshashilaSecondaryLogo}
+            src={TakshashilaTextLogo}
             className="w-full max-w-56"
           />
         </section>
@@ -385,19 +534,28 @@ const Main = () => {
         <section className="hidden text-[#f0f0f0] w-2/3 lg:flex lg:justify-end lg:items-center lg:gap-x-5">
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Socials</h1>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.instagram.com/cittakshashila/"
+            >
               Instagram
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://m.facebook.com/p/CIT-Takshashila-100064056814271/"
+            >
               Facebook
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.linkedin.com/in/cittakshashila/?originalSubdomain=in"
+            >
               LinkedIn
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="8015929273">
               Phone
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="takshashila@citchennai.net">
               Email
             </a>
           </section>
@@ -406,41 +564,47 @@ const Main = () => {
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Events</h1>
-            <a className="text-cream text-xs" href="#">
+            <Link className="text-cream text-xs" href="/events">
               Technical
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Non Technical
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Workshops
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Pro-Shows
-            </a>
-            <a className="text-cream text-xs" href="#">
+            </Link>
+            <Link className="text-cream text-xs" href="/events">
               Others
-            </a>
+            </Link>
           </section>
 
           <div className="bg-cream w-[1px] h-24 mx-8" />
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Website</h1>
-            <a className="text-cream text-xs" href="#">
-              Terms & Policy
+            <a
+              className="text-cream text-xs"
+              href="https://www.bitspace.org.in/team"
+            >
+              Team
             </a>
-            <a className="text-cream text-xs" href="#">
-              Services
+            <a
+              className="text-cream text-xs"
+              href="https://www.citchennai.edu.in/"
+            >
+              College Site
             </a>
-            <a className="text-cream text-xs" href="#">
-              Account
-            </a>
-            <a className="text-cream text-xs" href="#">
-              Collage Site
-            </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://github.com/bitspaceorg/"
+            >
               Developer
+            </a>
+            <a className="text-cream text-xs" href="info@bitspace.org.in">
+              Contact
             </a>
           </section>
 
@@ -448,26 +612,32 @@ const Main = () => {
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Support</h1>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="bitspace.org.in">
               Takshashila Team
             </a>
             <a className="text-cream text-xs" href="#">
               Report
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.bitspace.org.in/"
+            >
               Developer
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a className="text-cream text-xs" href="#contact">
               Contact Us
             </a>
-            <a className="text-cream text-xs" href="#">
+            <a
+              className="text-cream text-xs"
+              href="https://www.bitspace.org.in/"
+            >
               Credits
             </a>
           </section>
         </section>
       </section>
 
-      <section className="bg-grey flex justify-center gap-3 text-white text-[9px] py-2">
+      <section className="bg-grey flex justify-center gap-3 text-white text-[9px] py-2 lg:snap-end">
         <h1>cittakshashila.in</h1>
         <h1>Copyright &copy; 2024</h1>
         <h1>Website By Team :bitspace</h1>

@@ -26,9 +26,7 @@ export default function CartSheet() {
         .then((data) => {
           console.log(data);
         });
-    } catch (err: any) {
-      if (err.response.status === 550) router.push("/register");
-    }
+    } catch (err: any) {}
   };
 
   return (
@@ -36,6 +34,7 @@ export default function CartSheet() {
       className={cn(
         `
         bg-opacity-60 absolute top-0 min-h-screen min-w-60 lg:min-w-[500px] z-40 
+        border-l- rounded-l-xl
         backdrop-blur pt-36 py-24 px-5 flex flex-col  justify-between transition-all duration-700 ease-in-out overflow-auto`,
         cartOpen ? "right-0" : "-right-[600px]",
       )}
@@ -55,9 +54,12 @@ export default function CartSheet() {
             <CartPass day={"DAY3"} event={cart.DAY3} />
           </section>
 
+          <h1 className="text-center text-cream text-md font-oranienbaum">Boarding starts tomorrow ! ! !</h1>
+
           <button
-            className="px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white"
+            className="px-6 py-2 text-black cursor-not-allowed text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white"
             onClick={() => confirmEvents()}
+            disabled
           >
             Confirm
           </button>

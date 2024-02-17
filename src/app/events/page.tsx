@@ -5,6 +5,7 @@ import Card from "@/components/Card";
 import { EVENT, FOLDER_TYPE } from "@/libs/types";
 import { PARSE } from "@/libs/utils";
 import { NavBar } from "@/components";
+import { IconLoader } from "@tabler/icons-react";
 
 export default function Events() {
     const [filter, setFilter] = useState<string>("All");
@@ -57,6 +58,7 @@ export default function Events() {
         }, 100);
     }, [queue]);
 
+<<<<<<< HEAD
     const filteredEvents = EventList.filter(
         (item) => filter === "All" || item.details.type === filter,
     );
@@ -124,4 +126,76 @@ export default function Events() {
             </div>
         </div>
     );
+=======
+  return (
+    <div className="bg-paint-effect bg-cover bg-center bg-[#272727] h-screen lg:snap-y lg:snap-mandatory overflow-x-hidden">
+      <div className=" bg-fixed bg-cover bg-center m-2">
+        <NavBar />
+
+        {EventList.length === 0 ? (
+          <div className="min-h-screen flex items-center justify-center">
+            <IconLoader size={72} className="animate-spin text-white" />
+          </div>
+        ) : (
+          <div className="relative top-32 flex flex-row flex-wrap justify-center">
+            <div className="sticky w-full flex justify-center items-center xl:top-36 top-3 px-5  md:z-[999] z-40 ">
+              <ul className="text-cream px-10 text-md flex justify-center flex-wrap items-center space-x-4 rounded-xl backdrop-blur py-4 cursor-pointer">
+                <a
+                  className={filter === "All" ? "underline text-[#f0f0f0]" : ""}
+                  onClick={() => setFilter("All")}
+                >
+                  All
+                </a>
+                <a
+                  className={
+                    filter === "TECHNICAL" ? "underline text-[#f0f0f0]" : ""
+                  }
+                  onClick={() => setFilter("TECHNICAL")}
+                >
+                  Technical
+                </a>
+                <a
+                  className={
+                    filter === "NON-TECHNICAL" ? "underline text-[#f0f0f0]" : ""
+                  }
+                  onClick={() => setFilter("NON-TECHNICAL")}
+                >
+                  Non-Technical
+                </a>
+                <a
+                  className={
+                    filter === "WORKSHOP" ? "underline text-[#f0f0f0]" : ""
+                  }
+                  onClick={() => setFilter("WORKSHOP")}
+                >
+                  Workshops
+                </a>
+                <a
+                  className={
+                    filter === "PRO SHOW" ? "underline text-[#f0f0f0]" : ""
+                  }
+                  onClick={() => setFilter("PRO SHOW")}
+                >
+                  Pro Show
+                </a>
+                <a
+                  className={
+                    filter === "ONLINE EVENT" ? "underline text-[#f0f0f0]" : ""
+                  }
+                  onClick={() => setFilter("ONLINE EVENT")}
+                >
+                  Online Event
+                </a>
+              </ul>
+            </div>
+
+            {filteredEvents.map((item, index: number) => (
+              <Card events={item} key={index} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+>>>>>>> upstream/main
 }

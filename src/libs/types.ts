@@ -20,10 +20,10 @@ export type EVENT = {
     prizes: Array<string>;
     contacts: Array<CONTACT>;
     links: Array<string>;
+    glink?: string, 
     fee: number;
     day: "DAY1" | "DAY2" | "DAY3";
     category: "WK" | "GEN";
-    code: string;
 };
 
 // INTERFACES FOR CART

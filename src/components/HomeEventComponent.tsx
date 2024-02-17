@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface prop {
   title: string;
@@ -12,7 +13,7 @@ export default function HomeEventComponent({
   background,
 }: prop) {
   return (
-    <section className="relative flex flex-col items-center hover:justify-between justify-end w-full rounded-xl p-5">
+    <section className="h-full xl:h-auto relative flex flex-col items-center justify-between w-full rounded-xl py-5">
       <Image
         className="rounded-l -z-10"
         src={background}
@@ -21,9 +22,12 @@ export default function HomeEventComponent({
         objectPosition="center"
         alt={title}
       />
-      <h1 className="transition-all text-cream text-4xl">{title}</h1>
-      <p className="hidden  text-black text-base ">{description}</p>
-      <button className="hidden  bg-white w-3/4">Learn More</button>
+      <h1 className="transition-all text-white text-center py-2 text-4xl w-full backdrop-blur bg-opacity-50 bg-cream shadow">
+        {title}
+      </h1>
+      <Link href={"/events"} className="bg-white w-3/4 py-2 font-bold text-xl text-center font-oranienbaum rounded-md  shadow">
+        Learn More
+      </Link>
     </section>
   );
 }

@@ -30,10 +30,10 @@ export const useCart = create<CartState>()(
         set((state) => {
           const newCart = state.cart;
 
-          if (newCart.codes[event.day].includes(event.code)) return {};
+          if (newCart.codes[event.day].includes(event.id)) return {};
 
           newCart[event.day][event.category].push(event);
-          newCart.codes[event.day].push(event.code);
+          newCart.codes[event.day].push(event.id);
 
           return { cart: newCart };
         });
@@ -55,7 +55,7 @@ export const useCart = create<CartState>()(
           const newCart = state.cart;
 
           newCart[day][category] = [
-            ...newCart[day][category].filter((obj) => obj.code !== code),
+            ...newCart[day][category].filter((obj) => obj.id !== code),
           ];
           newCart.codes[day] = [
             ...newCart.codes[day].filter((i) => i !== code),
