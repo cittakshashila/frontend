@@ -47,7 +47,7 @@ const Event = ({ params: { id } }: { params: { id: string } }) => {
                         onClick={() => setCurr("details")}>Details</button>
                     {curr === "description" ? <div className="font-oranienbaum sm:text-xl text-lg my-10">{data.description}</div> :
                         curr === "rules" ? data.rules.map((item: String, index: number) => {
-                            return <div key={index} className="font-oranienbaum sm:text-xl text-lg my-3">{index + 1}. {item}</div>
+                            return <div key={index} className="font-oranienbaum sm:text-xl text-lg my-3">{item}</div>
                         }) : Object.entries(data.details).map((value, index) => {
                             return <div className="font-oranienbaum sm:text-xl text-lg my-10" key={index}>{value[0].toUpperCase()} : {value[1]}</div>
                         })
