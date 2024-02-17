@@ -6,28 +6,28 @@ import { EventList } from "@/libs/data";
 import { useAuth } from "@/store";
 
 export default function Events() {
-  const { login } = useProfileButton();
-  const { auth } = useAuth();
+    const { login } = useProfileButton();
+    const { auth } = useAuth();
 
-  if (!auth) {
-    login();
+    if (!auth) {
+        login();
+        return (
+            <main className="flex min-h-screen flex-col bg-gray-800 ">
+                <div className="w-[100vw] h-[100vh] flex justify-center items-center">
+                    <span className="text-3xl text-white">Click Login and Continue</span>
+                </div>
+            </main>
+        );
+    }
+
     return (
-      <main className="flex min-h-screen flex-col bg-gray-800 ">
-        <div className="w-[100vw] h-[100vh] flex justify-center items-center">
-          <span className="text-3xl text-white">Click Login and Continue</span>
-        </div>
-      </main>
+        <main className="flex min-h-screen flex-col bg-gray-800 ">
+            <NavBar />
+            <section className="  pt-32 text-center ">
+                {EventList.map((event) => (
+                    <AddToCartButton key={event.code} event={event} />
+                ))}
+            </section>
+        </main>
     );
-  }
-
-  return (
-    <main className="flex min-h-screen flex-col bg-gray-800 ">
-      <NavBar />
-      <section className="  pt-32 text-center ">
-        {EventList.map((event) => (
-          <AddToCartButton key={event.code} event={event} />
-        ))}
-      </section>
-    </main>
-  );
 }
