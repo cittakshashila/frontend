@@ -14,7 +14,7 @@ export default function HomeEventComponent({
   return (
     <section className="relative flex flex-col items-center hover:justify-between justify-end w-full rounded-xl p-5">
       <Image
-        className="rounded-xl -z-10"
+        className="rounded-l -z-10"
         src={background}
         layout="fill"
         objectFit="cover"
