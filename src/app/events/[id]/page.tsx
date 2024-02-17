@@ -33,26 +33,35 @@ const Event = ({ params: { id } }: { params: { id: string } }) => {
                 <div className="font-oranienbaum sm:text-5xl text-3xl my-10"> {data.title} </div>
                 <div className="sm:text-xl text-lg">
                     <div className="font-oranienbaum"> {data.details.date} </div>
-                    <div className="font-oranienbaum"> Chennai Institute of Technology </div>
-                    <div className="font-oranienbaum"> Technical </div>
+                    <div className="font-oranienbaum my-2"> Chennai Institute of Technology </div>
+                    <div className="font-oranienbaum"> {data.details.type}</div>
                 </div>
                 <div className="my-10">
                     <button className={`font-oranienbaum sm:text-3xl text-xl transition-all ${curr === "description" && 'border-b-4'}`}
                         onClick={() => setCurr("description")}>Description</button>
-                    <button className={`font-oranienbaum sm:text-3xl text-xl mx-5 transition-all ${curr === "rules" && 'border-b-4'}`}
-                        onClick={() => setCurr("rules")}>Rules</button>
-                    <button className={`font-oranienbaum sm:text-3xl text-xl transition-all ${curr === "details" && 'border-b-4'}`}
+                     { ( data.rules && data.rules.length > 0 ) &&
+                     <button className={`font-oranienbaum sm:text-3xl text-xl mx-5 transition-all ${curr === "rules" && 'border-b-4'}`}
+                        onClick={() => setCurr("rules")}>Rules</button> }
+                    <button className={`font-oranienbaum sm:text-3xl text-xl transition-all ${curr === "details" && 'border-b-4'}
+                    ${((!(data.rules)) || (!(data.rules.length > 0))) && "mx-5" }`}
                         onClick={() => setCurr("details")}>Details</button>
-                    {curr === "description" ? <div className="font-oranienbaum sm:text-xl text-lg my-10">{data.description}</div> :
+                    <div className="mt-8">
+                    {curr === "description" ? <div className="font-oranienbaum sm:text-xl text-lg">{data.description}</div> :
                         curr === "rules" ? data.rules.map((item: String, index: number) => {
-                            return <div key={index} className="font-oranienbaum sm:text-xl text-lg my-10">{index + 1}. {item}</div>
+                            return <div key={index} className="font-oranienbaum sm:text-xl text-lg my-3">{item}</div>
                         }) : Object.entries(data.details).map((value, index) => {
-                            return <div className="font-oranienbaum sm:text-xl text-lg my-10">{value[0].toUpperCase()} : {value[1]}</div>
+                            return <div className="font-oranienbaum sm:text-xl text-lg" key={index}>{value[0].toUpperCase()} : {value[1]}</div>
                         })
                     }
+                    </div>
                 </div>
-                <AddToCartButton />
-            </div>
+                <div className="pb-10">
+                { data.details.type === "ONLINE EVENT" ?
+                    <Link href={data.glink || ""} className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg">Register</Link> :
+                    <AddToCartButton event={data}/>
+                }
+                </div>
+        </div>
         </div>
         <Image src={MEDIA_URL(data.id, 1)} alt="Event Photo" fill className="object-cover min-w-full min-h-full" />
     </>)
