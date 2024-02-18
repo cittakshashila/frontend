@@ -13,19 +13,46 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#18181b",
     icons: [
       {
-        src: "favicon.ico",
-        sizes: "64x64 32x32 24x24 16x16",
-        type: "image/x-icon",
+        src: "icons/takshashila-logo-64.png",
+        sizes: "64x64",
+        type: "image/png",
+      },
+      {
+        src: "icons/takshashila-logo-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        src: "icons/takshashila-logo-16.png",
+        sizes: "16x16",
+        type: "image/png",
       },
       {
         src: "icons/takshashila-submark-logo-192.png",
         sizes: "192x192",
         type: "image/png",
+        purpose: "maskable",
       },
       {
-        src: "icons/takshashila-submark-logo-192.png",
+        src: "icons/takshashila-submark-logo-512.png",
         sizes: "512x512",
         type: "image/png",
+      },
+    ],
+    screenshots: [
+      {
+        src: "screenshots/Screenshotpor.png",
+        type: "image/png",
+        sizes: "540x720",
+        //@ts-ignore
+        form_factor: "narrow",
+      },
+      {
+        src: "screenshots/Screenshotlsc.png",
+        type: "image/png",
+        sizes: "720x540",
+        //@ts-ignore
+        form_factor: "wide",
       },
     ],
   };
