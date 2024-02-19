@@ -1,76 +1,79 @@
-"use client";
-import { EVENT } from "@/libs/types";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { MEDIA_URL } from "@/libs/utils";
 import Image from "next/image";
+import { title } from "process";
+
+import { Variants, motion } from "framer-motion";
 import Link from "next/link";
 
 interface Props {
-    id: string;
-    name: string;
+  id: string;
+  name: string;
+  date: string;
+  category: string;
 }
 
-const Card = ({ id, name }: Props) => {
-    const [isMouseOver, setIsMouseOver] = useState(false);
+const hoverContainerVarient: Variants = {
+  notHovered: { translateY: 100, opacity: 0 },
+  hovered: { filter: "grayscale" },
+};
 
-    const handleMouseEnter = () => {
-        setIsMouseOver(true);
-    };
+const hoverTitleVarient: Variants = {
+  notHovered: { y: 0 },
+  hovered: { y: -300 },
+};
 
-    const handleMouseLeave = () => {
-        setIsMouseOver(false);
-    };
-    return (
-        <motion.div
-            className={`group relative text-center shadow m-5 md:mt-20 mt-10 sm:mx-10 sm:min-h-[380px] h-[500px] sm:min-w-[320px] w-[300px] flex flex-col justify-end  hover:grayscale  transition-all delay-100 ease-linear`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+const hoverButtonVarient: Variants = {
+  notHovered: { opacity: 0 },
+  hovered: { opacity: 1 },
+};
+
+const hoverSpanVarient: Variants = {
+  notHovered: { opacity: 0 },
+  hovered: { opacity: 1 },
+};
+
+const Card = ({ id, name, date, category }: Props) => {
+  return (
+    <motion.section
+      variants={hoverContainerVarient}
+      layout
+      initial="notHovered"
+      animate={{ translateY: 0, opacity: 1 }}
+      whileHover="hovered"
+      className="group border-[#D7D7D7] overflow-clip rounded-md border relative h-[550px] flex flex-col p-10 px-2 items-center justify-end"
+    >
+      <Image
+        loading="lazy"
+        fill
+        src={MEDIA_URL(id, 2)}
+        alt={title}
+        className="z-[1] group-hover:grayscale group-hover:scale-110 object-center object-cover transition-all"
+        sizes=""
+      />
+
+      <section className="fade-overlay" />
+
+      <motion.h1
+        variants={hoverTitleVarient}
+        className="z-[3] inline-flex flex-col text-white text-2xl lg:text-4xl text-center font-oranienbaum"
+      >
+        {name}
+        <motion.span variants={hoverSpanVarient} className="text-xs">
+          {date} | {category}
+        </motion.span>
+      </motion.h1>
+
+      <motion.div variants={hoverButtonVarient} className="z-[3] ">
+        <Link
+          href={`events/${id}`}
+          className="border border-cream p-3 text-grey text-center rounded-md bg-cream "
         >
-            <div style={{ width: "100%", height: "500px", position: "relative" }}>
-                <div className="absolute  z-30 w-full h-[500px] bg-[linear-gradient(0deg,rgba(0,0,0,0.95)_6.82%,rgba(0,0,0,0.00)_81.44%)]" />
-                <Image
-                    className="absolute w-full  h-[500px] object-cover z-0"
-                    width={300}
-                    height={500}
-                    src={MEDIA_URL(id, 1)}
-                    alt={id}
-                />
-            </div>
-            <motion.div className="w-full flex flex-col justify-end my-4 z-30">
-                <motion.h3
-                    className="text-white text-3xl font-oranienbaum w-full drop-shadow-2xl text-shadow	"
-                    animate={{
-                        y: isMouseOver ? -350 : -50,
-                    }}
-                    transition={{ ease: "easeInOut", duration: isMouseOver ? 0.5 : 0.75 }}
-                >
-                    {name}
-                </motion.h3>
-                <motion.p
-                    className="text-gray-100 text-4xl justify-center w-full absolute bottom-0 "
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        y: isMouseOver ? -250 : 0,
-                        opacity: isMouseOver ? 1 : 0,
-                    }}
-                    transition={{ ease: "easeInOut", duration: isMouseOver ? 0.75 : 0.5 }}
-                ></motion.p>
-            </motion.div>
-            <div className="w-full flex justify-center items-center absolute bottom-10 z-30">
-                <Link href={`/events/${id}`}>
-                    <motion.div
-                        className="px-8 py-2 text-2xl text-white delay-100 justify-center bg-white bg-opacity-50 z-10 hover:scale-105 hover:bg-opacity-60 transition-all ease-linear "
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: isMouseOver ? 1 : 0 }}
-                        transition={{ ease: "easeIn", duration: 0.5 }}
-                    >
-                        Learn More
-                    </motion.div>
-                </Link>
-            </div>
-        </motion.div>
-    );
+          Learn More
+        </Link>
+      </motion.div>
+    </motion.section>
+  );
 };
 
 export default Card;

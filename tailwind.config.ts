@@ -23,14 +23,14 @@ const config: Config = {
         "hero-popcorn": "url('/hero-background.webp')",
         "paint-effect": "url('/paint-effect-bg.webp')",
         "world-map": "url('/world-map-bg.webp')",
-        "world-map-white":"url('/world-map-bg.svg')" ,
+        "world-map-white": "url('/world-map-bg.svg')",
         "cit-crowd": "url('/cit-crowd-bg.webp')",
         "thai-kudam-bridge": "url('/thaikudambridge-bg.webp')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       textUnderlineOffset: {
-        16: '16px',
-      }
+        16: "16px",
+      },
     },
   },
   plugins: [],

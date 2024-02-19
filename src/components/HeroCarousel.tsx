@@ -324,7 +324,7 @@ export default function HeroCarousel() {
         </motion.section>
       </section>
 
-      <section className="absolute left-0 right-0 mx-auto z-10 w-fit bottom-28">
+      <section className="pointer-events-none absolute left-0 right-0 mx-auto z-10 w-fit bottom-28">
         <Swiper
           loop={true}
           fadeEffect={{ crossFade: true }}
@@ -333,6 +333,7 @@ export default function HeroCarousel() {
           direction="vertical"
           autoplay={{ delay: 3000 }}
           effect="fade"
+          allowTouchMove={false}
           modules={[Autoplay, EffectFade]}
           className="text-white text-center text-3xl h-10"
         >

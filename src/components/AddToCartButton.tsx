@@ -20,7 +20,7 @@ export default function AddToCartButton({ event }: prop) {
         onClick={handleClick}
         className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg"
       >
-        Add To Cart
+        Add To Wishlist 
       </button>
     </>
   );

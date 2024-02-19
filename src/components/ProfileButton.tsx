@@ -36,7 +36,7 @@ export default function ProfileButton() {
 
         <section
           className={cn(
-          " bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-70",
+            " bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-70",
             "absolute top-12 right-0 rounded-md py-5 text-cream text-center text-sm min-w-52 transition-all",
             !isOpen && "hidden",
           )}
@@ -76,7 +76,7 @@ export default function ProfileButton() {
                   </h1>
                 </li>
 
-{/*
+                {/*
                 <li>
                   <Link
                     className="block cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey"

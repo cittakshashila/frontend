@@ -10,15 +10,15 @@ import { useRouter } from "next/navigation";
 export default function CartSheet() {
   const { cart, cartOpen, toggleCart } = useCart((state) => state);
   const { auth } = useAuth((state) => state);
-  const events_id = ["OD-567"];
   const router = useRouter();
 
   const confirmEvents = async () => {
     try {
-      console.log("Here")
+      const CartCodeList = cart.codes;
       await axios
-        .get(
-          `${API_URL}/api/user/`,
+        .put(
+          `${API_URL}/user/update-cart`,
+          { CartCodeList },
           {
             headers: { authorization: `Bearer ${auth?.access_token}` },
           },
@@ -26,7 +26,7 @@ export default function CartSheet() {
         .then((data) => {
           console.log(data);
         });
-    } catch (err: any) {}
+    } catch (err: any) { }
   };
 
   return (
@@ -40,10 +40,10 @@ export default function CartSheet() {
       )}
     >
       {cart.codes.DAY1.length === 0 &&
-      cart.codes.DAY2.length === 0 &&
-      cart.codes.DAY3.length === 0 ? (
+        cart.codes.DAY2.length === 0 &&
+        cart.codes.DAY3.length === 0 ? (
         <section className="text-cream flex flex-col items-center justify-center">
-          <h1 className="text-xl lg:text-7xl text-cream">Cart Is Empty</h1>
+          <h1 className="text-xl lg:text-7xl text-cream">WishList Is Empty</h1>
           <IconShoppingCart size={72} />
         </section>
       ) : (
@@ -54,7 +54,9 @@ export default function CartSheet() {
             <CartPass day={"DAY3"} event={cart.DAY3} />
           </section>
 
-          <h1 className="text-center text-cream text-md font-oranienbaum">Boarding starts tomorrow ! ! !</h1>
+          <h1 className="text-center text-cream text-md font-oranienbaum">
+            Boarding starts tomorrow ! ! !
+          </h1>
 
           <button
             className="px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white"
