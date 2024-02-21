@@ -10,7 +10,18 @@ import IMGDjDance from "@/assets/stacked-images-about-section/tk-dj-crowd-dance.
 import IMGPeopleSitting from "@/assets/stacked-images-about-section/people-sitting-together.png";
 import IMGSriram from "@/assets/stacked-images-about-section/sriram-parthasarathy.png";
 import IMGThaikudamGuitarist from "@/assets/stacked-images-about-section/thaikudam-gutarist.png";
-
+import PSDance from "@/assets/PSDance.png";
+import PSdj from "@/assets/PSDJ.png";
+import PSTKb from "@/assets/PSTKB.png";
+import Wbs1 from "@/assets/WBS1.png";
+import Wbs2 from "@/assets/WBS2.png";
+import Wbs3 from "@/assets/WBS3.png";
+import TRc from "@/assets/TRC.png";
+import Tcode from "@/assets/TCODE.png";
+import Tdrone from "@/assets/TDRONE.png";
+import NTdance from "@/assets/NTDANCE.png";
+import NTcam from "@/assets/NTCAM.png";
+import NTdance2 from "@/assets/NTDANCE2.png";
 import {
   IMGProShow,
   IMGWorkshop,
@@ -328,7 +339,7 @@ const Main = () => {
       <section
         ref={ref2}
         id="events"
-        className="flex flex-col relative min-h-screen w-full  p-10 md:p-24 lg:p-48 lg:py-36 lg:snap-start"
+        className="flex flex-col relative min-h-screen w-full  p-10 md:p-24 lg:p-48 lg:py-24 lg:snap-start"
       >
         <Image
           className="h-screen -z-10 bg-[#272727]"
@@ -339,87 +350,42 @@ const Main = () => {
           loading="lazy"
           src={BGThaiKudamBridge}
         />
-        <h1 className="font-oranienbaum text-5xl text-cream pb-3 text-center">
-          Events
-        </h1>
-
-        <motion.section
-          className="hidden xl:flex flex-grow space-x-3"
-          initial="hidden"
-          animate={controls2}
-          variants={{
-            visible: { opacity: 1, scale: 1 },
-            hidden: { opacity: 0, scale: 0.5 },
-          }}
-          transition={{ duration: 1.5 }}
-        >
+        <section className="flex flex-col flex-grow pt-0 h-0 space-y-3">
           <HomeEventComponent
-            title="Pro Shows"
-            description="For people with friends"
-            background={IMGProShow}
+            title="Pro-Shows"
+            description="Prepare to be dazzled and entertained at our Proshows. Celebrate digital excellence at the prestigious CIDA Awards, Lose yourself in the melodies and rhythms of our Music Concert. Surrender to the beats and energy at our DJ Night,Be mesmerized by grace and precision at Choreo Night."
+            type="left"
+            image1={PSTKb}
+            image2={PSdj}
+            image3={PSDance}
           />
 
           <HomeEventComponent
-            title="Workshop"
-            description="For NERDS"
-            background={IMGWorkshop}
-          />
-
-          <HomeEventComponent
-            title="Non-Technical"
-            description="it is non techincal events, loren ipsum its on load rasengan macbook pro router keyboard it is pendrive paper"
-            background={IMGNonTechnical}
+            title="Workshops"
+            description="Explore learning and innovation with our Workshops. Learn software development in Coding, delve into storytelling in Screenplay sessions, and master digital design in Graphic Design, creating immersive experiences with expert guidance."
+            type="right"
+            image1={Wbs1}
+            image2={Wbs2}
+            image3={Wbs3}
           />
 
           <HomeEventComponent
             title="Technical"
-            description="For people with "
-            background={IMGTechnical}
+            description="Immerse yourself in intellectual challenges at our Technical Events. Participate in Drone Racing, showcase your skills in the Technical Quiz, and collaborate in Coding Challenges and Hackathons, innovating with technology."
+            type="left"
+            image1={Tcode}
+            image2={TRc}
+            image3={Tdrone}
           />
-        </motion.section>
 
-        <section className="xl:hidden text-center flex flex-1 h-0">
-          <Swiper
-            slidesPerView={"auto"}
-            effect={"creative"}
-            creativeEffect={{
-              prev: {
-                translate: [0, 0, -700],
-              },
-              next: {
-                translate: ["100%", 0, 0],
-              },
-            }}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            modules={[EffectCreative, Autoplay]}
-          >
-            <SwiperSlide className=" w-full rounded-3xl">
-              <HomeEventComponent
-                title="Technical"
-                description="For people with "
-                background={IMGTechnical}
-              />
-            </SwiperSlide>
-            <SwiperSlide className="  rounded-3xl">
-              <HomeEventComponent
-                title="Non-Technical"
-                description="it is non techincal events, loren ipsum its on load rasengan macbook pro router keyboard it is pendrive paper"
-                background={IMGNonTechnical}
-              />
-            </SwiperSlide>
-            <SwiperSlide className="  rounded-3xl ">
-              <HomeEventComponent
-                title="Pro Shows"
-                description="For people with friends"
-                background={IMGProShow}
-              />
-            </SwiperSlide>
-          </Swiper>
+          <HomeEventComponent
+            title="Non-Technical"
+            description="Experience excitement and creativity with our Non-Technical Events. Join adventure-filled Treasure Hunts, showcase talents in Rap Battles, Dance-offs, and Talent Shows. Compete in our Cooking Competition and outdoor sports tournaments like Football, emphasizing teamwork."
+            type="right"
+            image1={NTdance}
+            image2={NTcam}
+            image3={NTdance2}
+          />
         </section>
       </section>
 
