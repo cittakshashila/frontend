@@ -62,6 +62,7 @@ export interface User {
     email: string;
     picture: string;
     access_token: string;
+    verified: boolean;
 }
 
 export const REPO_OWNER = "cittakshashila";

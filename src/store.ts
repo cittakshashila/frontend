@@ -78,6 +78,7 @@ interface AuthState {
   auth: User | null;
   setAcessToken: (user: User) => void;
   removeToken: () => void;
+  setVerificationStatus: () => void;
 }
 
 const initUser: User = {
@@ -85,6 +86,7 @@ const initUser: User = {
   access_token: "",
   picture: "",
   email: "",
+  verified: false
 };
 
 export const useAuth = create<AuthState>()(
@@ -98,7 +100,25 @@ export const useAuth = create<AuthState>()(
       removeToken: () => {
         set(() => ({ auth: null }));
       },
+      setVerificationStatus: () => {
+        set((state) => ({
+          auth: state.auth
+            ? {
+                ...state.auth,
+                verified: true,
+              }
+            : null,
+        }));
+      },
     }),
     { name: "user" },
   ),
 );
+
+interface OTP { otp : string; }
+
+const newOtp: string = Math.floor(100000 + Math.random() * 900000).toString();
+
+export const useOTP = create<OTP>(()=>({
+    otp: newOtp,
+}))
