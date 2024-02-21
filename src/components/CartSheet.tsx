@@ -15,10 +15,10 @@ export default function CartSheet() {
 
   const confirmEvents = async () => {
     try {
+      console.log("Here")
       await axios
-        .put(
-          `${API_URL}/user/update-cart`,
-          { events_id },
+        .get(
+          `${API_URL}/api/user/`,
           {
             headers: { authorization: `Bearer ${auth?.access_token}` },
           },
@@ -57,9 +57,8 @@ export default function CartSheet() {
           <h1 className="text-center text-cream text-md font-oranienbaum">Boarding starts tomorrow ! ! !</h1>
 
           <button
-            className="px-6 py-2 text-black cursor-not-allowed text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white"
+            className="px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white"
             onClick={() => confirmEvents()}
-            disabled
           >
             Confirm
           </button>
