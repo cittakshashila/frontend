@@ -21,7 +21,12 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.cittakshashila.in/",
     siteName: "CIT - TAKSHASHILA 2024",
-    images: ["/thumbnail.png"],
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/titan-rocky/frontend/main/public/thumbnail.png",
+        alt: "TK-24 Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
