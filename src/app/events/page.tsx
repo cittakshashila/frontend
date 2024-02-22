@@ -48,7 +48,6 @@ export default function Events() {
                 id={key}
                 name={value.name}
                 category={value.type}
-                day={"DAY1"}
                 date = {value.date}
                 key={index}
               />

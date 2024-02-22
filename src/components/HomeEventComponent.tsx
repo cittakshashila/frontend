@@ -31,14 +31,15 @@ export default function HomeEventComponent({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h1
+      <Link
+        href={"/events"}
         className={cn(
-          "flex invisible items-center text-cream text-xl md:visible lg:text-[85px] w-1/2 px-5",
+          "flex invisible items-center text-cream text-xl md:visible lg:text-7xl w-1/2 px-5",
           type === "right" ? "text-right" : "text-left",
         )}
       >
         {title}
-      </h1>
+      </Link>
       <section className="lg:relative absolute top-0 flex flex-grow  lg:w-0">
         <section className="absolute top-0 flex -space-x-20">
           <motion.section
@@ -74,15 +75,6 @@ export default function HomeEventComponent({
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {description}
-
-          <span>
-            <Link
-              href={"/events"}
-              className="text-grey bg-cream p-1 rounded-md px-5"
-            >
-              Learn More
-            </Link>
-          </span>
         </motion.p>
 
         <h1 className="absolute text-cream sm:text-[50px] md:hidden lg:text-[85px] px-5">
