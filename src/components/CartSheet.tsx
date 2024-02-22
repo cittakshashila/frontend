@@ -14,11 +14,16 @@ export default function CartSheet() {
 
   const confirmEvents = async () => {
     try {
-      const CartCodeList = cart.codes;
+      let events_id = [
+        ...cart.codes.DAY1,
+        ...cart.codes.DAY2,
+        ...cart.codes.DAY3,
+      ];
+
       await axios
         .put(
           `${API_URL}/user/update-cart`,
-          { CartCodeList },
+          { events_id },
           {
             headers: { authorization: `Bearer ${auth?.access_token}` },
           },
@@ -26,7 +31,10 @@ export default function CartSheet() {
         .then((data) => {
           console.log(data);
         });
-    } catch (err: any) { }
+    } catch (err: any) {
+      console.log(err);
+      router.push("/register");
+    }
   };
 
   return (
@@ -40,10 +48,10 @@ export default function CartSheet() {
       )}
     >
       {cart.codes.DAY1.length === 0 &&
-        cart.codes.DAY2.length === 0 &&
-        cart.codes.DAY3.length === 0 ? (
+      cart.codes.DAY2.length === 0 &&
+      cart.codes.DAY3.length === 0 ? (
         <section className="text-cream flex flex-col items-center justify-center">
-          <h1 className="text-xl lg:text-7xl text-cream">WishList Is Empty</h1>
+          <h1 className="text-xl lg:text-7xl text-cream">Wish List Is Empty</h1>
           <IconShoppingCart size={72} />
         </section>
       ) : (
@@ -53,10 +61,6 @@ export default function CartSheet() {
             <CartPass day={"DAY2"} event={cart.DAY2} />
             <CartPass day={"DAY3"} event={cart.DAY3} />
           </section>
-
-          <h1 className="text-center text-cream text-md font-oranienbaum">
-            Boarding starts tomorrow ! ! !
-          </h1>
 
           <button
             className="px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white"

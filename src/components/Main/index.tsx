@@ -22,19 +22,16 @@ import Tdrone from "@/assets/TDRONE.png";
 import NTdance from "@/assets/NTDANCE.png";
 import NTcam from "@/assets/NTCAM.png";
 import NTdance2 from "@/assets/NTDANCE2.png";
-import {
-  IMGProShow,
-  IMGWorkshop,
-  IMGTechnical,
-  IMGNonTechnical,
-} from "@/assets/event-section";
 import HeroCarousel from "../HeroCarousel";
 
-import { IMGAgs, IMGZoom, IMGCadbery, IMGUnibics, IMGGokulCinimas } from "@/assets/sponsers";
+import {
+  IMGAgs,
+  IMGZoom,
+  IMGCadbery,
+  IMGUnibics,
+  IMGGokulCinimas,
+} from "@/assets/sponsers";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCreative } from "swiper/modules";
-import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
@@ -167,10 +164,10 @@ const Main = () => {
             }}
             transition={{ duration: 1 }}
           >
-            <h1 className="font-oranienbaum text-4xl text-cream pb-3">
+            <h1 className="font-oranienbaum text-4xl text-white pb-3">
               About CIT
             </h1>
-            <p className="text-cream text-xs md:text-base text-justify">
+            <p className="text-white text-xs md:text-base text-justify">
               A prominent institution ranking amongst the top colleges in Tamil
               Nadu, was established with an initiative to provide pragmatic
               learning. The institution has also partnered with a number of
@@ -265,10 +262,10 @@ const Main = () => {
             }}
             transition={{ duration: 1 }}
           >
-            <h1 className="font-oranienbaum text-4xl text-cream py-4">
+            <h1 className="font-oranienbaum text-4xl text-white py-4">
               About Takshashila
             </h1>
-            <p className="text-cream text-xs md:text-base text-justify">
+            <p className="text-white text-xs md:text-base text-justify">
               The Grand Annual Cultural Fiesta of Chennai Institute Of
               Technology is an eminent spectacle that gives the student
               community a platform to showcase their talents and sculpt their
@@ -343,7 +340,7 @@ const Main = () => {
       <section
         ref={ref2}
         id="events"
-        className="flex flex-col relative min-h-screen w-full  p-10 md:p-24 lg:p-48 lg:py-24 lg:snap-start"
+        className="flex flex-col relative min-h-screen h-fit w-full  p-10 md:p-24 lg:p-48 lg:py-24 lg:snap-start"
       >
         <Image
           className="h-screen -z-10 bg-[#272727]"
@@ -407,19 +404,49 @@ const Main = () => {
           loading="lazy"
         />
 
-        <h1 className="font-oranienbaum text-5xl text-cream pb-3">Sponsors</h1>
+        <h1 className="font-oranienbaum text-5xl text-white pb-3">Sponsors</h1>
 
         <section className="flex items-center min-h-40 h-40 xl:min-h-48 overflow-clip">
-          <Marquee autoFill className="flex justify-between" >
-            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGCadbery} />
-            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGAgs} />
-            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGZoom} />
-            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGGokulCinimas} />
-            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGUnibics} />
+          <Marquee autoFill className="flex justify-between">
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={300}
+              height={160}
+              src={IMGCadbery}
+            />
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={300}
+              height={160}
+              src={IMGAgs}
+            />
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={300}
+              height={160}
+              src={IMGZoom}
+            />
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={300}
+              height={160}
+              src={IMGGokulCinimas}
+            />
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={300}
+              height={160}
+              src={IMGUnibics}
+            />
           </Marquee>
         </section>
 
-        <h1 className="font-oranienbaum text-5xl text-cream py-8">
+        <h1 className="font-oranienbaum text-5xl text-white py-8">
           {isContactComp ? "Contact Us" : "Location"}
         </h1>
 

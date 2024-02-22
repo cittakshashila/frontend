@@ -23,64 +23,66 @@ export default function HomeEventComponent({
 }: prop) {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <motion.section
-      className={cn(
-        "lg:flex backdrop-blur-sm w-full h-full min-w-56 rounded-lg overflow-clip",
-        type === "left" && "flex-row-reverse",
-      )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Link
-        href={"/events"}
+    <>
+      <motion.section
         className={cn(
-          "flex invisible items-center text-cream text-xl md:visible lg:text-7xl w-1/2 px-5",
-          type === "right" ? "text-right" : "text-left",
+          "hidden  lg:flex backdrop-blur-sm w-full h-full min-w-56 rounded-lg overflow-clip",
+          type === "left" && "flex-row-reverse",
         )}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        {title}
-      </Link>
-      <section className="lg:relative absolute top-0 flex flex-grow  lg:w-0">
-        <section className="absolute top-0 flex -space-x-20">
-          <motion.section
-            initial={{ x: 0, y: 0 }}
-            animate={{ x: isHovered ? -250 : 0, y: isHovered ? 250 : 0 }}
-            transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
-          >
-            <Image src={image1} alt="image3" />{" "}
-          </motion.section>
-          <motion.section
-            initial={{ x: 0, y: 0 }}
-            animate={{ x: isHovered ? 250 : 0, y: isHovered ? -250 : 0 }}
-            transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
-          >
-            <Image src={image2} alt="image3" />
-          </motion.section>
-          <motion.section
-            initial={{ x: 0, y: 0 }}
-            animate={{ x: isHovered ? -250 : 0, y: isHovered ? 250 : 0 }}
-            transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
-          >
-            <Image src={image3} alt="image3" />
-          </motion.section>
-        </section>
-
-        <motion.p
+        <Link
+          href={"/events"}
           className={cn(
-            "flex flex-col justify-center itemscenter text-cream text-[12px] mdtext-lg px-2",
-            type === "left" ? "text-right" : "text-left",
+            "flex invisible items-center text-cream text-xl md:visible lg:text-5xl  w-1/2 px-5",
+            type === "right" ? "text-right" : "text-left",
           )}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {description}
-        </motion.p>
-
-        <h1 className="absolute text-cream sm:text-[50px] md:hidden lg:text-[85px] px-5">
           {title}
-        </h1>
+        </Link>
+        <section className="lg:relative absolute top-0 flex flex-grow  lg:w-0">
+          <section className="absolute top-0 flex -space-x-20">
+            <motion.section
+              initial={{ x: 0, y: 0 }}
+              animate={{ x: isHovered ? -250 : 0, y: isHovered ? 250 : 0 }}
+              transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
+            >
+              <Image src={image1} alt="image3" />{" "}
+            </motion.section>
+            <motion.section
+              initial={{ x: 0, y: 0 }}
+              animate={{ x: isHovered ? 250 : 0, y: isHovered ? -250 : 0 }}
+              transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
+            >
+              <Image src={image2} alt="image3" />
+            </motion.section>
+            <motion.section
+              initial={{ x: 0, y: 0 }}
+              animate={{ x: isHovered ? -250 : 0, y: isHovered ? 250 : 0 }}
+              transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
+            >
+              <Image src={image3} alt="image3" />
+            </motion.section>
+          </section>
+
+          <motion.p
+            className={cn(
+              "flex flex-col justify-center itemscenter text-cream text-[12px] mdtext-lg px-2",
+              type === "left" ? "text-right" : "text-left",
+            )}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {description}
+          </motion.p>
+        </section>
+      </motion.section>
+      <section className="relative p-5 lg:hidden backdrop-blur text-cream h-full w-full overflow-clip">
+        <Link href="/events" className="text-2xl z-10 underline">{title}</Link>
+        <p className="text-xs z-10">{description}</p>
       </section>
-    </motion.section>
+    </>
   );
 }

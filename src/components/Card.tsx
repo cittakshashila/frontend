@@ -38,9 +38,10 @@ const Card = ({ id, name, date, category }: Props) => {
     <motion.section
       variants={hoverContainerVarient}
       layout
-      initial="notHovered"
+      initial="hovered"
       animate={{ translateY: 0, opacity: 1 }}
       whileHover="hovered"
+      whileTap="hovered"
       className="group border-[#D7D7D7] overflow-clip rounded-md border relative h-[550px] flex flex-col p-10 px-2 items-center justify-end"
     >
       <Image

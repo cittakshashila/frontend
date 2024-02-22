@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export const isTeaser = process.env.IsTeaser || false;
 export const CLIENT_ID = process.env.CLIENT_ID || "";
 export const CLIENT_SECRET = process.env.CLIENT_SECRET || "";
-export const API_URL = process.env.API_HOST || "http://localhost:3000";
+export const API_URL = process.env.API_HOST || "https://api.cittakshashila.in";
 
 
 export const REPO_OWNER = "cittakshashila";

@@ -6,14 +6,17 @@ const initData: Cart = {
   DAY1: {
     WK: [],
     GEN: [],
+    PRO: [],
   },
   DAY2: {
     WK: [],
     GEN: [],
+    PRO: [],
   },
   DAY3: {
     WK: [],
     GEN: [],
+    PRO: [],
   },
   codes: {
     DAY1: [],
@@ -26,6 +29,7 @@ export const useCart = create<CartState>()(
   persist(
     (set) => ({
       cart: initData,
+
       addEvent: (event) => {
         set((state) => {
           const newCart = state.cart;
@@ -43,7 +47,11 @@ export const useCart = create<CartState>()(
         set((state) => {
           const newCart = state.cart;
 
-          newCart[day] = { WK: [], GEN: [] };
+          newCart[day] = {
+            WK: [],
+            GEN: [],
+            PRO: [],
+          };
           newCart.codes[day] = [];
 
           return { cart: newCart };
@@ -87,10 +95,12 @@ export const useAuth = create<AuthState>()(
   persist(
     (set) => ({
       auth: initUser,
-      setAcessToken: (user) =>
+      setAcessToken: (user) => {
+        const newUser: User = { ...user, verified: false };
         set(() => ({
-          auth: user,
-        })),
+          auth: newUser,
+        }));
+      },
       removeToken: () => {
         set(() => ({ auth: null }));
       },

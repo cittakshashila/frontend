@@ -1,18 +1,12 @@
 import { cn } from "@/libs/utils";
 import { Dispatch, SetStateAction, use, useState } from "react";
 interface prop {
-  isBackdrop: boolean;
   setFilter: Dispatch<SetStateAction<string>>;
 }
 
-export default function FilterComponent({ isBackdrop, setFilter }: prop) {
+export default function FilterComponent({ setFilter }: prop) {
   return (
-    <section
-      className={cn(
-        "  py-4  z-10",
-        isBackdrop && "backdrop-blur",
-      )}
-    >
+    <section className={cn("  py-4  z-10")}>
       <section className="hidden h-[60px] text-white  text-center text-3xl lg:flex space-x-5 p-4 items-center justify-center w-full ">
         <h1 onClick={() => setFilter("ALL")} className="cursor-pointer">
           All
