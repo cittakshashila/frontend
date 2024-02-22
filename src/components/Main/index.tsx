@@ -37,7 +37,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 import BGCITCrowd from "@/assets/cit-crowd-bg.webp";
-import BGAbout from "@/assets/BGEvents.png";
+import BGAbout from "@/assets/BGEvents.webp";
 import BGPaintSplash from "@/assets/paint-effect-bg.webp";
 import BGThaiKudamBridge from "@/assets/thaikudambridge-bg.webp";
 
