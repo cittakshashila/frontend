@@ -81,13 +81,7 @@ interface AuthState {
   setVerificationStatus: () => void;
 }
 
-const initUser: User = {
-  name: "",
-  access_token: "",
-  picture: "",
-  email: "",
-  verified: false
-};
+const initUser = null;
 
 export const useAuth = create<AuthState>()(
   persist(
@@ -115,10 +109,12 @@ export const useAuth = create<AuthState>()(
   ),
 );
 
-interface OTP { otp : string; }
+interface OTP {
+  otp: string;
+}
 
 const newOtp: string = Math.floor(100000 + Math.random() * 900000).toString();
 
-export const useOTP = create<OTP>(()=>({
-    otp: newOtp,
-}))
+export const useOTP = create<OTP>(() => ({
+  otp: newOtp,
+}));

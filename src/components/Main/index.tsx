@@ -30,11 +30,15 @@ import {
 } from "@/assets/event-section";
 import HeroCarousel from "../HeroCarousel";
 
+import { IMGAgs, IMGZoom, IMGCadbery, IMGUnibics, IMGGokulCinimas } from "@/assets/sponsers";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
+
+import Marquee from "react-fast-marquee";
 
 import BGCITCrowd from "@/assets/cit-crowd-bg.webp";
 import BGAbout from "@/assets/BGEvents.png";
@@ -403,17 +407,24 @@ const Main = () => {
           loading="lazy"
         />
 
-        {/*
         <h1 className="font-oranienbaum text-5xl text-cream pb-3">Sponsors</h1>
-        <section className="min-h-40 xl:min-h-48 bg-red-200"></section>
-*/}
+
+        <section className="flex items-center min-h-40 h-40 xl:min-h-48 overflow-clip">
+          <Marquee autoFill className="flex justify-between" >
+            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGCadbery} />
+            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGAgs} />
+            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGZoom} />
+            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGGokulCinimas} />
+            <Image className="px-2 rounded-xl" alt="cadbery" width={300} height={160} src={IMGUnibics} />
+          </Marquee>
+        </section>
 
         <h1 className="font-oranienbaum text-5xl text-cream py-8">
           {isContactComp ? "Contact Us" : "Location"}
         </h1>
 
         {isContactComp ? (
-          <section className="h-fit xl:h-0 p-6 flex flex-col items-center justify-center flex-grow space-x-5 w-full xl:w-3/4 self-center rounded-md bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-100 border border-gray-600">
+          <section className="h-fit xl:h-0 p-6 flex flex-col items-center justify-center flex-grow lg:space-x-5 w-full xl:w-3/4 self-center rounded-md bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-100 border border-gray-600">
             <h1 className="text-3xl xl:text-5xl text-[#f0f0f0] pb-3">Phone</h1>
 
             <ul className="text-base xl:text-xl text-cream text-center space-y-1">

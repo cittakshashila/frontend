@@ -63,9 +63,10 @@ export default function HomeEventComponent({
             <Image src={image3} alt="image3" />
           </motion.section>
         </section>
+
         <motion.p
           className={cn(
-            "flex items-center text-cream text-[12px] md:text-lg px-2",
+            "flex flex-col justify-center itemscenter text-cream text-[12px] mdtext-lg px-2",
             type === "left" ? "text-right" : "text-left",
           )}
           initial={{ opacity: 0 }}
@@ -73,7 +74,17 @@ export default function HomeEventComponent({
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {description}
+
+          <span>
+            <Link
+              href={"/events"}
+              className="text-grey bg-cream p-1 rounded-md px-5"
+            >
+              Learn More
+            </Link>
+          </span>
         </motion.p>
+
         <h1 className="absolute text-cream sm:text-[50px] md:hidden lg:text-[85px] px-5">
           {title}
         </h1>
