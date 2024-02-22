@@ -30,10 +30,10 @@ export const useCart = create<CartState>()(
         set((state) => {
           const newCart = state.cart;
 
-          if (newCart.codes[event.day].includes(event.code)) return {};
+          if (newCart.codes[event.day].includes(event.id)) return {};
 
           newCart[event.day][event.category].push(event);
-          newCart.codes[event.day].push(event.code);
+          newCart.codes[event.day].push(event.id);
 
           return { cart: newCart };
         });
@@ -55,7 +55,7 @@ export const useCart = create<CartState>()(
           const newCart = state.cart;
 
           newCart[day][category] = [
-            ...newCart[day][category].filter((obj) => obj.code !== code),
+            ...newCart[day][category].filter((obj) => obj.id !== code),
           ];
           newCart.codes[day] = [
             ...newCart.codes[day].filter((i) => i !== code),
@@ -78,6 +78,7 @@ interface AuthState {
   auth: User | null;
   setAcessToken: (user: User) => void;
   removeToken: () => void;
+  setVerificationStatus: () => void;
 }
 
 const initUser: User = {
@@ -85,6 +86,7 @@ const initUser: User = {
   access_token: "",
   picture: "",
   email: "",
+  verified: false
 };
 
 export const useAuth = create<AuthState>()(
@@ -98,7 +100,25 @@ export const useAuth = create<AuthState>()(
       removeToken: () => {
         set(() => ({ auth: null }));
       },
+      setVerificationStatus: () => {
+        set((state) => ({
+          auth: state.auth
+            ? {
+                ...state.auth,
+                verified: true,
+              }
+            : null,
+        }));
+      },
     }),
     { name: "user" },
   ),
 );
+
+interface OTP { otp : string; }
+
+const newOtp: string = Math.floor(100000 + Math.random() * 900000).toString();
+
+export const useOTP = create<OTP>(()=>({
+    otp: newOtp,
+}))

@@ -1,53 +1,76 @@
-"use client"
-import { EventList } from "@/libs/types";
+"use client";
+import { EVENT } from "@/libs/types";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { MEDIA_URL } from "@/libs/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
-  events: EventList;
+    id: string;
+    name: string;
 }
 
-const Card = ({ events }: Props) => {
-  const cardStyle: React.CSSProperties = {
-    backgroundImage: `url(${events.event_img})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    color: "white",
-    filter: "contrast(0.85) brightness(0.9) grayscale(0.2) blur(0px)",
-    minHeight: "300px",
-    position: "relative",
-  };
+const Card = ({ id, name }: Props) => {
+    const [isMouseOver, setIsMouseOver] = useState(false);
 
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+    const handleMouseEnter = () => {
+        setIsMouseOver(true);
+    };
 
-  return (
-    <div
-      className="relative text-center card border-2 border-gray-700 m-5 p-5 sm:min-h-[380px] h-[450px]  rounded sm:min-w-[350px] w-[300px]"
-      style={cardStyle}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="p-5 h-[90%]  w-[100%]">
-        {isHovered && (
-          <div className="mt-5">
-            <p>{events.event_type}|{events.event_date}</p>
-          </div>
-        )}
-        {isHovered && (
-          <div className="text-2xl mt-12">
-            {events.event_tag}
-          </div>
-        )}
-        {isHovered && (
-          <button className="mt-5 sm:mt-20 p-3  text-[#FFF] rounded-lg bg-gray-200 bg-opacity-30">
-            Learn More
-          </button>
-        )}
-        <div className="text">
-          {events.event_name}
-        </div>
-      </div>
-    </div>
-  );
+    const handleMouseLeave = () => {
+        setIsMouseOver(false);
+    };
+    return (
+        <motion.div
+            className={`group relative text-center shadow m-5 md:mt-20 mt-10 sm:mx-10 sm:min-h-[380px] h-[500px] sm:min-w-[320px] w-[300px] flex flex-col justify-end  hover:grayscale  transition-all delay-100 ease-linear`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            <div style={{ width: "100%", height: "500px", position: "relative" }}>
+                <div className="absolute  z-30 w-full h-[500px] bg-[linear-gradient(0deg,rgba(0,0,0,0.95)_6.82%,rgba(0,0,0,0.00)_81.44%)]" />
+                <Image
+                    className="absolute w-full  h-[500px] object-cover z-0"
+                    width={300}
+                    height={500}
+                    src={MEDIA_URL(id, 1)}
+                    alt={id}
+                />
+            </div>
+            <motion.div className="w-full flex flex-col justify-end my-4 z-30">
+                <motion.h3
+                    className="text-white text-3xl font-oranienbaum w-full drop-shadow-2xl text-shadow	"
+                    animate={{
+                        y: isMouseOver ? -350 : -50,
+                    }}
+                    transition={{ ease: "easeInOut", duration: isMouseOver ? 0.5 : 0.75 }}
+                >
+                    {name}
+                </motion.h3>
+                <motion.p
+                    className="text-gray-100 text-4xl justify-center w-full absolute bottom-0 "
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        y: isMouseOver ? -250 : 0,
+                        opacity: isMouseOver ? 1 : 0,
+                    }}
+                    transition={{ ease: "easeInOut", duration: isMouseOver ? 0.75 : 0.5 }}
+                ></motion.p>
+            </motion.div>
+            <div className="w-full flex justify-center items-center absolute bottom-10 z-30">
+                <Link href={`/events/${id}`}>
+                    <motion.div
+                        className="px-8 py-2 text-2xl text-white delay-100 justify-center bg-white bg-opacity-50 z-10 hover:scale-105 hover:bg-opacity-60 transition-all ease-linear "
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: isMouseOver ? 1 : 0 }}
+                        transition={{ ease: "easeIn", duration: 0.5 }}
+                    >
+                        Learn More
+                    </motion.div>
+                </Link>
+            </div>
+        </motion.div>
+    );
 };
 
 export default Card;

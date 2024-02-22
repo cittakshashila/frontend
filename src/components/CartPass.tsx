@@ -61,12 +61,12 @@ export default function CartPass({ day, event }: prop) {
           {event.GEN.map((event_name) => (
             <li
               className="inline-flex gap-x-1 items-center"
-              key={event_name.code}
+              key={event_name.id}
             >
               {event_name.title}
               <span
                 onClick={() => {
-                  removeEvent(event_name.code, event_name.day, "GEN");
+                  removeEvent(event_name.id, event_name.day, "GEN");
                 }}
                 className="cursor-pointer hover:text-red-400"
               >
@@ -81,12 +81,12 @@ export default function CartPass({ day, event }: prop) {
           {event.WK.map((event_name) => (
             <li
               className="inline-flex gap-x-1 items-center"
-              key={event_name.code}
+              key={event_name.id}
             >
               {event_name.title}
               <span
                 onClick={() => {
-                  removeEvent(event_name.code, event_name.day, "WK");
+                  removeEvent(event_name.id, event_name.day, "WK");
                 }}
                 className="cursor-pointer hover:text-red-400"
               >

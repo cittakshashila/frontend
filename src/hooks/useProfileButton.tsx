@@ -1,4 +1,3 @@
-import { useAuthContext } from "@/contexts/AuthContext";
 import { useAuth } from "@/store";
 import {
   googleLogout,
