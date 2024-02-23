@@ -61,7 +61,7 @@ const Card = ({ id, name, date, category }: Props) => {
       >
         {name}
         <motion.span variants={hoverSpanVarient} className="text-sm">
-          {date} | {category}
+          {date} {category && "|"} {category}
         </motion.span>
       </motion.h1>
 
