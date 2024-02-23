@@ -25,6 +25,8 @@ const initData: Cart = {
   },
 };
 
+localStorage.clear();
+
 export const useCart = create<CartState>()(
   persist(
     (set) => ({
@@ -78,7 +80,10 @@ export const useCart = create<CartState>()(
         set((state) => ({ cartOpen: !state.cartOpen }));
       },
     }),
-    { name: "cart" },
+    {
+      name: "cart",
+      storage: createJSONStorage(() => sessionStorage),
+    },
   ),
 );
 
@@ -108,9 +113,9 @@ export const useAuth = create<AuthState>()(
         set((state) => ({
           auth: state.auth
             ? {
-                ...state.auth,
-                verified: true,
-              }
+              ...state.auth,
+              verified: true,
+            }
             : null,
         }));
       },
