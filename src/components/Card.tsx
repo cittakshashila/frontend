@@ -60,7 +60,7 @@ const Card = ({ id, name, date, category }: Props) => {
         className="z-[3] inline-flex flex-col text-white text-2xl lg:text-4xl text-center font-oranienbaum"
       >
         {name}
-        <motion.span variants={hoverSpanVarient} className="text-xs">
+        <motion.span variants={hoverSpanVarient} className="text-sm">
           {date} | {category}
         </motion.span>
       </motion.h1>

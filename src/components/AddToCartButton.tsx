@@ -25,6 +25,7 @@ export default function AddToCartButton({ event }: prop) {
       theme: "light",
     });
 
+    console.log(event);
     addEvent(event);
   };
 

@@ -464,7 +464,7 @@ const Main = () => {
 
               <li>
                 <h1>
-                  Amrize ( Even Co-ordinator ) <br className="xl:hidden" /> +91
+                  Amrize ( Event Co-ordinator ) <br className="xl:hidden" />
                   +91 8015929273
                 </h1>
               </li>

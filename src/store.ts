@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 import { Cart, CartState, User } from "./libs/types";
 
 const initData: Cart = {
@@ -115,7 +115,11 @@ export const useAuth = create<AuthState>()(
         }));
       },
     }),
-    { name: "user" },
+    {
+      name: "user",
+
+      storage: createJSONStorage(() => sessionStorage),
+    },
   ),
 );
 

@@ -79,10 +79,15 @@ export default function HomeEventComponent({
           </motion.p>
         </section>
       </motion.section>
-      <section className="relative p-5 lg:hidden backdrop-blur text-cream h-full w-full overflow-clip">
-        <Link href="/events" className="text-2xl z-10 underline">{title}</Link>
-        <p className="text-xs z-10">{description}</p>
-      </section>
+
+      <Link
+        href={"/events"}
+        className="flex items-center justify-center border border-cream rounded-md relative p-5 lg:hidden backdrop-blur text-center text-cream h-full w-full overflow-auto"
+      >
+        <h1 className="text-4xl font-bold text-cream w-full p-1 py2  z-10">
+          {title}
+        </h1>
+      </Link>
     </>
   );
 }
