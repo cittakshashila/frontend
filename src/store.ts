@@ -25,8 +25,6 @@ const initData: Cart = {
   },
 };
 
-localStorage.clear();
-
 export const useCart = create<CartState>()(
   persist(
     (set) => ({
