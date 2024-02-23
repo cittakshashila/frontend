@@ -28,6 +28,7 @@ const Register = () => {
 
   const [verifyOtp, setOtpVerify] = useState(true);
   const [otp, setOtp] = useState("");
+  const [load, setLoad] = useState(false)
 
   const formSchema = z.object({
     name: z
@@ -238,7 +239,10 @@ const Register = () => {
                 className="bg-grey justify-self-end text-cream max-w-32 py-2 rounded-md font-mono hover:bg-gray-700 md:py-4 md:text-xl"
                 disabled={isSubmitting}
               >
-                Register
+                { isSubmitting ?
+                    <span className="font-oranienbaum">Loading</span>:
+                    <span className="font-oranienbaum">Register</span>
+                }
               </button>
             </form>
 
