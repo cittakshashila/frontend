@@ -6,14 +6,17 @@ import { API_URL, cn } from "@/libs/utils";
 import { useAuth, useCart } from "@/store";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function CartSheet() {
   const { cart, cartOpen, toggleCart } = useCart((state) => state);
   const { auth } = useAuth((state) => state);
   const router = useRouter();
+  const [isDisabled, setDisabled] = useState<boolean>(false);
 
   const confirmEvents = async () => {
     try {
+      setDisabled(true);
       let events_id = [
         ...cart.codes.DAY1,
         ...cart.codes.DAY2,
@@ -34,6 +37,8 @@ export default function CartSheet() {
     } catch (err: any) {
       console.log(err);
       router.push("/register");
+    } finally {
+      setDisabled(false);
     }
   };
 
@@ -63,10 +68,14 @@ export default function CartSheet() {
           </section>
 
           <button
-            className="px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white"
+            className={cn(
+              "px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white",
+              isDisabled && "bg-gray-400",
+            )}
+            disabled={isDisabled}
             onClick={() => confirmEvents()}
           >
-            Confirm
+            {isDisabled ? "Loading" : "Confirm"}
           </button>
         </>
       )}

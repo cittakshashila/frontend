@@ -36,9 +36,9 @@ const Register = () => {
       .min(4, "Name should be atleast 4 characters")
       .max(15, "Name should be atmost 15 characters"),
     college: z
-      .string({ required_error: "Collage feild is required" })
-      .min(3, "Collage Name should be atleast 3 characters")
-      .max(50, "Collage Name should be atmost 50 characters"),
+      .string({ required_error: "College feild is required" })
+      .min(4, "College Name should be atleast 3 characters")
+      .max(50, "Colege Name should be atmost 50 characters"),
     mobile: z
       .string({ required_error: "Mobile Number is required" })
       .length(10, "Invalid mobile number"),
@@ -198,7 +198,7 @@ const Register = () => {
                 </h1>
                 <input
                   type="text"
-                  placeholder="collage"
+                  placeholder="college"
                   {...register("college")}
                   className={cn(
                     "min-h-9 max-w-40 md:max-w-80 bg-transparent text-xl md:text-4xl font-mono border-slate-500 border-b-2 focus:outline-0",
