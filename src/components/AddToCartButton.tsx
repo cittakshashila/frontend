@@ -25,18 +25,23 @@ export default function AddToCartButton({ event }: prop) {
       theme: "light",
     });
 
-    console.log(event);
     addEvent(event);
   };
 
   return (
     <>
-      <button
-        onClick={handleClick}
-        className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg"
-      >
-        Add To Wishlist
-      </button>
+      {event.id !== "CHNIG" ? (
+        <button
+          onClick={handleClick}
+          className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg"
+        >
+          Add To Wishlist
+        </button>
+      ) : (
+        <h1 className="font-oranienbaum sm text-3xl   py-3 ">
+          Contact the person above
+        </h1>
+      )}
       <ToastContainer
         position="bottom-left"
         autoClose={5000}

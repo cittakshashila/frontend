@@ -16,7 +16,6 @@ const Event = ({ params: { id } }: { params: { id: string } }) => {
       const res = await fetch(`/api/events/${id}`);
       const data = await res.json();
       setData(PARSE(data.payload.blob.rawLines) as EVENT);
-      console.log(PARSE(data.payload.blob.rawLines) as EVENT)
     };
     GET();
   }, []);

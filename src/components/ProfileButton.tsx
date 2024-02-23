@@ -72,7 +72,7 @@ export default function ProfileButton() {
                     onClick={() => toggleCart()}
                     className="block cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey"
                   >
-                    Cart
+                  Wish List
                   </h1>
                 </li>
 

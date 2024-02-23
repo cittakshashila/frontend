@@ -5,10 +5,9 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import OtpInput from "react-otp-input";
 import axios from "axios";
-import { date, z } from "zod";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "react-toastify";
-import { useAuth, useOTP } from "@/store";
+import { useAuth, useCart, useOTP } from "@/store";
 import { useProfileButton } from "@/hooks/useProfileButton";
 import { NavBar } from "@/components";
 import { useForm } from "react-hook-form";
@@ -17,9 +16,9 @@ import TakshashilaText from "../../../public/takshashila-text-2024.svg";
 import TakshashilaLogo from "../../../public/register-logo.svg";
 import Map from "../../../public/world-map-bg.webp";
 import Year from "../../../public/2024-travel.svg";
-import { ToastContainer } from "react-toastify";
+
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { error } from "console";
 
 const Register = () => {
   const { login } = useProfileButton();
@@ -27,7 +26,7 @@ const Register = () => {
   const OTP = useOTP((state) => state.otp);
   const router = useRouter();
 
-  const [verifyOtp, setOtpVerify] = useState(false);
+  const [verifyOtp, setOtpVerify] = useState(true);
   const [otp, setOtp] = useState("");
 
   const formSchema = z.object({
@@ -50,6 +49,7 @@ const Register = () => {
   });
 
   type UserType = z.infer<typeof formSchema>;
+  const { cartOpen, toggleCart } = useCart((state) => state);
 
   const {
     register,
@@ -61,6 +61,8 @@ const Register = () => {
   });
 
   useEffect(() => {
+    if (cartOpen) toggleCart();
+
     if (errors.name) {
       toast.error(errors.name.message);
     } else if (errors.college) {
@@ -71,6 +73,20 @@ const Register = () => {
       toast.error(errors.email.message);
     }
   }, [errors]);
+
+  useEffect(() => {
+    if (!auth) router.push("/");
+    if (auth?.verified) router.push("/events");
+
+    async function _sendOTP() {
+      await axios.post(`${API_URL}/support/sendotp`, {
+        otp: OTP,
+        email: auth?.email,
+      });
+    }
+
+    _sendOTP();
+  }, []);
 
   const onSubmit = async (user: UserType) => {
     try {
@@ -95,10 +111,6 @@ const Register = () => {
         }
       } else {
         setOtpVerify(true);
-        await axios.post(`${API_URL}/support/sendotp`, {
-          otp: OTP,
-          email: auth?.email,
-        });
       }
       reset();
     } catch (err: any) {
