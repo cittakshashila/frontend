@@ -60,7 +60,7 @@ const Card = ({ id, name, date, category }: Props) => {
         variants={hoverTitleVarient}
         initial="ifMobile"
       >
-        {name} - S
+        {name}
         <motion.span className="text-xs">
           {date} | {category}
         </motion.span>
