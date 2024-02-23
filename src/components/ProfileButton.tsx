@@ -5,12 +5,14 @@ import { cn } from "@/libs/utils";
 import { useAuth, useCart } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 export default function ProfileButton() {
   const { menuRef, imgRef, logOut, login, isOpen, setOpen } =
     useProfileButton();
   const { toggleCart } = useCart();
   const { auth } = useAuth((state) => state);
+  const router = useRouter()
 
   return (
     <>
@@ -75,19 +77,19 @@ export default function ProfileButton() {
                   Wish List
                   </h1>
                 </li>
-
-                {/*
                 <li>
                   <Link
                     className="block cursor-pointer px-3 font-mono hover:bg-slate-200 hover:text-grey"
                     href="/booked-events"
                   >
+                    Booked Events
                   </Link>
                 </li>
-*/}
-
                 <button
-                  onClick={() => logOut()}
+                  onClick={() => {
+                    router.push("/")
+                    logOut()
+                  }}
                   className=" cursor-pointer bg-red-500 mx-3 py-1 text-cream font-mono hover:bg-red-400 text-center w-1/2 inline-block rounded-sm"
                 >
                   Log Out
