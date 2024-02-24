@@ -1,6 +1,7 @@
-import { FOLDER_URL, INFO_URL } from "@/libs/utils";
+import { INFO_URL } from "@/libs/utils";
 import { NextRequest, NextResponse } from "next/server";
 
+export const revalidate = 1;
 export async function GET(
   req: NextRequest,
   { params }: { params: { name: string } },
