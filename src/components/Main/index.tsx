@@ -91,6 +91,7 @@ const Main = () => {
         ref={ref1}
         className="relative w-full flex items-center justify-center min-h-screen h-screen p-10 md:p-24 lg:p-48 overflow-clip lg:snap-start"
       >
+        <section className="absolute w-full h-screen  z-10" />
         <motion.div
           className="absolute lg:-right-56 -z-10 lg:-top-64 lg:w-[900px] min-w-[1000px] -bottom-40"
           initial={{ opacity: 0, x: 500, rotate: -30 }}
@@ -142,7 +143,7 @@ const Main = () => {
       <section
         ref={ref1}
         id="about"
-        className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:snap-start  overflow-clip "
+        className="relative xl:min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:overflow-y-hidden overflow-x-clip lg:snap-start"
       >
         <Image
           className="h-screen -z-10 bg-[#272727]"
@@ -252,7 +253,7 @@ const Main = () => {
           </section>
         </section>
 
-        <section className="hidden xl:flex xl:flex-row-reverse xl:mt-16">
+        <section className=" xl:flex xl:flex-row-reverse xl:mt-16">
           <motion.section
             initial="hidden"
             animate={controls1}
@@ -396,7 +397,7 @@ const Main = () => {
 
       <section
         id="contact"
-        className="flex flex-col relative min-h-screen w-full p-10 md:px-24 md:py-16 lg:snap-end"
+        className="flex flex-col relative lg:min-h-screen w-full p-10 md:px-24 md:py-16 lg:snap-end"
       >
         <Image
           className="h-screen -z-20 bg-[#272727]"
