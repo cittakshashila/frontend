@@ -18,13 +18,13 @@ export default function Events() {
     const [filter, setFilter] = useState<Type>("ALL");
     const [queue, setQueue] = useState<Record<string, infoType> | null>(null);
 
-    const P = useSearchParams();
+//    const P = useSearchParams();
     useEffect(() => {
-        if (P.has("filter")) {
-            if (P.get("filter") === "ALL" || P.get("filter") === "TECHNICAL" || P.get("filter") === "NON-TECHNICAL" || P.get("filter") === "WORKSHOP" || P.get("filter") === "PRO SHOW" || P.get("filter") === "ONLINE EVENT") {
-                setFilter(P.get("filter") as Type);
-            }
-        }
+//        if (P.has("filter")) {
+//            if (P.get("filter") === "ALL" || P.get("filter") === "TECHNICAL" || P.get("filter") === "NON-TECHNICAL" || P.get("filter") === "WORKSHOP" || P.get("filter") === "PRO SHOW" || P.get("filter") === "ONLINE EVENT") {
+//                setFilter(P.get("filter") as Type);
+//            }
+//        }
         const fetchFolders = async () => {
             const res = await fetch("/api/events/folder");
             const data = (await res.json()) as {
