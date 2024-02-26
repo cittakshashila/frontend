@@ -10,6 +10,13 @@ interface prop {
   image1: StaticImageData;
   image2: StaticImageData;
   image3: StaticImageData;
+  filter:
+  | "ALL"
+  | "TECHNICAL"
+  | "NON-TECHNICAL"
+  | "WORKSHOP"
+  | "PRO SHOW"
+  | "ONLINE EVENT";
   type?: "left" | "right";
 }
 
@@ -19,6 +26,7 @@ export default function HomeEventComponent({
   image1,
   image2,
   image3,
+  filter,
   type = "left",
 }: prop) {
   const [isHovered, setIsHovered] = useState(false);
@@ -33,7 +41,7 @@ export default function HomeEventComponent({
         onMouseLeave={() => setIsHovered(false)}
       >
         <Link
-          href={"/events"}
+          href={`/events?filter=${filter}`}
           className={cn(
             "flex invisible items-center text-cream text-xl md:visible lg:text-5xl  w-1/2 px-5",
             type === "right" ? "text-right" : "text-left",
@@ -81,7 +89,7 @@ export default function HomeEventComponent({
       </motion.section>
 
       <Link
-        href={"/events"}
+        href={`/events?filter=${filter}`}
         className="flex items-center justify-center border border-cream rounded-md relative p-5 lg:hidden backdrop-blur text-center text-cream h-full w-full overflow-auto"
       >
         <h1 className="text-4xl font-bold text-cream w-full p-1 py2  z-10">

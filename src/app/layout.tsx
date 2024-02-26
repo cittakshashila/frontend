@@ -4,6 +4,7 @@ import { georgia, oranienbaum, passport } from "@/libs/fonts";
 import { CLIENT_ID, isTeaser } from "@/libs/utils";
 import { Teaser } from "@/components";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { Suspense } from "react";
 
 export const viewport: Viewport = {
   themeColor: "#18181B",

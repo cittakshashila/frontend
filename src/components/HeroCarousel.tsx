@@ -43,7 +43,7 @@ export default function HeroCarousel() {
 
   return (
     <>
-      <section className="h-screen flex space-x-0  md:space-x-[10px] absolute w-[250px] md:w-[350px] xl:w-[500px] left-0 right-0 mx-auto z-0">
+      <section className="h-screen flex space-x-0  md:space-x-[10px] absolute w-[250px] md:w-[350px] xl:w-[500px] left-0 right-0 mx-auto ">
         <motion.section
           className="h-full w-full"
           initial={{ y: -1000 }}
@@ -62,7 +62,7 @@ export default function HeroCarousel() {
           >
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG1}
                 layout="fill"
@@ -74,7 +74,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen bg-[#272727]"
                 alt="bg"
                 src={IMG2}
                 layout="fill"
@@ -86,7 +86,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen bg-[#272727]"
                 alt="bg"
                 src={IMG3}
                 layout="fill"
@@ -98,7 +98,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen bg-[#272727]"
                 alt="bg"
                 src={IMG4}
                 layout="fill"
@@ -110,7 +110,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG5}
                 layout="fill"
@@ -122,7 +122,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen 0 bg-[#272727]"
                 alt="bg"
                 src={IMG6}
                 layout="fill"
@@ -133,6 +133,7 @@ export default function HeroCarousel() {
             </SwiperSlide>
           </Swiper>
         </motion.section>
+
         <motion.section
           className="h-full w-full"
           initial={{ y: 1000 }}
@@ -151,7 +152,7 @@ export default function HeroCarousel() {
           >
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG7}
                 layout="fill"
@@ -163,7 +164,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen bg-[#272727]"
                 alt="bg"
                 src={IMG8}
                 layout="fill"
@@ -175,7 +176,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG8}
                 layout="fill"
@@ -187,7 +188,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG9}
                 layout="fill"
@@ -199,7 +200,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG10}
                 layout="fill"
@@ -211,7 +212,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG11}
                 layout="fill"
@@ -223,7 +224,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG12}
                 layout="fill"
@@ -234,7 +235,7 @@ export default function HeroCarousel() {
             </SwiperSlide>
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG13}
                 layout="fill"
@@ -245,6 +246,8 @@ export default function HeroCarousel() {
             </SwiperSlide>
           </Swiper>
         </motion.section>
+
+
         <motion.section
           className="h-full w-full"
           initial={{ y: -1000 }}
@@ -263,7 +266,7 @@ export default function HeroCarousel() {
           >
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG14}
                 layout="fill"
@@ -275,7 +278,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG15}
                 layout="fill"
@@ -287,7 +290,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG16}
                 layout="fill"
@@ -299,7 +302,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG17}
                 layout="fill"
@@ -311,7 +314,7 @@ export default function HeroCarousel() {
 
             <SwiperSlide className="relative bg-grey">
               <Image
-                className="h-screen -z-20 bg-[#272727]"
+                className="h-screen  bg-[#272727]"
                 alt="bg"
                 src={IMG18}
                 layout="fill"
@@ -324,7 +327,7 @@ export default function HeroCarousel() {
         </motion.section>
       </section>
 
-      <section className="pointer-events-none absolute left-0 right-0 mx-auto z-10 w-fit bottom-28">
+      <section className="pointer-events-none absolute left-0 right-0 mx-auto w-fit bottom-28">
         <Swiper
           loop={true}
           fadeEffect={{ crossFade: true }}

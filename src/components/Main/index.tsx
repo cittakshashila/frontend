@@ -91,6 +91,7 @@ const Main = () => {
         ref={ref1}
         className="relative w-full flex items-center justify-center min-h-screen h-screen p-10 md:p-24 lg:p-48 overflow-clip lg:snap-start"
       >
+        <section className="absolute w-full h-screen  z-10" />
         <motion.div
           className="absolute lg:-right-56 -z-10 lg:-top-64 lg:w-[900px] min-w-[1000px] -bottom-40"
           initial={{ opacity: 0, x: 500, rotate: -30 }}
@@ -142,7 +143,7 @@ const Main = () => {
       <section
         ref={ref1}
         id="about"
-        className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:snap-start  overflow-clip "
+        className="relative xl:min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:overflow-y-hidden overflow-x-clip lg:snap-start"
       >
         <Image
           className="h-screen -z-10 bg-[#272727]"
@@ -252,7 +253,7 @@ const Main = () => {
           </section>
         </section>
 
-        <section className="hidden xl:flex xl:flex-row-reverse xl:mt-16">
+        <section className=" xl:flex xl:flex-row-reverse xl:mt-16">
           <motion.section
             initial="hidden"
             animate={controls1}
@@ -354,6 +355,7 @@ const Main = () => {
         <section className="flex flex-col flex-grow pt-0 h-0 space-y-3">
           <HomeEventComponent
             title="Pro-Shows"
+            filter="PRO SHOW"
             description="Prepare to be dazzled and entertained at our Proshows. Celebrate digital excellence at the prestigious CIDA Awards, Lose yourself in the melodies and rhythms of our Music Concert. Surrender to the beats and energy at our DJ Night,Be mesmerized by grace and precision at Choreo Night."
             type="left"
             image1={PSTKb}
@@ -363,6 +365,7 @@ const Main = () => {
 
           <HomeEventComponent
             title="Workshops"
+            filter="WORKSHOP"
             description="Explore learning and innovation with our Workshops. Learn software development in Coding, delve into storytelling in Screenplay sessions, and master digital design in Graphic Design, creating immersive experiences with expert guidance."
             type="right"
             image1={Wbs1}
@@ -372,6 +375,7 @@ const Main = () => {
 
           <HomeEventComponent
             title="Technical"
+            filter="TECHNICAL"
             description="Immerse yourself in intellectual challenges at our Technical Events. Participate in Drone Racing, showcase your skills in the Technical Quiz, and collaborate in Coding Challenges and Hackathons, innovating with technology."
             type="left"
             image1={Tcode}
@@ -381,6 +385,7 @@ const Main = () => {
 
           <HomeEventComponent
             title="Non-Technical"
+            filter="NON-TECHNICAL"
             description="Experience excitement and creativity with our Non-Technical Events. Join adventure-filled Treasure Hunts, showcase talents in Rap Battles, Dance-offs, and Talent Shows. Compete in our Cooking Competition and outdoor sports tournaments like Football, emphasizing teamwork."
             type="right"
             image1={NTdance}
@@ -392,7 +397,7 @@ const Main = () => {
 
       <section
         id="contact"
-        className="flex flex-col relative min-h-screen w-full p-10 md:px-24 md:py-16 lg:snap-end"
+        className="flex flex-col relative lg:min-h-screen w-full p-10 md:px-24 md:py-16 lg:snap-end"
       >
         <Image
           className="h-screen -z-20 bg-[#272727]"
@@ -556,11 +561,14 @@ const Main = () => {
             >
               LinkedIn
             </a>
-            <a className="text-cream text-xs" href="8015929273">
-              Phone
-            </a>
-            <a className="text-cream text-xs" href="takshashila@citchennai.net">
+            <a
+              className="text-cream text-xs"
+              href="mailto:takshashila@citchennai.net"
+            >
               Email
+            </a>
+            <a className="text-cream text-xs opacity-0" href="8015929273">
+              Phone
             </a>
           </section>
 
@@ -568,20 +576,29 @@ const Main = () => {
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Events</h1>
-            <Link className="text-cream text-xs" href="/events">
+            <Link
+              className="text-cream text-xs"
+              href="/events?filter=TECHNICAL"
+            >
               Technical
             </Link>
-            <Link className="text-cream text-xs" href="/events">
+            <Link
+              className="text-cream text-xs"
+              href="/events?filter=NON-TECHNICAL"
+            >
               Non Technical
             </Link>
-            <Link className="text-cream text-xs" href="/events">
+            <Link className="text-cream text-xs" href="/events?filter=WORKSHOP">
               Workshops
             </Link>
-            <Link className="text-cream text-xs" href="/events">
+            <Link className="text-cream text-xs" href="/events?filter=PRO SHOW">
               Pro-Shows
             </Link>
-            <Link className="text-cream text-xs" href="/events">
-              Others
+            <Link
+              className="text-cream text-xs"
+              href="/events?filter=ONLINE EVENT"
+            >
+              Online
             </Link>
           </section>
 
@@ -607,7 +624,16 @@ const Main = () => {
             >
               Developer
             </a>
-            <a className="text-cream text-xs" href="info@bitspace.org.in">
+            <a
+              className="text-cream text-xs"
+              href="mailto:info@bitspace.org.in"
+            >
+              Contact
+            </a>
+            <a
+              className="text-cream text-xs opacity-0"
+              href="info@bitspace.org.in"
+            >
               Contact
             </a>
           </section>
@@ -616,26 +642,29 @@ const Main = () => {
 
           <section className="flex flex-col space-y-1">
             <h1 className="text-2xl mb-3">Support</h1>
-            <a className="text-cream text-xs" href="bitspace.org.in">
-              Takshashila Team
-            </a>
-            <a className="text-cream text-xs" href="#">
-              Report
-            </a>
             <a
               className="text-cream text-xs"
-              href="https://www.bitspace.org.in/"
+              href="mailto:takshashila@citchennai.net"
             >
-              Developer
-            </a>
-            <a className="text-cream text-xs" href="#contact">
               Contact Us
             </a>
             <a
               className="text-cream text-xs"
+              href="mailto:takshashila@citchennai.net"
+            >
+              Report
+            </a>
+            <a className="text-cream text-xs" href="tel:8015929273">
+              Phone
+            </a>
+            <a
+              className="text-cream text-xs opacity-0"
               href="https://www.bitspace.org.in/"
             >
               Credits
+            </a>
+            <a className="text-cream text-xs opacity-0" href="bitspace.org.in">
+              Takshashila Team
             </a>
           </section>
         </section>
