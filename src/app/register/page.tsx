@@ -144,7 +144,7 @@ const Register = () => {
   return (
     <main className="bg-paint-effect bg-cover bg-center bg-[#272727] h-screen md:snap-y md:snap-mandatory overflow-x-hidden">
       <NavBar />
-      {!verifyOtp ? (
+      {verifyOtp ? (
         <section className="w-[100vw] h-[100vh] flex justify-center items-center">
           <div className="bg-[rgba(0,0,0,0.5)] text-[#fafafa] p-5">
             <div className="text-3xl font-oranienbaum py-5 text-center">
