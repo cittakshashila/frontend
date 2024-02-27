@@ -101,15 +101,11 @@ export class G_API {
             mainData[data.id].date = data.day === "DAY1" ? "29/02/2024": (data.day === "DAY2" ? "01/03/2024": "02/03/2024")
 
             let resp
-            // console.log(this.API);
-            console.log("UPDATE - here up");
             try {
                 resp = await this.API.get(API_URL);
             } catch (err) {
-                // console.log(err);
                 return { success: false, message: `Failed to update event` }
             }
-            console.log("UPDATE - here");
             try {
                 const updatedFileContent = {
                     ...resp.data,
@@ -127,9 +123,7 @@ export class G_API {
                         'X-GitHub-Api-Version': '2022-11-28'
                     }
                 })
-                console.log("UPDATE - here in");
             } catch (err) {
-                console.log(err);
                 return { success: false, message: `Failed to update event` }
             }
 
