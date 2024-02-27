@@ -49,6 +49,12 @@ export interface Cart {
   };
 }
 
+export type API_TYPE = {
+    success: boolean;
+    message: string;
+    data?: any;
+}
+
 export interface CartState {
   cart: Cart;
   cartOpen: boolean;

@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   robots: "all",
 };
 
+
 export default function RootLayout({
   children,
 }: {
