@@ -77,8 +77,8 @@ export interface User {
     verified: boolean;
 }
 
-export const REPO_OWNER = "RahulNavneeth";
-export const REPO_NAME = "EVENTS-DATA-24-TEST";
+export const REPO_OWNER = "cittakshashila";
+export const REPO_NAME = "EVENTS-DATA-24";
 
 export type INFO_URL =
     `https://github.com/${string}/${string}/blob/master/${string}/info.json`;
