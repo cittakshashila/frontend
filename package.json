@@ -16,6 +16,7 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.5",
+    "jsonwebtoken": "^9.0.2",
     "next": "^14.0.4",
     "react": "^18",
     "react-dom": "^18",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
