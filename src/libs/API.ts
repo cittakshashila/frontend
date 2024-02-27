@@ -16,7 +16,7 @@ export class G_API {
     }
     // @ts-ignore
     public event = async (EVENT_NAME: string, data: EVENT_TYPE , EVENT_MODE: "CREATE" | "UPDATE" | "CREATE IMAGE" = "CREATE", IMG: { img: string, num: number } = { img:"", num:0 }): Promise<API_TYPE> => {
-        const API_URL = `/${REPO_OWNER}/${REPO_NAME}/contents/events/${EVENT_NAME}/info.json`;
+        const API_URL = `/${REPO_OWNER}/${REPO_NAME}/contents/events/${data.id}/info.json`;
         const MAIN_URL = `/${REPO_OWNER}/${REPO_NAME}/contents/info.json`;
 
 
@@ -91,7 +91,7 @@ export class G_API {
         } 
         if (EVENT_MODE === "UPDATE") {
             let json = JSON.stringify(data, null, 2);
-            const r = await fetch(`https://github.com/${REPO_OWNER}/EVENTS-DATA-24/blob/master/info.json`);
+            const r = await fetch(`https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/master/info.json`);
             const D = await r.json();
 
             let mainData = PARSE(D.payload.blob.rawLines)
@@ -101,12 +101,15 @@ export class G_API {
             mainData[data.id].date = data.day === "DAY1" ? "29/02/2024": (data.day === "DAY2" ? "01/03/2024": "02/03/2024")
 
             let resp
+            // console.log(this.API);
+            console.log("UPDATE - here up");
             try {
                 resp = await this.API.get(API_URL);
             } catch (err) {
+                // console.log(err);
                 return { success: false, message: `Failed to update event` }
             }
-
+            console.log("UPDATE - here");
             try {
                 const updatedFileContent = {
                     ...resp.data,
@@ -124,7 +127,9 @@ export class G_API {
                         'X-GitHub-Api-Version': '2022-11-28'
                     }
                 })
+                console.log("UPDATE - here in");
             } catch (err) {
+                console.log(err);
                 return { success: false, message: `Failed to update event` }
             }
 

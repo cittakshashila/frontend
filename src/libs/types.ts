@@ -77,13 +77,13 @@ export interface User {
   verified: boolean;
 }
 
-export const REPO_OWNER = "cittakshashila";
-export const REPO_NAME = "EVENTS-DATA-24";
+export const REPO_OWNER = "RahulNavneeth";
+export const REPO_NAME = "EVENTS-DATA-24-TEST";
 
 export type INFO_URL =
-  `https://github.com/cittakshashila/EVENTS-DATA-24/blob/master/${string}/info.json`;
+  `https://github.com/RahulNavneeth/EVENTS-DATA-24-TEST/blob/master/${string}/info.json`;
 export type MEDIA_URL =
-  `https://raw.githubusercontent.com/cittakshashila/EVENTS-DATA-24/master/events/${string}/assets/${string}.png`;
+  `https://raw.githubusercontent.com/RahulNavneeth/EVENTS-DATA-24-TEST/master/events/${string}/assets/${string}.png`;
 
 export type FOLDER_TYPE = {
   name: string;
