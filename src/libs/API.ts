@@ -14,10 +14,11 @@ export class G_API {
             }
         })
     }
-    // @ts-ignore
+
     public event = async (EVENT_NAME: string, data: EVENT_TYPE, EVENT_MODE: "CREATE" | "UPDATE" | "CREATE IMAGE" = "CREATE", IMG: { img: string, num: number } = { img: "", num: 0 }): Promise<API_TYPE> => {
         const API_URL = `/${REPO_OWNER}/${REPO_NAME}/contents/events/${EVENT_NAME}/info.json`;
         const MAIN_URL = `/${REPO_OWNER}/${REPO_NAME}/contents/info.json`;
+        console.log(this.API, API_URL, MAIN_URL, EVENT_MODE, data, IMG);
         if (EVENT_MODE === "CREATE") {
             let json = JSON.stringify(data, null, 2);
             const r = await fetch(`https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/master/info.json`);
@@ -25,14 +26,13 @@ export class G_API {
 
             let mainData = PARSE(D.payload.blob.rawLines)
 
-            let newMainData = {}
-            // @ts-ignore
+            let newMainData: any = {}
+
             newMainData[data.id] = {
                 name: data.title,
                 type: data.details.type,
             }
 
-            // @ts-ignore
             if (data.details.type !== "ONLINE EVENT") newMainData[data.id].date = data.day === "DAY1" ? "29/02/2024" : (data.day === "DAY2" ? "01/03/2024" : "02/03/2024")
             mainData = { ...mainData, ...newMainData }
 
@@ -99,7 +99,7 @@ export class G_API {
             try {
                 resp = await this.API.get(API_URL);
             } catch (err) {
-                return { success: false, message: `Failed to update event` }
+                return { success: false, message: `Failed to update event ` + err }
             }
             try {
                 const updatedFileContent = {
@@ -119,19 +119,19 @@ export class G_API {
                     }
                 })
             } catch (err) {
-                return { success: false, message: `Failed to update event` }
+                return { success: false, message: `Failed to update event ` + err }
             }
 
             try {
                 resp = await this.API.get(MAIN_URL);
             } catch (err) {
-                return { success: false, message: `Failed to update event` }
+                return { success: false, message: `Failed to update event` + err }
             }
 
             try {
                 const createdMainFileContent = {
                     ...resp.data,
-                    message: `ADMIN: CREATING EVENT - ${data.title}`,
+                    message: `ADMIN: UPDATING EVENT - ${data.title}`,
                     content: Buffer.from(JSON.stringify(mainData, null, 2)).toString('base64'),
                 };
                 const mainRes: AxiosResponse = await this.API.put(MAIN_URL, {
@@ -146,7 +146,7 @@ export class G_API {
                     }
                 })
             } catch (err) {
-                return { success: false, message: `Failed to create event` }
+                return { success: false, message: `Failed to update event ` + err }
             }
 
             return { success: true, message: `Event ${data.title} updated successfully` };
@@ -175,5 +175,6 @@ export class G_API {
             }
             return { success: true, message: `Image created successfully` };
         }
+        return { success: false, message: `Failed` };
     }
 };
