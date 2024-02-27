@@ -25,11 +25,19 @@ import NTdance2 from "@/assets/NTDANCE2.png";
 import HeroCarousel from "../HeroCarousel";
 
 import {
+  IMGMakers,
+  IMGStylerz,
+  IMGProorvika,
   IMGAgs,
   IMGZoom,
   IMGCadbery,
   IMGUnibics,
   IMGGokulCinimas,
+  IMG9Skins,
+  IMGKauvery,
+  IMGProvoke,
+  IMGBG_Naidu,
+  IMGFastTrack,
   IMGCocoCola,
 } from "@/assets/sponsers";
 
@@ -431,8 +439,73 @@ const Main = () => {
               alt="cadbery"
               width={200}
               height={100}
+              src={IMGProorvika}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
+              src={IMGMakers}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
+              src={IMGStylerz}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
+              src={IMGBG_Naidu}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
+              src={IMGProvoke}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
+              src={IMGKauvery}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
+              src={IMG9Skins}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
+              src={IMGFastTrack}
+            />
+
+            <Image
+              className="px-2 rounded-xl"
+              alt="cadbery"
+              width={200}
+              height={100}
               src={IMGCadbery}
             />
+
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
@@ -440,6 +513,7 @@ const Main = () => {
               height={100}
               src={IMGAgs}
             />
+
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
@@ -447,6 +521,7 @@ const Main = () => {
               height={100}
               src={IMGZoom}
             />
+
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
@@ -454,6 +529,7 @@ const Main = () => {
               height={100}
               src={IMGGokulCinimas}
             />
+
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
