@@ -7,18 +7,13 @@ import { PARSE } from "@/libs/utils";
 import { useSearchParams } from "next/navigation"
 
 export default function Events() {
-    type Type =
-        | "ALL"
-        | "TECHNICAL"
-        | "NON-TECHNICAL"
-        | "WORKSHOP"
-        | "PRO SHOW"
-        | "ONLINE EVENT";
+    type Type = | "ALL" | "TECHNICAL" | "NON-TECHNICAL" | "WORKSHOP" | "PRO SHOW" | "ONLINE EVENT";
     type infoType = { name: string; type: Type; date: string };
     const [filter, setFilter] = useState<Type>("ALL");
     const [queue, setQueue] = useState<Record<string, infoType> | null>(null);
 
     const P = useSearchParams();
+
     useEffect(() => {
         if (P.has("filter")) {
             if (P.get("filter") === "ALL" || P.get("filter") === "TECHNICAL" || P.get("filter") === "NON-TECHNICAL" || P.get("filter") === "WORKSHOP" || P.get("filter") === "PRO SHOW" || P.get("filter") === "ONLINE EVENT") {
