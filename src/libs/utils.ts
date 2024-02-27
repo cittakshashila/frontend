@@ -1,6 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { G_API } from "./API";
 import type { INFO_URL as INFO_URL_TYPE, MEDIA_URL as MEDIA_URL_TYPE } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
@@ -34,5 +33,3 @@ export const PARSE = (data: Array<string>): Record<string, any> => {
     const jsonObject: Record<string, any> = JSON.parse(jsonString);
     return jsonObject;
 }
-
-export const CALL = new G_API(process.env.G_TOKEN || "");
