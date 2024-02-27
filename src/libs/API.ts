@@ -1,6 +1,6 @@
 import axios, { Axios, AxiosResponse } from 'axios';
-import {REPO_NAME, REPO_OWNER, API_TYPE, EVENT as EVENT_TYPE} from './types';
-import {PARSE} from './utils';
+import { REPO_NAME, REPO_OWNER, API_TYPE, EVENT as EVENT_TYPE } from './types';
+import { PARSE } from './utils';
 
 export class G_API {
     private API: Axios;
@@ -15,15 +15,12 @@ export class G_API {
         })
     }
     // @ts-ignore
-    public event = async (EVENT_NAME: string, data: EVENT_TYPE , EVENT_MODE: "CREATE" | "UPDATE" | "CREATE IMAGE" = "CREATE", IMG: { img: string, num: number } = { img:"", num:0 }): Promise<API_TYPE> => {
+    public event = async (EVENT_NAME: string, data: EVENT_TYPE, EVENT_MODE: "CREATE" | "UPDATE" | "CREATE IMAGE" = "CREATE", IMG: { img: string, num: number } = { img: "", num: 0 }): Promise<API_TYPE> => {
         const API_URL = `/${REPO_OWNER}/${REPO_NAME}/contents/events/${EVENT_NAME}/info.json`;
         const MAIN_URL = `/${REPO_OWNER}/${REPO_NAME}/contents/info.json`;
-
-
         if (EVENT_MODE === "CREATE") {
-            console.log(2)
             let json = JSON.stringify(data, null, 2);
-            const r = await fetch(`https://github.com/${REPO_OWNER}/EVENTS-DATA-24/blob/master/info.json`);
+            const r = await fetch(`https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/master/info.json`);
             const D = await r.json();
 
             let mainData = PARSE(D.payload.blob.rawLines)
@@ -36,7 +33,7 @@ export class G_API {
             }
 
             // @ts-ignore
-            if (data.details.type !== "ONLINE EVENT") newMainData[data.id].date = data.day === "DAY1" ? "29/02/2024": (data.day === "DAY2" ? "01/03/2024": "02/03/2024")
+            if (data.details.type !== "ONLINE EVENT") newMainData[data.id].date = data.day === "DAY1" ? "29/02/2024" : (data.day === "DAY2" ? "01/03/2024" : "02/03/2024")
             mainData = { ...mainData, ...newMainData }
 
             try {
@@ -88,17 +85,15 @@ export class G_API {
             }
 
             return { success: true, message: `Event ${data.title} created successfully` };
-        } 
+        }
         if (EVENT_MODE === "UPDATE") {
             let json = JSON.stringify(data, null, 2);
-            const r = await fetch(`https://github.com/${REPO_OWNER}/EVENTS-DATA-24/blob/master/info.json`);
+            const r = await fetch(`https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/master/info.json`);
             const D = await r.json();
-
             let mainData = PARSE(D.payload.blob.rawLines)
-
             mainData[data.id].name = data.title
             mainData[data.id].type = data.details.type
-            mainData[data.id].date = data.day === "DAY1" ? "29/02/2024": (data.day === "DAY2" ? "01/03/2024": "02/03/2024")
+            mainData[data.id].date = data.day === "DAY1" ? "29/02/2024" : (data.day === "DAY2" ? "01/03/2024" : "02/03/2024")
 
             let resp
             try {
@@ -106,7 +101,6 @@ export class G_API {
             } catch (err) {
                 return { success: false, message: `Failed to update event` }
             }
-
             try {
                 const updatedFileContent = {
                     ...resp.data,
@@ -157,9 +151,8 @@ export class G_API {
 
             return { success: true, message: `Event ${data.title} updated successfully` };
 
-        } 
+        }
         if (EVENT_MODE === "CREATE IMAGE") {
-            console.log(3)
             const json = IMG.img
             try {
                 const createdFileContent = {
@@ -181,6 +174,6 @@ export class G_API {
                 return { success: false, message: `Failed to create image` }
             }
             return { success: true, message: `Image created successfully` };
-        } 
+        }
     }
 };
