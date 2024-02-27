@@ -10,7 +10,13 @@ interface prop {
     image1: StaticImageData;
     image2: StaticImageData;
     image3: StaticImageData;
-    filter: | "ALL" | "TECHNICAL" | "NON-TECHNICAL" | "WORKSHOP" | "PRO SHOW" | "ONLINE EVENT";
+    filter:
+    | "ALL"
+    | "TECHNICAL"
+    | "NON-TECHNICAL"
+    | "WORKSHOP"
+    | "PRO SHOW"
+    | "ONLINE EVENT";
     type?: "left" | "right";
 }
 

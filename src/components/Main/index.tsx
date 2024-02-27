@@ -30,6 +30,7 @@ import {
     IMGCadbery,
     IMGUnibics,
     IMGGokulCinimas,
+    IMGCocoCola,
 } from "@/assets/sponsers";
 
 import "swiper/css";
@@ -91,6 +92,7 @@ const Main = () => {
                 ref={ref1}
                 className="relative w-full flex items-center justify-center min-h-screen h-screen p-10 md:p-24 lg:p-48 overflow-clip lg:snap-start"
             >
+                <section className="absolute w-full h-screen  z-10" />
                 <motion.div
                     className="absolute lg:-right-56 -z-10 lg:-top-64 lg:w-[900px] min-w-[1000px] -bottom-40"
                     initial={{ opacity: 0, x: 500, rotate: -30 }}
@@ -142,7 +144,7 @@ const Main = () => {
             <section
                 ref={ref1}
                 id="about"
-                className="relative min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:snap-start  overflow-clip "
+                className="relative xl:min-h-screen w-full p-10 md:p-24 lg:px-40 xl:pt-10 lg:overflow-y-hidden overflow-x-clip lg:snap-start"
             >
                 <Image
                     className="h-screen -z-10 bg-[#272727]"
@@ -252,7 +254,7 @@ const Main = () => {
                     </section>
                 </section>
 
-                <section className="hidden xl:flex xl:flex-row-reverse xl:mt-16">
+                <section className=" xl:flex xl:flex-row-reverse xl:mt-16">
                     <motion.section
                         initial="hidden"
                         animate={controls1}
@@ -396,7 +398,7 @@ const Main = () => {
 
             <section
                 id="contact"
-                className="flex flex-col relative min-h-screen w-full p-10 md:px-24 md:py-16 lg:snap-end"
+                className="flex flex-col relative lg:min-h-screen w-full p-10 md:px-24 md:py-16 lg:snap-end"
             >
                 <Image
                     className="h-screen -z-20 bg-[#272727]"
@@ -408,49 +410,61 @@ const Main = () => {
                     loading="lazy"
                 />
 
-                <h1 className="font-oranienbaum text-5xl text-white pb-3">Sponsors</h1>
+                <h1 className="font-oranienbaum text-3xl text-center text-white pb-3">
+                    Title Sponsors
+                </h1>
+                <Image
+                    className="mx-auto px-2 rounded-xl"
+                    alt="cadbery"
+                    width={200}
+                    height={100}
+                    src={IMGCocoCola}
+                />
 
-                <section className="flex items-center min-h-40 h-40 xl:min-h-48 overflow-clip">
+                <h1 className="font-oranienbaum text-3xl text-center text-white py-2">
+                    Sponsors
+                </h1>
+                <section className="flex items-center min-h-24 h-24 xl:min-h-24 overflow-clip">
                     <Marquee autoFill className="flex justify-between">
                         <Image
                             className="px-2 rounded-xl"
                             alt="cadbery"
-                            width={300}
-                            height={160}
+                            width={200}
+                            height={100}
                             src={IMGCadbery}
                         />
                         <Image
                             className="px-2 rounded-xl"
                             alt="cadbery"
-                            width={300}
-                            height={160}
+                            width={200}
+                            height={100}
                             src={IMGAgs}
                         />
                         <Image
                             className="px-2 rounded-xl"
                             alt="cadbery"
-                            width={300}
-                            height={160}
+                            width={200}
+                            height={100}
                             src={IMGZoom}
                         />
                         <Image
                             className="px-2 rounded-xl"
                             alt="cadbery"
-                            width={300}
-                            height={160}
+                            width={200}
+                            height={100}
                             src={IMGGokulCinimas}
                         />
                         <Image
                             className="px-2 rounded-xl"
                             alt="cadbery"
-                            width={300}
-                            height={160}
+                            width={200}
+                            height={100}
                             src={IMGUnibics}
                         />
                     </Marquee>
                 </section>
 
-                <h1 className="font-oranienbaum text-5xl text-white py-8">
+                <h1 className="font-oranienbaum text-5xl text-white py-4">
                     {isContactComp ? "Contact Us" : "Location"}
                 </h1>
 
@@ -560,11 +574,14 @@ const Main = () => {
                         >
                             LinkedIn
                         </a>
-                        <a className="text-cream text-xs" href="8015929273">
-                            Phone
-                        </a>
-                        <a className="text-cream text-xs" href="takshashila@citchennai.net">
+                        <a
+                            className="text-cream text-xs"
+                            href="mailto:takshashila@citchennai.net"
+                        >
                             Email
+                        </a>
+                        <a className="text-cream text-xs opacity-0" href="8015929273">
+                            Phone
                         </a>
                     </section>
 
@@ -572,20 +589,29 @@ const Main = () => {
 
                     <section className="flex flex-col space-y-1">
                         <h1 className="text-2xl mb-3">Events</h1>
-                        <Link className="text-cream text-xs" href="/events">
+                        <Link
+                            className="text-cream text-xs"
+                            href="/events?filter=TECHNICAL"
+                        >
                             Technical
                         </Link>
-                        <Link className="text-cream text-xs" href="/events">
+                        <Link
+                            className="text-cream text-xs"
+                            href="/events?filter=NON-TECHNICAL"
+                        >
                             Non Technical
                         </Link>
-                        <Link className="text-cream text-xs" href="/events">
+                        <Link className="text-cream text-xs" href="/events?filter=WORKSHOP">
                             Workshops
                         </Link>
-                        <Link className="text-cream text-xs" href="/events">
+                        <Link className="text-cream text-xs" href="/events?filter=PRO SHOW">
                             Pro-Shows
                         </Link>
-                        <Link className="text-cream text-xs" href="/events">
-                            Others
+                        <Link
+                            className="text-cream text-xs"
+                            href="/events?filter=ONLINE EVENT"
+                        >
+                            Online
                         </Link>
                     </section>
 
@@ -611,7 +637,16 @@ const Main = () => {
                         >
                             Developer
                         </a>
-                        <a className="text-cream text-xs" href="info@bitspace.org.in">
+                        <a
+                            className="text-cream text-xs"
+                            href="mailto:info@bitspace.org.in"
+                        >
+                            Contact
+                        </a>
+                        <a
+                            className="text-cream text-xs opacity-0"
+                            href="info@bitspace.org.in"
+                        >
                             Contact
                         </a>
                     </section>
@@ -620,26 +655,29 @@ const Main = () => {
 
                     <section className="flex flex-col space-y-1">
                         <h1 className="text-2xl mb-3">Support</h1>
-                        <a className="text-cream text-xs" href="bitspace.org.in">
-                            Takshashila Team
-                        </a>
-                        <a className="text-cream text-xs" href="#">
-                            Report
-                        </a>
                         <a
                             className="text-cream text-xs"
-                            href="https://www.bitspace.org.in/"
+                            href="mailto:takshashila@citchennai.net"
                         >
-                            Developer
-                        </a>
-                        <a className="text-cream text-xs" href="#contact">
                             Contact Us
                         </a>
                         <a
                             className="text-cream text-xs"
+                            href="mailto:takshashila@citchennai.net"
+                        >
+                            Report
+                        </a>
+                        <a className="text-cream text-xs" href="tel:8015929273">
+                            Phone
+                        </a>
+                        <a
+                            className="text-cream text-xs opacity-0"
                             href="https://www.bitspace.org.in/"
                         >
                             Credits
+                        </a>
+                        <a className="text-cream text-xs opacity-0" href="bitspace.org.in">
+                            Takshashila Team
                         </a>
                     </section>
                 </section>

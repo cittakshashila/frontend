@@ -28,7 +28,7 @@ const Register = () => {
 
   const [verifyOtp, setOtpVerify] = useState(true);
   const [otp, setOtp] = useState("");
-  const [load, setLoad] = useState(false)
+  const [load, setLoad] = useState(false);
 
   const formSchema = z.object({
     name: z
@@ -76,7 +76,7 @@ const Register = () => {
   }, [errors]);
 
   useEffect(() => {
-    if (!auth) router.push("/");
+    if (!auth) return router.push("/");
     if (auth?.verified) router.push("/events");
 
     async function _sendOTP() {
@@ -186,6 +186,9 @@ const Register = () => {
         </section>
       ) : (
         <section className=" relative w-full max-w-4xl h-full overflow-hidden flex flex-col items-center justify-center p-5 py-20 mx-auto">
+          <h1 className="text-white text-4xl pb-5 text-center">
+            Payment will be done offline
+          </h1>
           <section className="relative bg-white w-full rounded-lg overflow-clip">
             <section className="bg-[#D9D9D9] p-2 w-full h-14">
               <Image src={TakshashilaText} alt="takshashila-text" />
@@ -239,10 +242,11 @@ const Register = () => {
                 className="bg-grey justify-self-end text-cream max-w-32 py-2 rounded-md font-mono hover:bg-gray-700 md:py-4 md:text-xl"
                 disabled={isSubmitting}
               >
-                { isSubmitting ?
-                    <span className="font-oranienbaum">Loading</span>:
-                    <span className="font-oranienbaum">Register</span>
-                }
+                {isSubmitting ? (
+                  <span className="font-oranienbaum">Loading</span>
+                ) : (
+                  <span className="font-oranienbaum">Register</span>
+                )}
               </button>
             </form>
 
