@@ -30,6 +30,7 @@ import {
   IMGCadbery,
   IMGUnibics,
   IMGGokulCinimas,
+  IMGCocoCola,
 } from "@/assets/sponsers";
 
 import "swiper/css";
@@ -409,49 +410,61 @@ const Main = () => {
           loading="lazy"
         />
 
-        <h1 className="font-oranienbaum text-5xl text-white pb-3">Sponsors</h1>
+        <h1 className="font-oranienbaum text-3xl text-center text-white pb-3">
+          Title Sponsors
+        </h1>
+        <Image
+          className="mx-auto px-2 rounded-xl"
+          alt="cadbery"
+          width={200}
+          height={100}
+          src={IMGCocoCola}
+        />
 
-        <section className="flex items-center min-h-40 h-40 xl:min-h-48 overflow-clip">
+        <h1 className="font-oranienbaum text-3xl text-center text-white py-2">
+          Sponsors
+        </h1>
+        <section className="flex items-center min-h-24 h-24 xl:min-h-24 overflow-clip">
           <Marquee autoFill className="flex justify-between">
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
-              width={300}
-              height={160}
+              width={200}
+              height={100}
               src={IMGCadbery}
             />
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
-              width={300}
-              height={160}
+              width={200}
+              height={100}
               src={IMGAgs}
             />
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
-              width={300}
-              height={160}
+              width={200}
+              height={100}
               src={IMGZoom}
             />
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
-              width={300}
-              height={160}
+              width={200}
+              height={100}
               src={IMGGokulCinimas}
             />
             <Image
               className="px-2 rounded-xl"
               alt="cadbery"
-              width={300}
-              height={160}
+              width={200}
+              height={100}
               src={IMGUnibics}
             />
           </Marquee>
         </section>
 
-        <h1 className="font-oranienbaum text-5xl text-white py-8">
+        <h1 className="font-oranienbaum text-5xl text-white py-4">
           {isContactComp ? "Contact Us" : "Location"}
         </h1>
 
