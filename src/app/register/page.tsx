@@ -81,9 +81,11 @@ const Register = () => {
 
     async function _sendOTP() {
       await axios.post(`${API_URL}/support/sendotp`, {
-        otp: OTP,
-        email: auth?.email,
-      });
+            otp: OTP,
+        },{
+            headers: { Authorization: `Bearer ${auth?.access_token}` }
+        }
+      );
     }
 
     _sendOTP();
@@ -106,7 +108,8 @@ const Register = () => {
         if (data.status === 200) {
           await axios.post(`${API_URL}/support/registered`, {
             name: auth?.name,
-            email: auth?.email,
+          },{
+            headers: { Authorization: `Bearer ${auth?.access_token}` }
           });
           router.push("/events");
         }
