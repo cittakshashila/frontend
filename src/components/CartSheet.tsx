@@ -55,8 +55,8 @@ export default function CartSheet() {
         )}
       >
         {cart.codes.DAY1.length === 0 &&
-        cart.codes.DAY2.length === 0 &&
-        cart.codes.DAY3.length === 0 ? (
+          cart.codes.DAY2.length === 0 &&
+          cart.codes.DAY3.length === 0 ? (
           <section className="text-cream flex flex-col items-center justify-center">
             <h1 className="text-xl lg:text-7xl text-cream">
               Wish List Is Empty
@@ -70,8 +70,12 @@ export default function CartSheet() {
               <CartPass day={"DAY2"} event={cart.DAY2} />
               <CartPass day={"DAY3"} event={cart.DAY3} />
             </section>
+            <h1 className="text-cream w-48 xl:w-56 mx-auto text-center xl:text-2xl text-md">
+              We are currently limiting registrations! Further registrations
+              will be done offline
+            </h1>
 
-            <button
+            {/*<button
               className={cn(
                 "px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white",
                 isDisabled && "bg-gray-400",
@@ -80,7 +84,7 @@ export default function CartSheet() {
               onClick={() => confirmEvents()}
             >
               {isDisabled ? "Loading" : "Confirm"}
-            </button>
+            </button>*/}
           </>
         )}
         <IconX
