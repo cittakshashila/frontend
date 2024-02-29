@@ -70,11 +70,6 @@ export default function CartSheet() {
               <CartPass day={"DAY2"} event={cart.DAY2} />
               <CartPass day={"DAY3"} event={cart.DAY3} />
             </section>
-            <h1 className="text-cream w-48 xl:w-56 mx-auto text-center xl:text-2xl text-md">
-              We are currently limiting registrations! Further registrations
-              will be done offline
-            </h1>
-
             <button
               className={cn(
                 "px-6 py-2 text-black text-2xl mt-8 border w-fit self-center rounded-md bg-cream hover:bg-white",
