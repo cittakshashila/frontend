@@ -31,12 +31,18 @@ export default function AddToCartButton({ event }: prop) {
   return (
     <>
       {event.id !== "CHNIG" ? (
-        <button
-          onClick={handleClick}
-          className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg"
-        >
-          Add To Wishlist
-        </button>
+        event.id === "KLIVE" || event.day === "DAY1" || !event.day ? (
+          <h1 className="font-oranienbaum sm text-3xl py-3 ">
+            Registrations are closed
+          </h1>
+        ) : (
+          <button
+            onClick={handleClick}
+            className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg"
+          >
+            Add To Wishlist
+          </button>
+        )
       ) : (
         <h1 className="font-oranienbaum sm text-3xl   py-3 ">
           Contact the person above
