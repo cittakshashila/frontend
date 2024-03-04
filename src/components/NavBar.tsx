@@ -39,7 +39,7 @@ export default function NavBar() {
           </a>
         </section>
       )}
-      <ProfileButton />
+      <div />
       <CartSheet />
     </section>
   );

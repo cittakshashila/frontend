@@ -4,7 +4,8 @@ import { georgia, oranienbaum, passport } from "@/libs/fonts";
 import { CLIENT_ID, isTeaser } from "@/libs/utils";
 import { Teaser } from "@/components";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import { Suspense } from "react";
+import ConfettiComponent from "@/components/ConfettiComponent";
+import PostTKModel from "@/components/PostTKModel";
 
 export const viewport: Viewport = {
   themeColor: "#18181B",
@@ -36,7 +37,6 @@ export const metadata: Metadata = {
   robots: "all",
 };
 
-
 export default function RootLayout({
   children,
 }: {
@@ -52,6 +52,7 @@ export default function RootLayout({
         <body
           className={`${georgia.variable} ${oranienbaum.variable} ${passport.variable}`}
         >
+          <PostTKModel />
           {isTeaser ? <Teaser /> : children}
         </body>
       </html>

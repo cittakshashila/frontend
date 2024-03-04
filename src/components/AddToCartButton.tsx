@@ -30,7 +30,7 @@ export default function AddToCartButton({ event }: prop) {
 
   return (
     <>
-      {event.day === "DAY3" ? (
+      {0 ? (
         <button
           onClick={handleClick}
           className="font-oranienbaum sm:text-3xl text-xl bg-[#565656] px-8 py-3 rounded-lg"
@@ -38,7 +38,7 @@ export default function AddToCartButton({ event }: prop) {
           Add To Wishlist
         </button>
       ) : (
-        <h1 className="font-oranienbaum sm text-3xl   py-3 ">
+        <h1 className="font-oranienbaum sm text-3xl py-3 ">
           Registrations are closed ! ! !
         </h1>
       )}
